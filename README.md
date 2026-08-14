@@ -1,12 +1,12 @@
 # Healthcare Operations Portfolio Hub
 
-A healthcare operations portfolio hub showcasing eligibility verification, prior authorization reliability, and denial prevention systems built by Kori Pickle.
+A student-developed healthcare operations portfolio showcasing simulated eligibility verification, prior authorization, denial prevention, workflow analysis, and revenue cycle concepts using synthetic, no-PHI data.
 
 **Created by Kori Pickle**
 
 ## Professional Positioning
 
-Healthcare Administration student focused on remote healthcare operations, revenue cycle workflow analysis, patient access risk, prior authorization reliability, denial prevention, clean intake readiness, and executive-style operational reporting.
+Bachelor of Science in Health Administration student focused on remote healthcare operations, revenue cycle workflow analysis, patient access risk, prior authorization reliability, denial prevention, clean intake readiness, and operational reporting. Portfolio work is student-developed and uses synthetic, no-PHI data.
 
 ## Portfolio Trilogy
 
@@ -28,18 +28,18 @@ This portfolio demonstrates how front-end workflow defects can create downstream
 
 All data shown in this portfolio is synthetic and created for demonstration purposes. No patient information, protected health information, or real payer case data is used.
 
-## Skills Demonstrated
+## Skills Practiced and Demonstrated Through Student Projects
 
 - Healthcare workflow analysis
 - Patient access risk detection
-- Eligibility verification logic
-- Prior authorization reliability
-- Denial prevention thinking
+- Simulated eligibility verification workflow logic
+- Prior authorization workflow analysis
+- Denial prevention and root-cause analysis
 - Revenue cycle workflow analysis
 - KPI design
-- Executive reporting
+- Operational reporting and dashboard design
 - Synthetic data design
-- Remote-ready documentation
+- Structured remote-work documentation
 - Clean claim readiness logic
 - Root-cause analysis
 
