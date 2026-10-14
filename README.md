@@ -1,5 +1,12 @@
 # Healthcare Operations Portfolio Hub
 
+> **Student-developed, simulated, educational, no-PHI healthcare operations portfolio project.**
+>
+> Brand: Healthcare Operations Intelligence Engine™ · Canonical entry: this hub. The [Healthcare Workflow Portfolio](https://healthcare-workflow-portfolio.vercel.app/) is a secondary case-study library.
+>
+> **Habit Audit live demo:** Streamlit may ask you to wake the app after idle time.
+
+
 I built this hub to bring together the simulated projects I use to study one question: **where does a healthcare workflow first lose control before the problem reaches the patient, the staff member trying to fix it, or the revenue cycle?**
 
 As I work toward my Bachelor's of Science degree in Healthcare Administration at the University of Phoenix, I am especially interested in patient access, eligibility verification, prior authorization, documentation readiness, denial prevention, and the handoffs that connect those areas.
@@ -92,3 +99,7 @@ Longer term, I am interested in healthcare operations analysis, workflow improve
 - [GitHub profile](https://github.com/koripickle1101-TN)
 
 Created by Kori Pickle. Student-developed portfolio. Synthetic data only. No PHI.
+
+## Contact
+
+Email: [koripickle1101@gmail.com](mailto:koripickle1101@gmail.com) · [LinkedIn](https://www.linkedin.com/in/kori-pickle) · [GitHub](https://github.com/koripickle1101-TN)
