@@ -19,3 +19,6 @@
 .wake-note{margin:8px 0 0;font-size:.88rem;line-height:1.5;color:#555!important;font-weight:500}
 .project-card.secondary-card{border-style:dashed}
 .button-row a.live-primary{background:#FF8200!important;border-color:#FF8200!important;color:#000000!important}
+
+/* a11y: visible keyboard focus indicator (Kori-approved) */
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #000000;outline-offset:3px}
