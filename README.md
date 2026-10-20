@@ -1,5 +1,20 @@
 # Healthcare Operations Portfolio Hub
 
+## Recruiter Quick View — Start Here
+
+**Candidate:** Kori Pickle · Bachelor of Science in Healthcare Administration candidate, University of Phoenix (degree in progress). No formal healthcare employment experience. All projects are student-developed, simulated, educational, and no-PHI.
+
+**What this portfolio demonstrates:** Patient-access and authorization workflow reasoning, documented exception ownership, claim-readiness and denial-prevention hypotheses, simulated dashboard calculations, and administrative process improvement practice.
+
+**Best starting point for entry-level remote patient access:** [EVIS](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system) — now includes a [completed 12-case fictional work queue](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system/blob/main/data/patient-access-work-queue-12-synthetic-cases.csv).
+
+**For authorization support:** [PARCS](https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system). **For revenue cycle support:** [DPIS](https://github.com/koripickle1101-TN/denial-prevention-intelligence-system). **For cross-workflow analysis:** [SBI](https://github.com/koripickle1101-TN/silent-breakpoint-intelligence-system). **For improvement habits:** [Habit Audit](https://github.com/koripickle1101-TN/healthcare-operations-habit-audit).
+
+**Limitations:** These projects are not production applications, actual healthcare work experience, real payer/EHR access, validated risk scores, or measured employer outcomes. Review each project's opening snapshot for its specific evidence and limitations.
+
+---
+
+
 > **Student-developed, simulated, educational, no-PHI healthcare operations portfolio project.**
 >
 > Brand: Healthcare Operations Intelligence Engine™ · Canonical entry: this hub. The [Healthcare Workflow Portfolio](https://healthcare-workflow-portfolio.vercel.app/) is a secondary case-study library.
