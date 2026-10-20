@@ -6,6 +6,8 @@
 
 **What this portfolio demonstrates:** Patient-access and authorization workflow reasoning, documented exception ownership, claim-readiness and denial-prevention hypotheses, simulated dashboard calculations, and administrative process improvement practice.
 
+**Direct practical evidence:** [EVIS 12-case queue](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system/blob/main/evidence/patient-access-queue-reviewer-guide.md) · [PARCS five-case authorization review](https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system/blob/main/evidence/prior-authorization-queue-example.md) · [DPIS five-case claim-readiness review](https://github.com/koripickle1101-TN/denial-prevention-intelligence-system/blob/main/evidence/denial-queue-reviewer-guide.md). All three are educational synthetic examples; none are completed healthcare employment tasks.
+
 **Best starting point for entry-level remote patient access:** [EVIS](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system) — now includes a [completed 12-case fictional work queue](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system/blob/main/data/patient-access-work-queue-12-synthetic-cases.csv).
 
 **For authorization support:** [PARCS](https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system). **For revenue cycle support:** [DPIS](https://github.com/koripickle1101-TN/denial-prevention-intelligence-system). **For cross-workflow analysis:** [SBI](https://github.com/koripickle1101-TN/silent-breakpoint-intelligence-system). **For improvement habits:** [Habit Audit](https://github.com/koripickle1101-TN/healthcare-operations-habit-audit).
