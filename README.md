@@ -1,5 +1,9 @@
 # Healthcare Operations Portfolio Hub
 
+## Visual Identity — Shared Across Flagship Projects
+
+**Canonical palette:** White `#FFFFFF` · True Black `#000000` · Tennessee Orange `#FF8200`. Presentation standards: editorial serif headings, modern sans-serif labels, substantial whitespace, thin orange workflow accents, double-ring process nodes and dotted connections when process mapping. Every current flagship landing page ends with **Created by Kori Pickle**, an elegant cursive display signature, and minimal LinkedIn/GitHub icons. Site-specific nested modules require separate visual verification; GitHub README fonts are controlled by GitHub.
+
 ## Recruiter Quick View — Start Here
 
 **Candidate:** Kori Pickle · Bachelor of Science in Healthcare Administration candidate, University of Phoenix (degree in progress). No formal healthcare employment experience. All projects are student-developed, simulated, educational, and no-PHI.
