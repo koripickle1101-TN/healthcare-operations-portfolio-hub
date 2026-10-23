@@ -10,9 +10,11 @@
 
 **What this portfolio demonstrates:** Patient-access and authorization workflow reasoning, documented exception ownership, claim-readiness and denial-prevention hypotheses, simulated dashboard calculations, and administrative process improvement practice.
 
-**Direct practical evidence:** [EVIS 12-case queue](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system/blob/main/evidence/patient-access-queue-reviewer-guide.md) · [PARCS five-case authorization review](https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system/blob/main/evidence/prior-authorization-queue-example.md) · [DPIS five-case claim-readiness review](https://github.com/koripickle1101-TN/denial-prevention-intelligence-system/blob/main/evidence/denial-queue-reviewer-guide.md). All three are educational synthetic examples; none are completed healthcare employment tasks.
+**Featured Track 1 Project — Patient Access Bottleneck Intelligence System™:** Excel-based workflow map, simulated case-control tracker, accuracy-control checklist, and dashboard that traces where a front-end patient-access workflow first loses control. [View the project and download the workbook](https://github.com/koripickle1101-TN/patient-access-bottleneck-intelligence-system).
 
-**Best starting point for entry-level remote patient access:** [EVIS](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system) — now includes a [completed 12-case fictional work queue](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system/blob/main/data/patient-access-work-queue-12-synthetic-cases.csv).
+**Direct practical evidence:** [Patient Access Bottleneck Intelligence System™ workbook](https://github.com/koripickle1101-TN/patient-access-bottleneck-intelligence-system/blob/main/Patient_Access_Bottleneck_Intelligence_System.xlsx) · [EVIS 12-case queue](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system/blob/main/evidence/patient-access-queue-reviewer-guide.md) · [PARCS five-case authorization review](https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system/blob/main/evidence/prior-authorization-queue-example.md) · [DPIS five-case claim-readiness review](https://github.com/koripickle1101-TN/denial-prevention-intelligence-system/blob/main/evidence/denial-queue-reviewer-guide.md). All are educational synthetic examples; none are completed healthcare employment tasks.
+
+**Best starting point for entry-level remote patient access:** [Patient Access Bottleneck Intelligence System™](https://github.com/koripickle1101-TN/patient-access-bottleneck-intelligence-system) and [EVIS](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system).
 
 **For authorization support:** [PARCS](https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system). **For revenue cycle support:** [DPIS](https://github.com/koripickle1101-TN/denial-prevention-intelligence-system). **For cross-workflow analysis:** [SBI](https://github.com/koripickle1101-TN/silent-breakpoint-intelligence-system). **For improvement habits:** [Habit Audit](https://github.com/koripickle1101-TN/healthcare-operations-habit-audit).
 
@@ -46,6 +48,7 @@ The goal is not to present these projects as production systems. The goal is to 
 
 | Project | What I Am Studying | Where It Fits |
 |---|---|---|
+| [Patient Access Bottleneck Intelligence System™](https://github.com/koripickle1101-TN/patient-access-bottleneck-intelligence-system) | How a front-end registration inaccuracy can create eligibility mismatch, authorization readiness delays, financial clearance issues, staff rework, and patient confusion | Patient Access | Eligibility | Workflow Control (Track 1 featured) |
 | [EVIS — Eligibility Verification Intelligence System](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system) | How eligibility, payer, demographic, and coordination-of-benefits issues can be identified earlier | Patient access / front-end revenue cycle |
 | [PARCS — Prior Authorization Command System](https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system) | How missing information, unclear ownership, aging requests, and escalation gaps can put an authorization at risk | Prior authorization workflow |
 | [DPIS — Denial Prevention Intelligence System](https://github.com/koripickle1101-TN/denial-prevention-intelligence-system) | How upstream documentation, authorization, and claim-readiness defects can become preventable denial risk | Denial prevention / revenue cycle |
@@ -55,9 +58,9 @@ The goal is not to present these projects as production systems. The goal is to 
 ## The Workflow Story
 
 ```text
-Eligibility Verification → Prior Authorization → Denial Prevention
-             ↓                    ↓                    ↓
-      Patient access risk   Documentation risk   Claim/revenue risk
+Patient Access Bottleneck Intelligence System™ → Eligibility Verification → Prior Authorization → Denial Prevention
+                    ↓                               ↓                    ↓                    ↓
+         Registration / intake control loss   Patient access risk   Documentation risk   Claim/revenue risk
 
 SBI asks where the first control loss occurred.
 Habit Audit asks which recurring operational habits may be making that risk more likely.
@@ -98,11 +101,12 @@ I include those boundaries because credibility matters to me. I want the work to
 
 A useful review path is:
 
-1. Start with **EVIS** to see how I approach eligibility and front-end patient access risk.
-2. Move to **PARCS** for prior authorization workflow risk, ownership, and escalation logic.
-3. Continue to **DPIS** for upstream denial prevention and claim-readiness thinking.
-4. Review **SBI** for cross-workflow breakpoint analysis.
-5. Finish with the **Healthcare Operations Habit Audit** for a broader look at recurring operational habits, controls, and improvement priorities.
+1. Start with the **Patient Access Bottleneck Intelligence System™** (Excel workbook) to see how a registration inaccuracy can cascade through eligibility, authorization readiness, and financial clearance.
+2. Move to **EVIS** for eligibility and front-end patient access risk in more detail.
+3. Continue to **PARCS** for prior authorization workflow risk, ownership, and escalation logic.
+4. Continue to **DPIS** for upstream denial prevention and claim-readiness thinking.
+5. Review **SBI** for cross-workflow breakpoint analysis.
+6. Finish with the **Healthcare Operations Habit Audit** for a broader look at recurring operational habits, controls, and improvement priorities.
 
 ## Career Direction
 
