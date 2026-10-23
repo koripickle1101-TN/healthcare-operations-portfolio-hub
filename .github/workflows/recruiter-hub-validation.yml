@@ -1,0 +1,27 @@
+name: Recruiter Hub Validation
+on:
+  push:
+    branches: [recruiter-directory-review-2026-10]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  browser-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Install browser test dependencies
+        run: |
+          npm install --no-save playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Run browser audit
+        run: |
+          python3 -m http.server 8766 --bind 127.0.0.1 >/tmp/portfolio-server.log 2>&1 &
+          node tests/recruiter-directory.cjs
