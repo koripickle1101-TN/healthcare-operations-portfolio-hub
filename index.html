@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- featured-project-cache-bust-2026-10-23 -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +21,35 @@
   <meta name="color-scheme" content="light only">
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .live-status {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #166534;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin: 0.5rem 0 1rem;
+      width: fit-content;
+    }
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background: #16a34a;
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -39,6 +67,10 @@
   </header>
   <main>
     <section class="hero-section">
+      <div class="live-status" id="live-status">
+        <span class="live-dot"></span>
+        <span>Live · Track 1 Featured · Patient Access Bottleneck Intelligence System™</span>
+      </div>
       <div class="eyebrow">Healthcare Operations Portfolio Hub</div>
       <p class="brand-engine-line"><em>Healthcare Operations Intelligence Engine™</em></p>
       <h1 class="stacked-hero-title"><span>Patient Access.</span><span>Eligibility.</span><span>Prior Authorization.</span><span>Denial Prevention.</span><span>Workflow Intelligence.</span></h1>
