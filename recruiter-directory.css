@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 :root{--orange:#FF8200;--black:#000;--white:#FFF}
 html{scroll-behavior:smooth;background:#fff!important}
-body{font-family:Inter,Arial,Helvetica,sans-serif!important;background:#fff!important;color:#000!important;line-height:1.55}
+body{font-family:'Inter',sans-serif!important;background:#fff!important;color:#000!important;line-height:1.55}
 body:before{background:#fff!important}
-h1,h2,h3{font-family:Inter,Arial,Helvetica,sans-serif!important;color:#000!important;font-weight:800!important;letter-spacing:-.055em!important;line-height:1.08!important}
+h1,h2,h3{font-family:'Inter',sans-serif!important;color:#000!important;font-weight:800!important;letter-spacing:-.055em!important;line-height:1.08!important}
 p{line-height:1.65}
 .site-header{background:#fff!important;border-bottom:2px solid #000;position:relative;z-index:1}
 .nav-shell{align-items:center;flex-wrap:wrap;background:#fff!important}
@@ -49,3 +49,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 #empty-results{padding:22px;border:2px dashed #000}
 @media(max-width:780px){.directory-grid{grid-template-columns:1fr}.filter-panel{display:flex;flex-direction:column;align-items:stretch}.filter-panel label,.filter-panel input,.filter-panel select,.filter-panel button{width:100%}.recruiter-hero{margin-top:18px}.nav-shell{padding:16px 20px}.nav-links{gap:12px}main{padding:0 18px 40px!important}.directory-section{margin:36px 0 52px}.recruiter-card{box-shadow:4px 4px 0 #ff8200}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Locked recruiter typography: Inter sans-serif for all portfolio text; no serif or Arial fallback. */
+html body,html body h1,html body h2,html body h3,html body h4,html body p,html body a,html body button,html body input,html body select,html body label,html body span,html body strong{font-family:'Inter',sans-serif!important}
