@@ -8,7 +8,7 @@ assert.equal(await page.locator('.recruiter-card').first().evaluate(e=>getComput
 assert.match(await page.locator('h1').evaluate(e=>getComputedStyle(e).fontFamily),/Inter/);
 for(const selector of ['main','.recruiter-hero','.filter-panel','.about-panel','.site-footer'])assert.equal(await page.locator(selector).evaluate(e=>getComputedStyle(e).backgroundColor),backgroundExpected,'Nonwhite '+selector);
 for(const selector of ['body','h1','h2','.recruiter-card h3','.recruiter-card p','.evidence-link','.nav-links a'])assert.match(await page.locator(selector).first().evaluate(e=>getComputedStyle(e).fontFamily),/Inter/,'Font mismatch '+selector);
-assert.equal(await page.locator(':root').evaluate(e=>getComputedStyle(e).getPropertyValue('--brand-orange').trim().toUpperCase()),'#FF8200');
+assert.equal(await page.locator(':root').evaluate(e=>getComputedStyle(e).getPropertyValue('--brand-orange').trim().toUpperCase()),'#D96B00');
 
 assert.equal(await page.locator('#featured-grid .recruiter-card').count(),6);
 assert.equal(await page.locator('#directory-grid .recruiter-card').count(),10);
