@@ -78,3 +78,26 @@ html body,html body h1,html body h2,html body h3,html body h4,html body p,html b
 .about-panel{border-left:12px solid var(--brand-orange)!important;border-top:6px solid var(--brand-orange)!important}
 .site-footer{border-top:8px solid var(--brand-orange)!important}
 @media(max-width:780px){.recruiter-hero h1{border-left:6px solid var(--brand-orange)}.recruiter-card{box-shadow:4px 4px 0 var(--brand-orange)!important}}
+
+/* Recruiter usability refinement: readable cards, reduced visual noise, consistent spacing */
+.recruiter-card{box-shadow:none!important;border:1px solid #181818!important;border-top:5px solid #FF8200!important;padding:clamp(22px,2.5vw,32px)!important;gap:16px!important}
+#directory-grid .recruiter-card{border-left:4px solid #FF8200!important;border-top:1px solid #181818!important}
+.recruiter-card h3{font-size:clamp(1.25rem,1.9vw,1.65rem)!important;line-height:1.22!important;letter-spacing:-.035em!important}
+.card-top{align-items:flex-start!important}
+.card-category{line-height:1.4!important}
+.review-status{max-width:100%;line-height:1.35!important;text-align:center}
+.card-summary{font-size:.96rem!important;line-height:1.65!important}
+.card-actions{margin-top:auto!important}
+.evidence-link{font-size:.87rem!important}
+.directory-section{margin:56px 0 65px!important}
+.directory-section>.section-intro{border-top:4px solid #FF8200!important}
+.directory-section h2{border-bottom:3px solid #FF8200!important}
+.about-panel{border-left:6px solid #FF8200!important;border-top:3px solid #FF8200!important}
+@media(max-width:1000px){
+.directory-grid{grid-template-columns:1fr!important;gap:18px!important}
+.recruiter-card{width:100%!important}
+.filter-panel{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:10px!important}
+.filter-panel label,.filter-panel input,.filter-panel select,.filter-panel button{width:100%!important;grid-row:auto!important}
+.filter-panel button{min-height:48px!important}
+}
+@media(min-width:1001px){.directory-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
