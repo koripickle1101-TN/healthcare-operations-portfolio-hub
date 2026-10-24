@@ -2,7 +2,7 @@ const assert=require('node:assert/strict');const {chromium}=require('playwright'
 const base='http://127.0.0.1:8766/';
 (async()=>{const browser=await chromium.launch({headless:true,args:['--no-sandbox']});try{
 for(const viewport of [{width:390,height:844},{width:768,height:1024},{width:1440,height:900}]){
-const context=await browser.newContext({viewport});const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(base,{waitUntil:'networkidle'});
+const context=await browser.newContext({viewport});const page=await context.newPage();const errors=[];const backgroundExpected='rgb(255, 255, 255)';page.on('pageerror',e=>errors.push(e.message));await page.goto(base,{waitUntil:'networkidle'});
 assert.equal(await page.locator('#featured-grid .recruiter-card').count(),6);
 assert.equal(await page.locator('#directory-grid .recruiter-card').count(),10);
 assert.match(await page.locator('#result-count').innerText(),/10 of 10/);
