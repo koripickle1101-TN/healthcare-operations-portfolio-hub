@@ -10,6 +10,12 @@ for(const selector of ['main','.recruiter-hero','.filter-panel','.about-panel','
 for(const selector of ['body','h1','h2','.recruiter-card h3','.recruiter-card p','.evidence-link','.nav-links a'])assert.match(await page.locator(selector).first().evaluate(e=>getComputedStyle(e).fontFamily),/Inter/,'Font mismatch '+selector);
 assert.equal(await page.locator(':root').evaluate(e=>getComputedStyle(e).getPropertyValue('--brand-orange').trim().toUpperCase()),'#FF8200');
 
+assert.ok(await page.locator('a[href="resume.html"]').count()>=2);
+await page.goto(base+'resume.html',{waitUntil:'networkidle'});
+assert.match(await page.locator('main').innerText(),/Employment History/);
+assert.match(await page.locator('main').innerText(),/University of Phoenix/);
+assert.equal(await page.locator('body').evaluate(e=>getComputedStyle(e).backgroundColor),backgroundExpected);
+await page.goto(base,{waitUntil:'networkidle'});
 assert.equal(await page.locator('#featured-grid .recruiter-card').count(),6);
 assert.equal(await page.locator('#directory-grid .recruiter-card').count(),10);
 assert.match(await page.locator('#result-count').innerText(),/10 of 10/);
