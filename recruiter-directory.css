@@ -52,3 +52,29 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 
 /* Locked recruiter typography: Inter sans-serif for all portfolio text; no serif or Arial fallback. */
 html body,html body h1,html body h2,html body h3,html body h4,html body p,html body a,html body button,html body input,html body select,html body label,html body span,html body strong{font-family:'Inter',sans-serif!important}
+
+/* Tennessee orange: deliberate, high-visibility structural treatment */
+:root{--orange:#FF8200!important;--brand-orange:#FF8200}
+.site-header{border-bottom:5px solid var(--brand-orange)!important}
+.brand-mark:before{width:13px!important;height:13px!important}
+.nav-links a{font-weight:800!important}
+.nav-links a:hover,.nav-links a:focus-visible{color:#000!important;border-bottom:3px solid var(--brand-orange)!important}
+.recruiter-hero{border-top:14px solid var(--brand-orange)!important;position:relative}
+.recruiter-hero:after{content:"";display:block;width:min(300px,65%);height:9px;background:var(--brand-orange);margin-top:28px}
+.recruiter-hero h1{border-left:9px solid var(--brand-orange);padding-left:clamp(14px,2.5vw,28px)}
+.hero-actions .primary-button{background:var(--brand-orange)!important;border-color:#000!important}
+.hero-actions .secondary-button:hover{background:var(--brand-orange)!important}
+.integrity-note{border-left:8px solid var(--brand-orange)!important;border-bottom:3px solid var(--brand-orange)}
+.directory-section>.section-intro{border-top:7px solid var(--brand-orange);padding-top:19px}
+.directory-section h2{border-bottom:5px solid var(--brand-orange);padding-bottom:14px;width:fit-content;max-width:100%}
+#featured-grid .recruiter-card{border-top:9px solid var(--brand-orange)!important}
+#directory-grid .recruiter-card{border-left:7px solid var(--brand-orange)!important}
+.recruiter-card{box-shadow:7px 7px 0 var(--brand-orange)!important}
+.card-category{border-bottom:4px solid var(--brand-orange)!important}
+.card-actions .evidence-link:first-child{background:var(--brand-orange)!important;border-color:#000!important}
+.card-actions .evidence-link:first-child:hover{background:#fff!important}
+.filter-panel{border-top:10px solid var(--brand-orange)!important}
+.filter-panel button{background:var(--brand-orange)!important}
+.about-panel{border-left:12px solid var(--brand-orange)!important;border-top:6px solid var(--brand-orange)!important}
+.site-footer{border-top:8px solid var(--brand-orange)!important}
+@media(max-width:780px){.recruiter-hero h1{border-left:6px solid var(--brand-orange)}.recruiter-card{box-shadow:4px 4px 0 var(--brand-orange)!important}}
