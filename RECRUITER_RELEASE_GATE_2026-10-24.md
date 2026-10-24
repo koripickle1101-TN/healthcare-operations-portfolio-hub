@@ -24,3 +24,11 @@ Release blockers
 5. Perform final recruiter walk-through and approve release.
 
 No production merge is authorized by this report.
+
+Validation follow-up — PABIS and EVIS
+- PABIS main tree confirms workbook Patient_Access_Bottleneck_Intelligence_System.xlsx, 23,949 bytes, Git blob d9cf4754e6d3601c42519ef3ee656a355cee9c38. Binary workbook inspection is not possible through the current text-only GitHub connector; formulas, sheets and calculations remain UNVERIFIED.
+- EVIS manually dispatched workflow run 40078060075 completed SUCCESS on branch portfolio-evidence-audit-2026-10, SHA 036fa703.
+- EVIS run logs explicitly report PASS synthetic data arithmetic and PASS calculator, simulation, closure safety gate, desktop/mobile smoke.
+- EVIS uploaded 18 evidence files including screenshots, accessibility JSON, and server log in artifact 12553783714. Artifact existence confirmed; individual accessibility findings and screenshots have not been independently reviewed.
+- EVIS status can advance from workflow execution pending to automated smoke PASS, but not final release approval. Manual visual review and claim audit remain.
+- Production and merge remain on HOLD.
