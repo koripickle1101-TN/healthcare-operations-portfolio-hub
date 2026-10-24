@@ -101,3 +101,9 @@ html body,html body h1,html body h2,html body h3,html body h4,html body p,html b
 .filter-panel button{min-height:48px!important}
 }
 @media(min-width:1001px){.directory-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+
+/* Absolute white-only surface lock: eliminate every cream/off-white panel and inherited surface. */
+:root{--white:#FFFFFF!important;--soft:#FFFFFF!important;--panel:#FFFFFF!important;--warm:#FFFFFF!important}
+html,body,body:before,main,.site-header,.nav-shell,.recruiter-hero,.directory-section,.section-intro,.recruiter-card,.filter-panel,.about-panel,.site-footer,.integrity-note,.review-status,#featured-grid,#directory-grid,#empty-results{background-color:#FFFFFF!important;background-image:none!important}
+html,body{color-scheme:only light!important}
+.recruiter-card,.recruiter-hero,.filter-panel,.about-panel{background:#FFFFFF!important}
