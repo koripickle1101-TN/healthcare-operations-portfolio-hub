@@ -100,3 +100,14 @@ Confirmed corrections:
 - PABIS corrected XLSX is published and automated structural checks passed, workflow 40195235039, commit 06de8fe5.
 
 Remaining release requirements: audit each deep case-study link and PDF, verify proof-system workbook recalculation and visual layout, test live Next.js/Streamlit prototypes where they are represented as interactive, and perform final recruiter navigation walkthrough on exact branch commit. Previously configured browser smoke tests are not proof these deeper resources function. Production release remains HOLD pending these checks and explicit approval; no portfolio project removed or redesigned.
+
+
+Controlling scope correction — October 25, 2026
+
+USER DIRECTIVE: Enterprise Rev Ops is explicitly excluded from the portfolio. Prior audit statements counting it as featured or in scope are superseded and must not be used for release.
+- Removed Enterprise Rev Ops from recruiter-directory.js, featured cards, and all-project directory.
+- Removed its mention from recruiter-facing index.html.
+- Updated automated browser counts to FIVE featured and NINE directory entries.
+- Removed its repository and evidence path from the integrated CI audit.
+- No changes to or deletion of the excluded Enterprise Rev Ops repository itself.
+- All remaining five featured projects and four supporting entries retained. Central production remains unchanged pending final validation and merge.
