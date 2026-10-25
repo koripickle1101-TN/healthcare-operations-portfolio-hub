@@ -62,3 +62,13 @@ Recruiter evidence-link and browser confirmation — October 25, 2026
 - Browser tests confirm 390px, 768px, 1440px layouts, role/search filters, ten directory entries and six featured entries, link URL structure, accessibility, resume seven employers and degree-in-progress disclosure, print button wiring, return link, and horizontal overflow. They do not independently confirm browser print-to-PDF output, all deep internal links, or third-party navigation success.
 - All six featured and all supporting repository links remain represented; no portfolio projects were removed. This is a link-target existence audit, not exhaustive functional certification.
 - Release HOLD until corrected PABIS binary is published/verified and final project claim boundaries are reconciled. Production untouched.
+
+
+Integration and PDF test update — October 25, 2026
+
+- PARCS PR 1 merged into main, commit 34352478387d398dff5a7b11a3935f020c6c67e4. Tested branch run 40187996045 SUCCESS.
+- DPIS PR 2 merged into main, commit b77e3c60aecaa3b7fd1c6f218abc4eaf66ccc2d0. Tested branch run 40188192314 SUCCESS.
+- SBI PR 1 merged into main, commit 83cd2869d74bdddc83352bffdd9a3173f33767bf. Synthetic evidence test run 40103304057 SUCCESS.
+- Recruiter browser suite now generates a real letter-size PDF in Chromium and verifies PDF header and minimum bytes. Runs 40189554376 and 40189551359 SUCCESS at 58aacfef. This is automated PDF generation, not a manual visual check of rendered PDF pages.
+- Supporting repository directory targets checked, but all internal hyperlinks and app interactions are not exhaustively certified.
+- PABIS corrected workbook publication and EVIS wider claims audit remain open. Central website production unchanged.
