@@ -72,3 +72,9 @@ Integration and PDF test update — October 25, 2026
 - Recruiter browser suite now generates a real letter-size PDF in Chromium and verifies PDF header and minimum bytes. Runs 40189554376 and 40189551359 SUCCESS at 58aacfef. This is automated PDF generation, not a manual visual check of rendered PDF pages.
 - Supporting repository directory targets checked, but all internal hyperlinks and app interactions are not exhaustively certified.
 - PABIS corrected workbook publication and EVIS wider claims audit remain open. Central website production unchanged.
+
+
+October 25 additional execution:
+- EVIS main documentation reconciled in commit 3e9fb48c: stale claim that five-case risk-score inputs are absent corrected; test scope and fictional metric caveats retained. This is documentation correction, not new full-module functional certification.
+- PABIS corrected local XLSX integrity verified (8 sheet XML files; no ZIP corruption). Binary GitHub replacement is NOT complete; do not represent it as published.
+- PARCS, DPIS, SBI merged changes remain on main. Central production portfolio remains untouched.
