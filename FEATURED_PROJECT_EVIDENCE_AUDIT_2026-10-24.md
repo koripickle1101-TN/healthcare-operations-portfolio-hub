@@ -29,3 +29,18 @@ PABIS — BLOCKED: workbook confirmed in GitHub tree, but binary XLSX not availa
 EVIS — AUTOMATED SMOKE PASS: successful run 40078060075; manual screenshot/accessibility artifact inspection and final claims review outstanding.
 
 RELEASE: HOLD. No merge or production publication.
+
+
+Portfolio-wide scope correction — October 25, 2026
+
+This audit is NOT a complete inventory of the recruiter's portfolio. The release covers six featured projects (PABIS, EVIS, PARCS, DPIS, SBI, Enterprise Rev Ops), the supporting Healthcare Workflow Portfolio, Healthcare Operations Proof System, GitHub Profile & Case-Study Collection, and the central Portfolio Hub, plus resume and direct evidence links. Do not describe PABIS and EVIS as the only remaining release checks.
+
+PARCS and DPIS: configured browser and accessibility smoke suites now PASS on their review branches (PARCS run 40187996045; DPIS run 40188192314). These do not prove Streamlit or every interactive workflow; retain the conditional scope of certification.
+SBI: synthetic evidence check passed (run 40103304057); full workflow claims still require bounded review.
+EVIS: automated synthetic arithmetic and selected HTML controls passed (run 40078060075); broader module and source-claim audit still needed.
+PABIS: corrected workbook has been structurally inspected outside GitHub, but the published repository binary has not been replaced and verified.
+Enterprise Rev Ops: archived and unverified, with known direct dependency documentation gap. This status is acceptable for a clearly labeled archived source project, not for a runnable-demo claim.
+Supporting repositories: verify that all displayed case-study, template and profile links resolve, their titles match the destinations, and their claims are properly qualified. These repositories are not exempt from link and accuracy checks because they are not featured.
+Recruiter website: test search and role filters, mobile and desktop layouts, accessibility, resume accuracy and print behavior, all external evidence links, and the complete user journey from home to project evidence and back. Validate current branch checks after each content update.
+
+No site redesign, removal of projects, or production release is authorized by this audit.
