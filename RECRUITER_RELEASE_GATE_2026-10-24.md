@@ -87,3 +87,16 @@ PABIS automated correction completed — October 25, 2026
 - Main-branch canonical workbook is 27,337 bytes, blob 84b0f8b118383581ad8ebc1ae5a667e0d392076d. This is the corrected published binary, not the earlier 30,819-byte upload.
 - These structural checks do not substitute for opening in Excel/Google Sheets, checking visual layout and formula recalculation; record those as a final spot check rather than claiming them completed.
 - No user reupload is needed. Portfolio website production remains unchanged.
+
+
+Portfolio-wide integrated audit checkpoint — October 25, 2026
+
+Scope inventoried against actual main Git trees: portfolio hub (16 tracked files), healthcare-workflow-portfolio (40+ tracked files including Next.js, Streamlit, HTML, case studies and templates), healthcare-operations-proof-system (24 tracked files including templates and tracker workbook), and GitHub profile/case-study repository (30+ tracked files including HTML studies and seven PDF studies). Six featured and four supporting recruiter directory entries retained.
+
+Confirmed corrections:
+- Workflow portfolio README stale GitHub Pages project URL replaced with verified GitHub source-file URL; educational prototype claims narrowed; planned directory outline distinguished from actual file inventory. Main commit 02440831.
+- GitHub profile README clarified Bachelor of Science in Healthcare Administration is IN PROGRESS with expected completion Feb–Mar 2027. Main commit 9b8bb2e7.
+- Portfolio review branch PABIS badge reconciled to actual automated XLSX verification; commit a71b7bd.
+- PABIS corrected XLSX is published and automated structural checks passed, workflow 40195235039, commit 06de8fe5.
+
+Remaining release requirements: audit each deep case-study link and PDF, verify proof-system workbook recalculation and visual layout, test live Next.js/Streamlit prototypes where they are represented as interactive, and perform final recruiter navigation walkthrough on exact branch commit. Previously configured browser smoke tests are not proof these deeper resources function. Production release remains HOLD pending these checks and explicit approval; no portfolio project removed or redesigned.
