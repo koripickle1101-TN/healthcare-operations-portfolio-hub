@@ -32,3 +32,14 @@ Validation follow-up — PABIS and EVIS
 - EVIS uploaded 18 evidence files including screenshots, accessibility JSON, and server log in artifact 12553783714. Artifact existence confirmed; individual accessibility findings and screenshots have not been independently reviewed.
 - EVIS status can advance from workflow execution pending to automated smoke PASS, but not final release approval. Manual visual review and claim audit remain.
 - Production and merge remain on HOLD.
+
+
+Validation checkpoint — October 25, 2026
+
+- Portfolio review branch at edc8d7ec: GitHub Actions runs 40188726072 and 40188722816 both completed SUCCESS.
+- PARCS browser test run 40187996045: SUCCESS, testing synthetic evidence and configured browser/accessibility smoke cases.
+- DPIS browser test run 40188192314: SUCCESS, after targeted contrast corrections.
+- EVIS workflow run 40078060075: SUCCESS, including synthetic arithmetic, calculator, simulation, closure safety gate, desktop/mobile smoke and artifact collection. This is not exhaustive verification of all HTML modules or real payer/healthcare workflows.
+- PABIS corrected user-provided workbook passed XLSX container integrity inspection and contains eight worksheet XML files. The corrected binary is NOT YET published to the repository; do not present the GitHub evidence link as the corrected workbook until its binary blob is replaced and independently downloaded.
+- Enterprise Rev Ops remains archived and unverified, labeled as such.
+- Resume and directory final recruiter walkthrough remains conditional on evidence link integrity and release-specific checks. No production merge or deployment is approved by this checkpoint.
