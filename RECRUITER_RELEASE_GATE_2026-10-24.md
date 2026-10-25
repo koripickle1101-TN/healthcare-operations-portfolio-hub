@@ -53,3 +53,12 @@ Supporting-repository and resume audit — October 25, 2026
 - Resume source inspection: all seven known verified hospitality employers are present; healthcare degree explicitly in progress with expected 2027 completion; educational portfolio disclaimer present; print button invokes window.print() and return-to-portfolio link exists.
 - Strengthened the existing 390/768/1440 Playwright browser suite to assert all seven employers, degree status, print control, resume accessibility and overflow. A successful CI run at the new test commit is required before certifying those checks.
 - Production remains unchanged.
+
+
+Recruiter evidence-link and browser confirmation — October 25, 2026
+
+- Updated recruiter browser test suite passed at b6748cbc: runs 40189278564 and 40189273327 SUCCESS. Same suite passed after audit-only commit 80a9a91d: runs 40189290926 and 40189286706 SUCCESS.
+- Verified all ten directory evidence destinations against the current main Git trees or direct text-file fetches: PABIS workbook path exists (old binary, not corrected); EVIS guide exists; PARCS guide exists; DPIS guide exists; SBI CSV exists; Enterprise synthetic standard exists; workflow case-studies/ exists; proof-system tools/ exists; GitHub profile projects/ exists; portfolio-hub repo exists.
+- Browser tests confirm 390px, 768px, 1440px layouts, role/search filters, ten directory entries and six featured entries, link URL structure, accessibility, resume seven employers and degree-in-progress disclosure, print button wiring, return link, and horizontal overflow. They do not independently confirm browser print-to-PDF output, all deep internal links, or third-party navigation success.
+- All six featured and all supporting repository links remain represented; no portfolio projects were removed. This is a link-target existence audit, not exhaustive functional certification.
+- Release HOLD until corrected PABIS binary is published/verified and final project claim boundaries are reconciled. Production untouched.
