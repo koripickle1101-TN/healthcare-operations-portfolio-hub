@@ -43,3 +43,13 @@ Validation checkpoint — October 25, 2026
 - PABIS corrected user-provided workbook passed XLSX container integrity inspection and contains eight worksheet XML files. The corrected binary is NOT YET published to the repository; do not present the GitHub evidence link as the corrected workbook until its binary blob is replaced and independently downloaded.
 - Enterprise Rev Ops remains archived and unverified, labeled as such.
 - Resume and directory final recruiter walkthrough remains conditional on evidence link integrity and release-specific checks. No production merge or deployment is approved by this checkpoint.
+
+
+Supporting-repository and resume audit — October 25, 2026
+
+- Confirmed main-branch Git trees resolve for healthcare-workflow-portfolio, healthcare-operations-proof-system, and koripickle1101-TN profile repository.
+- Confirmed linked directories exist: case-studies/ (workflow), tools/ (proof), and projects/ (profile). The proof system contains a tracker XLSX and templates; the workflow repository contains case studies and HTML/Next.js/Streamlit source; the profile repository contains HTML projects and PDF case studies.
+- This establishes repository and target-directory existence, not every individual internal link, executable feature, or PDF/workbook integrity. These remain bounded evidence claims.
+- Resume source inspection: all seven known verified hospitality employers are present; healthcare degree explicitly in progress with expected 2027 completion; educational portfolio disclaimer present; print button invokes window.print() and return-to-portfolio link exists.
+- Strengthened the existing 390/768/1440 Playwright browser suite to assert all seven employers, degree status, print control, resume accessibility and overflow. A successful CI run at the new test commit is required before certifying those checks.
+- Production remains unchanged.
