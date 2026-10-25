@@ -78,3 +78,12 @@ October 25 additional execution:
 - EVIS main documentation reconciled in commit 3e9fb48c: stale claim that five-case risk-score inputs are absent corrected; test scope and fictional metric caveats retained. This is documentation correction, not new full-module functional certification.
 - PABIS corrected local XLSX integrity verified (8 sheet XML files; no ZIP corruption). Binary GitHub replacement is NOT complete; do not represent it as published.
 - PARCS, DPIS, SBI merged changes remain on main. Central production portfolio remains untouched.
+
+
+PABIS automated correction completed — October 25, 2026
+
+- GitHub Actions run 40195235039 SUCCESS; script applied targeted closure-control correction to published canonical workbook and committed it to PABIS main at 06de8fe5.
+- CI asserted 8 worksheet XML files, 50 formula elements, 3 dropdown validation rules, and non-corrupt XLSX ZIP structure. The original BACKUP.xlsx remains in the repository.
+- Main-branch canonical workbook is 27,337 bytes, blob 84b0f8b118383581ad8ebc1ae5a667e0d392076d. This is the corrected published binary, not the earlier 30,819-byte upload.
+- These structural checks do not substitute for opening in Excel/Google Sheets, checking visual layout and formula recalculation; record those as a final spot check rather than claiming them completed.
+- No user reupload is needed. Portfolio website production remains unchanged.
