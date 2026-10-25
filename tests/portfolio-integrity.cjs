@@ -1,6 +1,6 @@
 'use strict';
 const assert=require('node:assert/strict');
-const repos=['patient-access-bottleneck-intelligence-system','eligibility-verification-intelligence-system','parcs-prior-authorization-command-system','denial-prevention-intelligence-system','silent-breakpoint-intelligence-system','enterprise_rev_ops_platform','healthcare-workflow-portfolio','healthcare-operations-proof-system','koripickle1101-TN','healthcare-operations-portfolio-hub'];
+const repos=['patient-access-bottleneck-intelligence-system','eligibility-verification-intelligence-system','parcs-prior-authorization-command-system','denial-prevention-intelligence-system','silent-breakpoint-intelligence-system','healthcare-workflow-portfolio','healthcare-operations-proof-system','koripickle1101-TN','healthcare-operations-portfolio-hub'];
 const owner='koripickle1101-TN';
 const req=async u=>{const r=await fetch(u,{headers:{'Accept':'application/vnd.github+json','User-Agent':'portfolio-integrity-audit'}});if(!r.ok)throw Error(r.status+' '+u);return r};
 const get=async u=>(await req(u)).json();
@@ -8,14 +8,14 @@ const pathOf=u=>{let m=u.match(/^https:\/\/github\.com\/koripickle1101-TN\/([^/]
 (async()=>{
 const trees=new Map();
 for(const repo of repos){
- if(['enterprise_rev_ops_platform','healthcare-operations-proof-system'].includes(repo)){console.log('SKIP inaccessible repository '+repo+': unauthenticated CI cannot inspect; verified through authenticated connector separately');trees.set(repo,null);continue;}
+ if(['healthcare-operations-proof-system'].includes(repo)){console.log('SKIP inaccessible repository '+repo+': unauthenticated CI cannot inspect; verified through authenticated connector separately');trees.set(repo,null);continue;}
  const data=await get('https://api.github.com/repos/'+owner+'/'+repo+'/git/trees/main?recursive=1');
  assert.equal(data.truncated,false,'Incomplete tree '+repo);
  trees.set(repo,new Set(data.tree.map(x=>x.path)));
 }
 const src=require('node:fs').readFileSync('recruiter-directory.js','utf8');
 const matches=[...src.matchAll(/repo:'([^']+)',evidenceUrl:owner\+'([^']+)'/g)];
-assert.equal(matches.length,10,'Expected 10 evidence entries');
+assert.equal(matches.length,9,'Expected 9 evidence entries');
 for(const m of matches){
  const repo=m[1],p=pathOf('https://github.com/'+owner+'/'+m[2]);
  assert.ok(p&&p.repo===repo,'Incorrect evidence repository '+repo);
@@ -53,5 +53,5 @@ for(const [repo,path] of [['patient-access-bottleneck-intelligence-system','Pati
  assert.ok(b.length>1000,'Truncated XLSX '+repo);
  console.log('PASS XLSX ZIP signature '+repo+'/'+path);
 }
-console.log('PASS 10 recruiter evidence destinations and supporting Markdown/PDF/XLSX integrity');
+console.log('PASS 9 recruiter evidence destinations and supporting Markdown/PDF/XLSX integrity');
 })().catch(e=>{console.error(e);process.exit(1)});
