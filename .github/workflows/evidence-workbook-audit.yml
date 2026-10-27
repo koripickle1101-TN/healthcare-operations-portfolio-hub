@@ -1,0 +1,43 @@
+name: Evidence workbook integrity and calculation audit
+on:
+  push:
+    branches: [recruiter-directory-review-2026-10]
+    paths:
+      - 'evidence/**'
+      - 'recruiter-directory.js'
+      - '.github/workflows/evidence-workbook-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit-workbook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install openpyxl
+      - name: Verify actual published workbook and its formulas
+        run: |
+          python - <<'PY'
+          from openpyxl import load_workbook
+          from zipfile import ZipFile
+          from pathlib import Path
+          from math import isclose
+          p=Path('evidence/Revenue_Cycle_Visibility_Tracker_Kori_Pickle.xlsx')
+          with ZipFile(p) as z:
+            assert z.testzip() is None
+          w=load_workbook(p,data_only=False)
+          v=load_workbook(p,data_only=True)
+          print('sheets',w.sheetnames,'bytes',p.stat().st_size)
+          for s in w:
+            formulas=[c for row in s for c in row if c.data_type=='f']
+            missing=[c.coordinate for c in formulas if v[s.title][c.coordinate].value is None]
+            errors=[c.coordinate for row in v[s.title] for c in row if c.data_type=='e']
+            print(s.title,'formulas',len(formulas),'missing cached results',missing,'stored errors',errors)
+            assert not errors, f'{s.title}: Excel errors'
+            assert not missing, f'{s.title}: formulas lack cached values'
+          assert sum(c.data_type=='f' for s in w for row in s for c in row)>0
+          print('PASS: published workbook ZIP, worksheets, formula caches and stored errors')
+          PY
