@@ -131,3 +131,13 @@ The user supplied the exact bytes published at `healthcare-operations-proof-syst
 Authorized workbook remediation — October 26, 2026
 
 User authorized creation of a corrected workbook in the active portfolio, updating only the affected evidence link, rerunning validation, and holding production until separate final approval. A corrected local XLSX was created from the independently verified 15-claim Library source with five sheets and 36 preserved formula cells. Exported XLSX passed ZIP CRC inspection; dashboard reconciles to 15 total claims, 5 denied (33.3333%), 3 clean claims (20%), and average 20.2 days in A/R. This is a documented replacement based on the historical 15-claim dataset, NOT the malformed canonical archived workbook. The file is available to the user as `Revenue_Cycle_Visibility_Tracker_VERIFIED.xlsx` in the conversation. Binary publication into the review branch and the associated link change have NOT yet occurred; no claim of publication or completed final link validation is authorized. Archived source unchanged. Release HOLD until binary is published, linked, tested, and separately approved for merge.
+
+
+Authorized workbook remediation — October 26, 2026
+
+- User explicitly authorized corrected tracker creation, validation, evidence-link update, and test reruns on review branch only; production merge not authorized.
+- The malformed workbook in archived `healthcare-operations-proof-system` was preserved untouched.
+- Reconstructed a new Excel ZIP workbook from the independently verified 15-claim synthetic source dataset, with five worksheets, 36 live Excel formulas, status/tier dropdowns, root-cause reference, workqueue guide and metric definitions. CI reconstruction independently asserts 15 unique claim IDs, 5 denied, 2 rejected, 7 Tier 1, and 20.2 average A/R days; ZIP CRC, sheet count and formula count pass.
+- Generator workflow passed GitHub Actions run 40446422891. The generated file is committed at immutable commit `c0cd1885b12d7acdfdda994c14ae96f2ac3acee7` under `evidence/Revenue_Cycle_Visibility_Tracker_Kori_Pickle.xlsx` (blob e107b266793b76b907823773c4d37c4f66b5d2e8). The workbook uses formula recalculation when opened in Excel; no claim is made that formula caches are populated before Excel opens it.
+- The Proof System supporting card now links to the immutable corrected workbook evidence in the active portfolio repo, without removing or modifying the archived source repository.
+- Release remains on hold until the latest recruiter browser and cross-repository validation runs complete successfully and explicit user approval to merge is given.
