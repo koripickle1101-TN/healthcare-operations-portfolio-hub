@@ -111,3 +111,13 @@ USER DIRECTIVE: Enterprise Rev Ops is explicitly excluded from the portfolio. Pr
 - Removed its repository and evidence path from the integrated CI audit.
 - No changes to or deletion of the excluded Enterprise Rev Ops repository itself.
 - All remaining five featured projects and four supporting entries retained. Central production remains unchanged pending final validation and merge.
+
+
+Final recruiter walkthrough and supporting workbook review — October 26, 2026
+
+- Extended Playwright recruiter walkthrough to assert all nine in-scope directory cards expose project titles, source and evidence actions, valid GitHub URL formats, safe new-tab attributes, and complete resume-to-directory round-trip navigation; excluded Enterprise Rev Ops text is explicitly prohibited. Review commit a8da27d5.
+- Two historical Library versions of Revenue_Cycle_Visibility_Tracker_Kori_Pickle.xlsx were independently opened and inspected: 15-claim version (5 worksheets, 36 formulas) and 12-claim version (5 worksheets, 21 formulas). Both have saved formula results and no stored Excel error cells.
+- Independent recomputation of total claims, denial rate and average days in A/R matched stored dashboard values in both versions (15, 33.33%, 20.2 days; 12, 25%, 36.6667 days).
+- IMPORTANT: Neither historical Library version has the same Git blob hash as the canonical tracker in the archived healthcare-operations-proof-system repository (GitHub blob 8b5842eacdd4fe14ab21fa69523ea0365ddecca7). Therefore the published canonical workbook remains unverified for calculation correctness. Archived repository is read-only; no changes were made there.
+- Browser CI result must be confirmed for exact commit a8da27d5 before declaring the final recruiter walkthrough passed.
+- No production merge, deployment, or release approval is authorized by this checkpoint. Remaining blocker: verify exact canonical archived workbook or explicitly document and approve an evidence alternative.
