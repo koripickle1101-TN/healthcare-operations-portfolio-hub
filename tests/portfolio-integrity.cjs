@@ -18,7 +18,17 @@ const matches=[...src.matchAll(/repo:'([^']+)',evidenceUrl:owner\+'([^']+)'/g)];
 assert.equal(matches.length,9,'Expected 9 evidence entries');
 for(const m of matches){
  const repo=m[1],p=pathOf('https://github.com/'+owner+'/'+m[2]);
- assert.ok(p&&(p.repo===repo||(repo==='healthcare-operations-proof-system'&&p.repo==='healthcare-operations-portfolio-hub'&&p.path==='evidence/Revenue_Cycle_Visibility_Tracker_Kori_Pickle.xlsx')),'Incorrect evidence repository '+repo);\n if(repo==='healthcare-operations-proof-system'&&p.repo==='healthcare-operations-portfolio-hub'){\n  const fs=require('node:fs');\n  const local=p.path;\n  assert.ok(fs.existsSync(local),'Missing verified workbook '+local);\n  const buf=fs.readFileSync(local);\n  assert.equal(buf.subarray(0,2).toString(),'PK','Invalid verified workbook container');\n  assert.ok(buf.length>10000,'Truncated verified workbook');\n  console.log('PASS verified local tracker '+local+' ('+buf.length+' bytes)');\n  continue;\n }
+ assert.ok(p&&(p.repo===repo||(repo==='healthcare-operations-proof-system'&&p.repo==='healthcare-operations-portfolio-hub'&&p.path==='evidence/Revenue_Cycle_Visibility_Tracker_Kori_Pickle.xlsx')),'Incorrect evidence repository '+repo);
+ if(repo==='healthcare-operations-proof-system'&&p.repo==='healthcare-operations-portfolio-hub'){
+  const fs=require('node:fs');
+  const local=p.path;
+  assert.ok(fs.existsSync(local),'Missing verified workbook '+local);
+  const buf=fs.readFileSync(local);
+  assert.equal(buf.subarray(0,2).toString(),'PK','Invalid verified workbook container');
+  assert.ok(buf.length>10000,'Truncated verified workbook');
+  console.log('PASS verified local tracker '+local+' ('+buf.length+' bytes)');
+  continue;
+ }
  if(!trees.get(repo)){console.log('SKIP inaccessible evidence target '+repo+'; connector verification required');continue;}
  assert.ok(!p.path||trees.get(repo).has(p.path)||[...trees.get(repo)].some(k=>k.startsWith(p.path+'/')),'Missing evidence target '+repo+'/'+p.path);
 }
