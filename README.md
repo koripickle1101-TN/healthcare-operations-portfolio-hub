@@ -9,36 +9,20 @@ No formal healthcare employment experience
 
 ## Recruiter Quick View
 
-**What this portfolio demonstrates**  
-Patient-access and authorization workflow reasoning, documented exception ownership, claim-readiness and denial-prevention hypotheses, simulated dashboard calculations, and administrative process improvement practice.
+This hub is the single recruiter-facing entry point for exactly eight owner-approved repositories. The other seven are linked below by their distinct roles. All examples are student-developed, educational, and synthetic; no PHI or professional healthcare employment is represented.
 
-**Featured Track 1 project**  
-**Patient Access Bottleneck Intelligence System™** — Excel-based workflow map, simulated case-control tracker, accuracy-control checklist, and dashboard. Traces where a front-end patient-access workflow first loses control.  
-[View project and download workbook](https://github.com/koripickle1101-TN/patient-access-bottleneck-intelligence-system)
-
-**Direct evidence links**  
-- [Patient Access Bottleneck Intelligence System™ workbook](https://github.com/koripickle1101-TN/patient-access-bottleneck-intelligence-system/blob/main/Patient_Access_Bottleneck_Intelligence_System.xlsx)  
-- [EVIS 12-case queue](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system/blob/main/evidence/patient-access-queue-reviewer-guide.md)  
-- [PARCS five-case authorization review](https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system/blob/main/evidence/prior-authorization-queue-example.md)  
-- [DPIS five-case claim-readiness review](https://github.com/koripickle1101-TN/denial-prevention-intelligence-system/blob/main/evidence/denial-queue-reviewer-guide.md)
-
-All are educational synthetic examples. None represent completed healthcare employment tasks.
-
-**Suggested starting points**  
-- Entry-level remote patient access: [Patient Access Bottleneck Intelligence System™](https://github.com/koripickle1101-TN/patient-access-bottleneck-intelligence-system) and [EVIS](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system)  
-- Authorization support: [PARCS](https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system)  
-- Revenue cycle support: [DPIS](https://github.com/koripickle1101-TN/denial-prevention-intelligence-system)  
-- Cross-workflow analysis: [SBI](https://github.com/koripickle1101-TN/silent-breakpoint-intelligence-system)  
-- Improvement habits: [Habit Audit](https://github.com/koripickle1101-TN/healthcare-operations-habit-audit)
-
-**Limitations**  
-These projects are not production applications, actual healthcare work experience, real payer/EHR access, validated risk scores, or measured employer outcomes.
+| Approved repository | Role | Explore |
+|---|---|---|
+| Healthcare Operations Portfolio Hub | Central directory | [Open website](https://healthcare-operations-portfolio-hub.vercel.app/) |
+| Healthcare Workflow Portfolio | Case-study library | [GitHub](https://github.com/koripickle1101-TN/healthcare-workflow-portfolio) |
+| GitHub Profile | Professional introduction | [GitHub](https://github.com/koripickle1101-TN/koripickle1101-TN) |
+| EVIS | Eligibility verification | [GitHub](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system) |
+| PARCS | Prior authorization | [GitHub](https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system) |
+| DPIS | Denial prevention | [GitHub](https://github.com/koripickle1101-TN/denial-prevention-intelligence-system) |
+| Silent Breakpoint Intelligence | Workflow quality | [GitHub](https://github.com/koripickle1101-TN/silent-breakpoint-intelligence-system) |
+| Healthcare Operations Proof System | Supporting evidence | [GitHub](https://github.com/koripickle1101-TN/healthcare-operations-proof-system) |
 
 ---
-
-> Brand: Healthcare Operations Intelligence Engine™  
-> Canonical entry: this hub  
-> Secondary case-study library: [Healthcare Workflow Portfolio](https://healthcare-workflow-portfolio.vercel.app/)
 
 I built this hub to study one question: **where does a healthcare workflow first lose control before the problem reaches the patient, the staff member trying to fix it, or the revenue cycle?**
 
@@ -50,7 +34,6 @@ My perspective is patient-to-professional. From the patient side, these processe
 
 | Project | What I Am Studying | Where It Fits |
 |---|---|---|
-| [Patient Access Bottleneck Intelligence System™](https://github.com/koripickle1101-TN/patient-access-bottleneck-intelligence-system) | How a front-end registration inaccuracy can create eligibility mismatch, authorization readiness delays, financial clearance issues, staff rework, and patient confusion | Patient Access · Eligibility · Workflow Control (Track 1 featured) |
 | [EVIS — Eligibility Verification Intelligence System](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system) | How eligibility, payer, demographic, and coordination-of-benefits issues can be identified earlier | Patient access / front-end revenue cycle |
 | [PARCS — Prior Authorization Command System](https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system) | How missing information, unclear ownership, aging requests, and escalation gaps can put an authorization at risk | Prior authorization workflow |
 | [DPIS — Denial Prevention Intelligence System](https://github.com/koripickle1101-TN/denial-prevention-intelligence-system) | How upstream documentation, authorization, and claim-readiness defects can become preventable denial risk | Denial prevention / revenue cycle |

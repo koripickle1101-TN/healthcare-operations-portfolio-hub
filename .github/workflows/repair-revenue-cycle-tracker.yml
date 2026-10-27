@@ -1,0 +1,134 @@
+name: Generate verified revenue cycle tracker evidence
+on:
+  push:
+    paths:
+      - '.github/workflows/repair-revenue-cycle-tracker.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  generate:
+    if: github.ref == 'refs/heads/recruiter-directory-review-2026-10'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'openpyxl>=3.1,<4'
+      - name: Reconstruct and validate synthetic tracker from independently verified 15-claim source data
+        run: |
+          python - <<'PY'
+          import csv,io,os,zipfile,collections,math
+          from openpyxl import Workbook,load_workbook
+          from openpyxl.styles import Font,PatternFill,Alignment
+          from openpyxl.utils import get_column_letter
+          from openpyxl.worksheet.datavalidation import DataValidation
+          data="""Claim ID|Service Date|Payer|Claim Amount|Current Status|Root Cause Category|Workflow Source|Owner|Next Action|Due Date|Days in A/R|Priority Tier|Notes
+          CLM-1001|46143|BlueCross|1250|Denied|Eligibility|Patient Access|Registration Lead|Verify active coverage and resubmit|46150|18|Tier 1|High-dollar eligibility denial
+          CLM-1002|46144|Aetna|740|Pending|Authorization|Prior Authorization|Auth Specialist|Confirm approval number/date range|46149|14|Tier 1|Service occurred near auth window
+          CLM-1003|46145|UnitedHealthcare|430|Paid|Clean Claim|Billing|Billing Analyst|No action needed|46145|8|Tier 3|Clean payment
+          CLM-1004|46146|Cigna|980|Rejected|Payer/Data Error|Registration|Patient Access Rep|Correct member ID and rebill|46149|11|Tier 2|Demographic mismatch
+          CLM-1005|46147|Medicare|1800|Denied|Documentation|Clinical Documentation|Documentation Owner|Request missing documentation|46149|27|Tier 1|Medical necessity support missing
+          CLM-1006|46148|Medicaid|325|Pending|Payer Delay|A/R Follow-Up|A/R Analyst|Follow payer status|46154|21|Tier 2|Payer processing delay
+          CLM-1007|46149|Humana|650|Denied|Authorization|Prior Authorization|Auth Specialist|Appeal with auth evidence|46153|34|Tier 1|Authorization not matched
+          CLM-1008|46150|BlueCross|510|Paid|Clean Claim|Billing|Billing Analyst|No action needed|46150|6|Tier 3|Paid first pass
+          CLM-1009|46151|Aetna|1120|Pending|Eligibility|Patient Access|Registration Lead|Review COB and coverage|46159|19|Tier 1|COB unresolved
+          CLM-1010|46152|UnitedHealthcare|290|Rejected|Coding|Coding|Coder|Review diagnosis/procedure alignment|46154|12|Tier 2|Coding edit
+          CLM-1011|46153|Cigna|1540|Denied|Authorization|Prior Authorization|Auth Specialist|Escalate missing auth denial|46154|44|Tier 1|Timely follow-up needed
+          CLM-1012|46154|Medicare|875|Paid|Clean Claim|Billing|Billing Analyst|No action needed|46154|9|Tier 3|Paid
+          CLM-1013|46155|Medicaid|460|Pending|Documentation|Clinical Documentation|Documentation Owner|Obtain signed note|46160|25|Tier 2|Documentation pending
+          CLM-1014|46156|Humana|1325|Denied|Eligibility|Patient Access|Registration Lead|Correct payer and resubmit|46159|38|Tier 1|Wrong payer selected
+          CLM-1015|46157|BlueCross|715|Pending|Payer Delay|A/R Follow-Up|A/R Analyst|Follow up by phone/portal|46163|17|Tier 2|Waiting payer response"""
+          records=list(csv.reader(io.StringIO(data),delimiter='|'))
+          records=[[int(x) if i in (1,3,9,10) and row_index>0 else x for i,x in enumerate(row)] for row_index,row in enumerate(records)]
+          claims=records[1:]
+          assert len(claims)==15 and len({r[0] for r in claims})==15
+          wb=Workbook();dash=wb.active;dash.title='Dashboard';tracker=wb.create_sheet('Claim Tracker')
+          roots=wb.create_sheet('Denial Root Causes');priority=wb.create_sheet('Workqueue Priority');defs=wb.create_sheet('Metric Definitions')
+          for r in records:tracker.append(r)
+          tracker.freeze_panes='A2';tracker.auto_filter.ref='A1:M16'
+          for col,choices in [('E','Denied,Pending,Paid,Rejected'),('L','Tier 1,Tier 2,Tier 3')]:
+            dv=DataValidation(type='list',formula1='"'+choices+'"');tracker.add_data_validation(dv);dv.add(f'{col}2:{col}1000')
+          dash['A1']='Revenue Cycle Visibility Tracker';dash['A2']='Created by Kori Pickle | Simulated Data Only | No PHI'
+          labels={'A4':'Total Claims Tracked','C4':'Denial Rate','E4':'Clean Claim Rate','G4':'Average Days in A/R','A7':'High-Risk Accounts','C7':'Authorization Denials','E7':'Eligibility Denials','G7':'Rework Volume'}
+          for cell,value in labels.items():dash[cell]=value
+          base="'Claim Tracker'!"
+          formulas={
+           'A5':f'=COUNTA({base}A2:A1000)',
+           'C5':f'=COUNTIF({base}E2:E1000,"Denied")/COUNTA({base}A2:A1000)',
+           'E5':f'=COUNTIF({base}F2:F1000,"Clean Claim")/COUNTA({base}A2:A1000)',
+           'G5':f'=AVERAGE({base}K2:K1000)',
+           'A8':f'=COUNTIF({base}L2:L1000,"Tier 1")',
+           'C8':f'=COUNTIFS({base}E2:E1000,"Denied",{base}F2:F1000,"Authorization")',
+           'E8':f'=COUNTIFS({base}E2:E1000,"Denied",{base}F2:F1000,"Eligibility")',
+           'G8':f'=COUNTIF({base}E2:E1000,"Denied")+COUNTIF({base}E2:E1000,"Rejected")'
+          }
+          for cell,formula in formulas.items():dash[cell]=formula
+          dash.append([]) if False else None
+          for c,v in {'A10':'Root Cause Category','B10':'Claim Count','C10':'Denial Count','E10':'Priority Tier','F10':'Claim Count','G10':'Total Amount'}.items():dash[c]=v
+          categories=['Authorization','Eligibility','Documentation','Coding','Payer/Data Error','Payer Delay','Clean Claim']
+          for row,category in enumerate(categories,11):
+            dash[f'A{row}']=category
+            dash[f'B{row}']=f'=COUNTIF({base}F2:F1000,A{row})'
+            dash[f'C{row}']=f'=COUNTIFS({base}F2:F1000,A{row},{base}E2:E1000,"Denied")'
+          for row,tier in enumerate(['Tier 1','Tier 2','Tier 3'],11):
+            dash[f'E{row}']=tier;dash[f'F{row}']=f'=COUNTIF({base}L2:L1000,E{row})';dash[f'G{row}']=f'=SUMIF({base}L2:L1000,E{row},{base}D2:D1000)'
+          root_rows=[
+          ['Root Cause Category','Workflow Source','Example Failure','Downstream Risk','Prevention Action','Metric to Track'],
+          ['Eligibility','Patient Access','Inactive coverage or wrong plan selected','Coverage denial, rejection, patient billing confusion','Verify active coverage and payer plan before service','Eligibility-related denial rate'],
+          ['Authorization','Prior Authorization','Requirement missed or approval details missing','Missing authorization denial, delayed reimbursement','Check payer rules and verify approval number/date range','Authorization-related denial rate'],
+          ['Documentation','Clinical Documentation','Missing medical necessity support','Medical necessity denial or rework','Use documentation readiness checklist','Documentation-related denial rate'],
+          ['Coding','Coding','Diagnosis/procedure mismatch','Coding denial or claim edit','Validate coding against documentation','Coding-related denial rate'],
+          ['Payer/Data Error','Registration/Billing','Wrong member ID or payer formatting issue','Claim rejection or reroute delay','Validate payer/member data before claim submission','Claim rejection volume'],
+          ['Payer Delay','A/R Follow-Up','No internal defect but payer response pending','A/R aging and delayed cash flow','Track payer-cycle pending separately','Days in A/R']]
+          for r in root_rows:roots.append(r)
+          for r in [
+          ['Priority Tier','Criteria','Example Claim Type','Required Action','Escalation Trigger'],
+          ['Tier 1','High-dollar, denied, near timely filing risk, or >30 days in A/R','Authorization denial, eligibility denial, high balance account','Assign owner, next action, deadline, and escalation path','No action within 48 hours or service/rebill deadline approaching'],
+          ['Tier 2','Medium-dollar, pending payer response, documentation/coding rework, or 15–30 days in A/R','Pending documentation, payer follow-up, coding edit','Track status and follow-up date; resolve internal defect','No update by due date or claim ages into Tier 1'],
+          ['Tier 3','Paid, low-dollar, routine follow-up, or clean claim monitoring','Paid clean claim or low-risk pending item','Monitor and close when resolved','Unexpected denial or aging trend appears']]:priority.append(r)
+          metric=[
+          ('Total Claims Tracked','Total simulated claims in the tracker','A5','Shows tracker volume','RCM Analyst','Monitor volume'),
+          ('Denial Rate','Denied claims divided by all tracked claims','C5','Shows denial burden and workflow risk','RCM Analyst','Lower'),
+          ('Clean Claim Rate','Paid clean claims divided by all tracked claims','E5','Shows first-pass readiness','Billing Lead','Higher'),
+          ('Average Days in A/R','Average days in A/R across tracked claims','G5','Shows reimbursement delay','A/R Lead','Lower'),
+          ('High-Risk Accounts','Tier 1 claims count','A8','Shows urgent follow-up workload','RCM Analyst','Lower'),
+          ('Authorization Denials','Denied claims tagged Authorization','C8','Shows prior auth workflow risk','Auth Specialist','Lower'),
+          ('Eligibility Denials','Denied claims tagged Eligibility','E8','Shows front-end verification risk','Patient Access Lead','Lower'),
+          ('Rework Volume','Claims denied or rejected requiring action','G8','Shows avoidable staff workload','Operations Lead','Lower')]
+          defs.append(['Metric','Definition','Formula','Why It Matters','Owner','Target Direction'])
+          for title,description,cell,why,owner,target in metric:defs.append([title,description,f'=Dashboard!{cell}',why,owner,target])
+          for sh in wb:
+            sh.sheet_view.showGridLines=False
+            for cell in sh[1]:
+              cell.font=Font(bold=True,color='FFFFFF')
+              cell.fill=PatternFill('solid',fgColor='15324B')
+            for col in range(1,sh.max_column+1):
+              width=min(52,max(15,max(len(str(sh.cell(row,col).value or '')) for row in range(1,sh.max_row+1))+2))
+              sh.column_dimensions[get_column_letter(col)].width=width
+            sh.freeze_panes=sh.freeze_panes or 'A2'
+          for c in ['C5','E5']:dash[c].number_format='0.0%'
+          os.makedirs('evidence',exist_ok=True)
+          path='evidence/Revenue_Cycle_Visibility_Tracker_Kori_Pickle.xlsx'
+          wb.save(path)
+          with zipfile.ZipFile(path) as z:assert z.testzip() is None
+          w=load_workbook(path)
+          assert len(w.sheetnames)==5
+          assert w['Dashboard']['A5'].value.startswith('=COUNTA')
+          assert len([x for sh in w for row in sh for x in row if x.data_type=='f'])==36
+          assert sum(r[4]=='Denied' for r in claims)==5
+          assert sum(r[4]=='Rejected' for r in claims)==2
+          assert sum(r[11]=='Tier 1' for r in claims)==7
+          assert sum(r[10] for r in claims)/15==20.2
+          print('PASS 5 worksheets, 36 formulas, 15 synthetic claims, 33.33% denied, 20.2 days A/R')
+          PY
+      - name: Commit verified workbook to review branch only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add evidence/Revenue_Cycle_Visibility_Tracker_Kori_Pickle.xlsx
+          git commit -m "Add verified revenue cycle tracker evidence" || exit 0
+          git push origin HEAD:recruiter-directory-review-2026-10
