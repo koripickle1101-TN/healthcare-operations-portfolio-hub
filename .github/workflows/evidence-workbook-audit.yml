@@ -31,6 +31,8 @@ jobs:
           w=load_workbook(p,data_only=False)
           v=load_workbook(p,data_only=True)
           print('sheets',w.sheetnames,'bytes',p.stat().st_size)
+          for sh in w:
+            print('DATA',sh.title,[(str(c.coordinate),str(c.value)[:60]) for row in sh.iter_rows(min_row=1,max_row=min(sh.max_row,7),max_col=min(sh.max_column,8)) for c in row if c.value is not None][:35])
           for s in w:
             formulas=[c for row in s for c in row if c.data_type=='f']
             missing=[c.coordinate for c in formulas if v[s.title][c.coordinate].value is None]
