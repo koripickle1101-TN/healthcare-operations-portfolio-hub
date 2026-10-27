@@ -43,3 +43,5 @@ jobs:
           assert sum(c.data_type=='f' for s in w for row in s for c in row)>0
           print('PASS: published workbook ZIP, worksheets, formula caches and stored errors')
           PY
+
+# Post-repair revalidation: verified 2026-10-27
