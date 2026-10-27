@@ -38,6 +38,31 @@ await page.locator('#project-search').fill('PARCS');assert.equal(await page.loca
 await page.locator('#project-search').fill('no-such-project');assert.equal(await page.locator('#directory-grid .recruiter-card').count(),0);assert.equal(await page.locator('#empty-results').isVisible(),true);
 await page.locator('#clear-filters').click();assert.equal(await page.locator('#directory-grid .recruiter-card').count(),9);
 const widths=await page.evaluate(()=>({document:document.documentElement.scrollWidth,viewport:window.innerWidth}));assert.ok(widths.document<=widths.viewport+2,'Horizontal overflow: '+JSON.stringify(widths));
+// Recruiter walkthrough: verify each visible card has actionable evidence and source links.
+const cards=page.locator('#directory-grid .recruiter-card');
+assert.equal(await cards.count(),9,'Directory must contain all in-scope entries');
+for(let i=0;i<await cards.count();i++){
+ const c=cards.nth(i);
+ assert.ok((await c.locator('h3').innerText()).trim(),'Missing project title '+i);
+ const evidence=c.getByRole('link',{name:'Inspect evidence'});
+ const source=c.getByRole('link',{name:'GitHub source'});
+ assert.equal(await evidence.count(),1,'Missing evidence action '+i);
+ assert.equal(await source.count(),1,'Missing source action '+i);
+ for(const a of [evidence,source]){
+  assert.match(await a.getAttribute('href'),/^https:\/\/github\.com\/koripickle1101-TN\//);
+  assert.equal(await a.getAttribute('target'),'_blank');
+  assert.match(await a.getAttribute('rel'),/noopener/);
+ }
+}
+assert.equal(await page.locator('#featured-grid .recruiter-card').count(),5);
+assert.equal(await page.getByText('Enterprise Rev Ops',{exact:false}).count(),0,'Excluded project visible');
+assert.equal(await page.locator('a[href="resume.html"]').count()>0,true);
+await page.locator('a[href="resume.html"]').first().click();
+await page.waitForURL('**/resume.html');
+assert.match(await page.locator('main').innerText(),/Employment History/);
+await page.getByRole('link',{name:/portfolio/i}).first().click();
+await page.waitForURL('**/index.html');
+assert.equal(await page.locator('#directory-grid .recruiter-card').count(),9);
 const links=await page.locator('.recruiter-card a').evaluateAll(els=>els.map(e=>({url:e.href,text:e.textContent})));assert.ok(links.length>=20);assert.ok(links.every(l=>l.url.startsWith('https://github.com/')));
 const audit=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();assert.equal(audit.violations.length,0,JSON.stringify(audit.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.slice(0,3).map(n=>n.target)}))));
 assert.deepEqual(errors,[]);await page.screenshot({path:'/tmp/portfolio-hub-'+viewport.width+'.png',fullPage:true});await context.close();
