@@ -31,7 +31,7 @@ These figures are simulated, not observed healthcare outcomes. The proposed dete
 
 ## Inspect the evidence
 
-- [Download the designated final Case Study 01 workbook](https://api.asm.skype.com/v1/objects/0-cus-d6-e4ac4365de9fb044a9377051cc1a6b6a/views/original/Kori_Pickle_Medical_Record_Completeness_TENNESSEE_ORANGE_PORTFOLIO_FINAL.xlsx)
+- [Download the designated final Case Study 01 workbook](./Kori_Pickle_Medical_Record_Completeness_TENNESSEE_ORANGE_PORTFOLIO_FINAL%20(1)%20(1).xlsx)
 - [Return to the Healthcare Operations Portfolio Hub](../../README.md)
 
 ### Workbook contents
