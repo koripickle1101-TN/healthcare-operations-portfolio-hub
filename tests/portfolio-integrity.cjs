@@ -15,10 +15,21 @@ for(const repo of repos){
 }
 const src=require('node:fs').readFileSync('recruiter-directory.js','utf8');
 const matches=[...src.matchAll(/repo:'([^']+)',evidenceUrl:owner\+'([^']+)'/g)];
-assert.equal(matches.length,9,'Expected 9 evidence entries');
+assert.equal(matches.length,10,'Expected 10 evidence entries');
 for(const m of matches){
  const repo=m[1],p=pathOf('https://github.com/'+owner+'/'+m[2]);
  assert.ok(p&&(p.repo===repo||(repo==='healthcare-operations-proof-system'&&p.repo==='healthcare-operations-portfolio-hub'&&p.path==='evidence/Revenue_Cycle_Visibility_Tracker_Kori_Pickle.xlsx')),'Incorrect evidence repository '+repo);
+ if(repo==='healthcare-operations-portfolio-hub'&&p.path==='case-studies/01-medical-record-completeness/README.md'){
+  const fs=require('node:fs');
+  assert.ok(fs.existsSync(p.path),'Missing Case Study 01 README '+p.path);
+  const workbook='case-studies/01-medical-record-completeness/Kori_Pickle_Medical_Record_Completeness_TENNESSEE_ORANGE_PORTFOLIO_FINAL (1) (1).xlsx';
+  assert.ok(fs.existsSync(workbook),'Missing Case Study 01 workbook '+workbook);
+  const buf=fs.readFileSync(workbook);
+  assert.equal(buf.subarray(0,2).toString(),'PK','Invalid Case Study 01 workbook container');
+  assert.ok(buf.length>10000,'Truncated Case Study 01 workbook');
+  console.log('PASS Case Study 01 local README and workbook ('+buf.length+' bytes)');
+  continue;
+ }
  if(repo==='healthcare-operations-proof-system'&&p.repo==='healthcare-operations-portfolio-hub'){
   const fs=require('node:fs');
   const local=p.path;
@@ -63,5 +74,5 @@ for(const [repo,path] of [['patient-access-bottleneck-intelligence-system','Pati
  assert.ok(b.length>1000,'Truncated XLSX '+repo);
  console.log('PASS XLSX ZIP signature '+repo+'/'+path);
 }
-console.log('PASS 9 recruiter evidence destinations and supporting Markdown/PDF/XLSX integrity');
+console.log('PASS 10 recruiter evidence destinations and supporting Markdown/PDF/XLSX integrity');
 })().catch(e=>{console.error(e);process.exit(1)});

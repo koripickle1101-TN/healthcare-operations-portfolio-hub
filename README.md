@@ -30,6 +30,12 @@ As I work toward my Bachelor’s of Science degree in Healthcare Administration 
 
 My perspective is patient-to-professional. From the patient side, these processes do not feel like separate departments. A missed verification step, unclear requirement, documentation gap, or handoff failure can show up later as another phone call, a delayed appointment, a reschedule, billing confusion, or a denial.
 
+## Featured Case Study 01 — Medical Record Completeness
+
+**Student-developed · Simulated · Educational · No PHI**
+
+[Inspect Case Study 01: Medical Record Completeness KPI Dashboard](case-studies/01-medical-record-completeness/README.md). This synthetic 500-document scenario studies 40 defects, documentation-completeness controls, detection/escape KPIs, and modeled downstream rework. The hypothetical proposed scenario is not evidence of real-world effectiveness or net labor savings.
+
 ## Portfolio Path
 
 | Project | What I Am Studying | Where It Fits |
