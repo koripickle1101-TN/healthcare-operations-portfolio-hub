@@ -36,6 +36,10 @@ My perspective is patient-to-professional. From the patient side, these processe
 
 [Inspect Case Study 01: Medical Record Completeness KPI Dashboard](case-studies/01-medical-record-completeness/README.md). This synthetic 500-document scenario studies 40 defects, documentation-completeness controls, detection/escape KPIs, and modeled downstream rework. The hypothetical proposed scenario is not evidence of real-world effectiveness or net labor savings.
 
+## Verified Project Evidence
+
+[Administrative Task & Handoff Tracker — Verified Project Evidence](https://github.com/koripickle1101-TN/healthcare-operations-portfolio-hub/tree/recruiter-evidence-2026-11-08/recruiter-evidence/administrative-task-handoff-tracker) — inspect the original branded synthetic workbook, November 6, 2026 technical QA receipt, and documented limitations. Automated workbook checks passed within their stated scope; interactive Android app acceptance remains unverified. No real-world deployment or healthcare outcomes are claimed.
+
 ## Portfolio Path
 
 | Project | What I Am Studying | Where It Fits |
