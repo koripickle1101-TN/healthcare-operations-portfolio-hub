@@ -1,0 +1,32 @@
+PROMPT 03 — FINAL AUTOMATED TECHNICAL QA RECEIPT
+Audit date: 2026-11-06
+Artifact: Administrative_Task_Handoff_Tracker_TENNESSEE_ORANGE_BRANDED.xlsx
+Scope: Existing 16-worksheet synthetic administrative task and handoff tracker.
+Action: Read-only audit of branded master; temporary edits made only to an in-memory test copy; test copy exported/re-imported to verify file persistence. No master redesign, overwrite, or rebuild.
+
+ROOT-CAUSE CLARIFICATION
+The Android screenshot at 6:46 PM shows E4 selected and 'Complete' in E4; E2 still says 'Not Started'. The earlier observation of M2=7 and N2=Yes was correct for E2, not evidence that E2-to-Complete recalculation failed.
+
+QA RESULTS
+- Full-row checks: 216/216 PASS, 0 FAIL across 60 CLEANED DATA plus 12 12-TASK DEMO rows, each tested for date classification, aging, and overdue logic.
+- Dynamic regression scenarios: 15/15 PASS, 0 FAIL. Tested status change and restore, reference date change and restore, new sample task, duplicate IDs, missing responsible role, invalid date, blank date, unknown workflow stage, closed status, due-today, future-dated task, and cleared customer template.
+- File and structural audit: 14/14 PASS.
+- 60 ORIGINAL source rows and 60 CLEANED DATA rows preserved. Dashboard reconciliation is 0 unmatched records.
+- Independently recomputed dashboard metrics: duplicate-ID rows 4; missing IDs 1; missing-required rows 29; invalid/unconfirmed dates 2; overdue open rows 11; needs-review rows 37; ready rows 23.
+- Source registers: 134 documented corrections, 106 exception items, 81 historical QA entries retained. The 81 historical tests were NOT independently re-executed by this audit.
+- Demo: 12 records (7 'Review', 5 'Ready'), with M2=7 and N2=Yes at the fixed date November 6, 2026.
+- Validation structure: stop-style dropdown rules encoded in Excel for Status and Workflow Stage on demo and customer template. They specify rejection and error display.
+- Filtering: Excel table autoFilter definitions exist for 12-TASK DEMO (A1:P13) and CLIENT TEMPLATE (A1:P26); formulas and 12 source rows remain present.
+- Roundtrip: spreadsheet engine exported an unchanged-in-content QA test copy and re-imported it with the expected M2/N2 values, worksheets, tables, and formulas.
+- Original master SHA256 unchanged: 71c3632c4759ec7e3924b5ef9822200b0258a59e11c312f8ce35bcd19fa43b83
+
+NOT TESTED / NOT CLAIMED
+- Whether the Excel Android app visually blocks an invalid dropdown entry during an interactive user edit.
+- Whether filtering and clearing filters in the actual Android app behave correctly.
+- Whether the Google Sheets Android app preserves every Excel-specific validation or filter rule after import.
+- Whether Android save/reopen persists every formula and dropdown (engine roundtrip passed; mobile app persistence not independently tested).
+- Actual customer use, demand, earnings, operational outcomes, and confidential/PHI-handling compliance beyond synthetic contents were not validated.
+
+ACCURACY & DECISION
+The branded master passes the available automated workbook formula, reconciliation, structural validation, filtering-metadata and engine save/reopen checks. Prompt 03 may be closed as a TECHNICALLY VERIFIED FICTIONAL DEMONSTRATION with the above mobile-interface verification limitations disclosed. This is NOT an assertion that all Android UI acceptance tests passed.
+No additional workbook changes are indicated by these results. Do not advance to Prompt 02 automatically.
