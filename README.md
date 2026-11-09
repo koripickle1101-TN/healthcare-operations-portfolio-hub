@@ -43,6 +43,9 @@ My perspective is patient-to-professional. From the patient side, these processe
 
 [PV12 Pre-Visit Administrative QA Case Study — supporting evidence](https://github.com/koripickle1101-TN/healthcare-operations-portfolio-hub/blob/recruiter-evidence-2026-11-08/recruiter-evidence/administrative-task-handoff-tracker/PV12_Previsit_Administrative_QA_Case_Study.md) — November 8, 2026 healthcare-specific synthetic extension of the **same tracker**, not an additional project. Twelve fictional fixture checks and four temporary regression scenarios matched expected rule classifications; human approval was not performed. The source healthcare QA workbook remains separate from the original generic demonstration, and these results do not establish production performance.
 
+
+[Healthcare Data Quality Lab™ — November 9 Technical QA Receipt](recruiter-evidence/administrative-task-handoff-tracker/Healthcare_Data_Quality_Lab_QA_Receipt_2026-11-09.md) — the completed **14/14 baseline**, **19/19 separate in-memory negative probes**, and **8/8 corruption-detection** results with source hashes, DEF-001 repair scope, and explicit Android limitations. The original healthcare workbook remains preserved and is not a public attachment. These are separate technical test categories, not 41 native-app regression tests.
+
 ## Portfolio Path
 
 | Project | What I Am Studying | Where It Fits |

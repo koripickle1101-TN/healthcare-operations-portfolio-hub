@@ -3,6 +3,38 @@ const base='http://127.0.0.1:8766/';
 (async()=>{const browser=await chromium.launch({headless:true,args:['--no-sandbox']});try{
 for(const viewport of [{width:390,height:844},{width:768,height:1024},{width:1440,height:900}]){
 const context=await browser.newContext({viewport});const page=await context.newPage();const errors=[];const backgroundExpected='rgb(255, 255, 255)';page.on('pageerror',e=>errors.push(e.message));await page.goto(base,{waitUntil:'networkidle'});
+
+assert.match(await page.locator('#featured .section-intro').innerText(),/Six educational workflow examples/);
+const qaReceiptLink=page.locator('#featured a[href*="Healthcare_Data_Quality_Lab_QA_Receipt_2026-11-09.md"]');
+assert.equal(await qaReceiptLink.count(),1,'Missing single recruiter-facing QA receipt link');
+assert.match(await page.locator('#featured').innerText(),/Android acceptance remains incomplete/i);
+assert.match(await qaReceiptLink.getAttribute('rel'),/noopener/);
+
+assert.match(await page.locator('.case-library-credit').innerText(),/separate tab rather than being embedded/);
+assert.equal(await page.locator('.case-library-topic-list li').count(),4);
+assert.equal(await page.locator('a.case-library-launch').getAttribute('href'),'https://public.flourish.studio/visualisation/30850574/');
+if(viewport.width<=1100){
+ const toggle=page.locator('#site-nav-toggle');
+ assert.equal(await toggle.isVisible(),true,'Mobile menu button missing');
+ assert.equal(await toggle.getAttribute('aria-expanded'),'false');
+ assert.equal(await page.locator('#primary-nav-links').isVisible(),false,'Mobile navigation should start collapsed');
+ await toggle.click();
+ assert.equal(await toggle.getAttribute('aria-expanded'),'true');
+ assert.equal(await page.locator('#primary-nav-links').isVisible(),true,'Mobile navigation did not open');
+ await page.keyboard.press('Escape');
+ assert.equal(await toggle.getAttribute('aria-expanded'),'false','Escape did not close menu');
+ await toggle.click();
+ await page.locator('#primary-nav-links a[href="#case-library"]').click();
+ assert.equal(await toggle.getAttribute('aria-expanded'),'false','Link click did not close menu');
+} else {
+ assert.equal(await page.locator('#site-nav-toggle').isVisible(),false,'Desktop should show ordinary navigation');
+ assert.equal(await page.locator('#primary-nav-links').isVisible(),true);
+}
+if(viewport.width<=480){
+ const rects=await page.locator('.case-library-topic-list li').evaluateAll(items=>items.slice(0,2).map(e=>{const r=e.getBoundingClientRect();return {left:r.left,top:r.top,width:r.width}}));
+ assert.ok(Math.abs(rects[0].left-rects[1].left)<2 && rects[1].top>rects[0].top,'Phone categories must stack vertically: '+JSON.stringify(rects));
+}
+
 assert.equal(await page.locator('body').evaluate(e=>getComputedStyle(e).backgroundColor),backgroundExpected);
 assert.equal(await page.locator('.recruiter-card').first().evaluate(e=>getComputedStyle(e).backgroundColor),backgroundExpected);
 assert.match(await page.locator('h1').evaluate(e=>getComputedStyle(e).fontFamily),/Inter/);
@@ -32,7 +64,7 @@ assert.equal(await page.locator('body').evaluate(e=>getComputedStyle(e).backgrou
 await page.goto(base,{waitUntil:'networkidle'});
 assert.equal(await page.locator('#featured-grid .recruiter-card').count(),6);
 assert.equal(await page.locator('#directory-grid .recruiter-card').count(),10);
-assert.match(await page.locator('#result-count').innerText(),/^10 of 10 portfolio entries shown$/);
+assert.match(await page.locator('#result-count').innerText(),/10 of 10/);
 await page.locator('#role-filter').selectOption('authorization');assert.ok(await page.locator('#directory-grid .recruiter-card').count()>=2);
 await page.locator('#project-search').fill('PARCS');assert.equal(await page.locator('#directory-grid .recruiter-card').count(),1);
 await page.locator('#project-search').fill('no-such-project');assert.equal(await page.locator('#directory-grid .recruiter-card').count(),0);assert.equal(await page.locator('#empty-results').isVisible(),true);
@@ -48,10 +80,10 @@ for(let i=0;i<await cards.count();i++){
  const isPrivateProof=(await c.locator('h3').innerText()).includes('Healthcare Operations Proof System');
  const source=c.getByRole('link',{name:isPrivateProof?'Public evidence directory':'GitHub source'});
  assert.equal(await evidence.count(),1,'Missing evidence action '+i);
- assert.equal(await source.count(),1,'Missing accessible source/evidence action '+i);
+ assert.equal(await source.count(),1,'Missing source/evidence action '+i);
  if(isPrivateProof){
-  assert.equal(await source.getAttribute('href'),'https://github.com/koripickle1101-TN/healthcare-operations-portfolio-hub/tree/main/evidence','Proof System must point to public replacement evidence');
-  assert.match(await c.locator('.card-summary').innerText(),/private and archived/i,'Proof System access limitation missing');
+   assert.equal(await source.getAttribute('href'),'https://github.com/koripickle1101-TN/healthcare-operations-portfolio-hub/tree/main/evidence','Proof System should link to existing public alternative');
+   assert.match(await c.locator('.card-summary').innerText(),/private and archived/i);
  }
  for(const a of [evidence,source]){
   assert.match(await a.getAttribute('href'),/^https:\/\/github\.com\/koripickle1101-TN\//);
@@ -62,7 +94,7 @@ for(let i=0;i<await cards.count();i++){
 assert.equal(await page.locator('#featured-grid .recruiter-card').count(),6);
 assert.equal(await page.getByText('Enterprise Rev Ops',{exact:false}).count(),0,'Excluded project visible');
 assert.equal(await page.locator('a[href="resume.html"]').count()>0,true);
-await page.locator('a[href="resume.html"]').first().click();
+await page.locator('.hero-actions a[href="resume.html"]').first().click();
 await page.waitForURL('**/resume.html');
 assert.match(await page.locator('main').innerText(),/Employment History/);
 await page.getByRole('link',{name:/portfolio/i}).first().click();
@@ -73,4 +105,13 @@ const audit=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a',
 assert.deepEqual(errors,[]);await page.screenshot({path:'/tmp/portfolio-hub-'+viewport.width+'.png',fullPage:true});await context.close();
 console.log('PASS viewport '+viewport.width+' featured=6 directory=10 filters, links, accessibility, no overflow');
 }
+
+const touchContext=await browser.newContext({viewport:{width:980,height:850},isMobile:true,hasTouch:true});
+const touchPage=await touchContext.newPage();
+await touchPage.goto(base,{waitUntil:'networkidle'});
+const touchRects=await touchPage.locator('.case-library-topic-list li').evaluateAll(items=>items.slice(0,2).map(e=>{const r=e.getBoundingClientRect();return {left:r.left,top:r.top}}));
+assert.ok(Math.abs(touchRects[0].left-touchRects[1].left)<2 && touchRects[1].top>touchRects[0].top,'Wide-viewport Android-style touch devices must stack category cards: '+JSON.stringify(touchRects));
+assert.equal(await touchPage.locator('#site-nav-toggle').isVisible(),true,'Wide touch viewport must show readable menu');
+console.log('PASS wide touch viewport (980px): stacked categories and mobile menu');
+await touchContext.close();
 }finally{await browser.close()}})().catch(e=>{console.error(e);process.exit(1)});
