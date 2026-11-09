@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="description" content="PV12: a student-developed, fictional pre-visit workflow QA case study. Evidence-backed DEF-001 repair and regression tests, with documented Android limitations.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="PV12 | Where Did the Workflow First Lose Control?">
+  <meta property="og:description" content="A verified simulated administrative control repair: fictional cases, false-ready authorization gating, and regression evidence.">
+  <title>PV12 Control QA Case Study | Healthcare Operations &amp; Workflow Intelligence Portfolio™</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="top-rule" aria-hidden="true"></div>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="index.html#top" aria-label="Kori Pickle portfolio home">
+        <span class="brand-mark" aria-hidden="true">KP<span class="brand-dot">.</span></span>
+        <span class="brand-copy"><strong>HEALTHCARE OPERATIONS</strong><small>WORKFLOW INTELLIGENCE PORTFOLIO™</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#methodology">Methodology</a>
+        <a href="index.html#projects" aria-current="page">Projects</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#contact" class="nav-contact">Connect <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="case-hero section" aria-labelledby="case-title">
+      <div class="container">
+        <a class="case-back" href="index.html#projects">← All projects</a>
+        <div class="case-kicker"><span class="eyebrow-line" aria-hidden="true"></span> PROJECT / 005 &nbsp;·&nbsp; NOVEMBER 2026</div>
+        <p class="kicker">PATIENT ACCESS · RULE-BASED QA · STUDENT SIMULATION</p>
+        <h1 id="case-title">Where Did the Workflow<br><span class="text-orange">First Lose Control?</span></h1>
+        <p class="case-lead">The problem was not a denied claim. It was a fictional administrative checkpoint that could label an incomplete authorization decision <em>ready</em>. This case study traces how that false-ready branch was detected, repaired, and retested.</p>
+        <div class="case-stats" aria-label="Verified simulated project statistics">
+          <div><strong>12</strong><span>fictional pre-visit cases</span></div>
+          <div><strong>10</strong><span>cases flagged for review</span></div>
+          <div><strong>2</strong><span>ready for human QA</span></div>
+          <div><strong>19 / 19</strong><span>file-based repair tests passed</span></div>
+        </div>
+        <p class="case-disclosure"><strong>Evidence classification:</strong> verified testing of a synthetic spreadsheet; no patient records, real payer decisions, clinical judgments, production EHR use, or real-world performance results.</p>
+      </div>
+    </section>
+    <section class="case-section section" aria-labelledby="story-title">
+      <div class="container case-two-col">
+        <div class="case-side"><p class="kicker">THE QA STORY</p><h2 id="story-title">One gap. A safer <span class="text-orange">exception path.</span></h2></div>
+        <div class="case-content">
+          <div class="case-stage"><span class="case-stage-number">01 / DETECT</span><h3>Identify the false-ready condition</h3><p>The original formula did not explicitly handle a blank or unrecognized value in <code>PV FIXTURES!E2</code>, the authorization-applicability input. A negative test showed such a value could produce <code>None detected</code> and <code>Ready for human QA</code>. This was an internally simulated control failure, not proof of a real adverse event.</p></div>
+          <div class="case-stage"><span class="case-stage-number">02 / DIAGNOSE</span><h3>Locate the first failing gate</h3><p>The worksheet evaluates checkpoints in order: registration, eligibility documentation, authorization applicability/status, task ownership, handoff destination, and escalation. The control loss was a missing fallback branch in the applicability logic—not evidence that an insurer authorized or denied care.</p></div>
+          <div class="case-stage"><span class="case-stage-number">03 / PREVENT</span><h3>Require an explicit applicability state</h3><p>A disposable workbook was updated to recognize the defined states <code>Required</code>, <code>Undetermined</code>, and <code>Not Triggered</code>. Invalid or missing values now generate <code>Authorization applicability</code> and <code>Review</code>. An Excel dropdown was also configured, although its Android UI rejection behavior remains unverified.</p></div>
+          <div class="case-stage"><span class="case-stage-number">04 / IMPROVE &amp; VALIDATE</span><h3>Retest without rewriting the evidence</h3><p>Sixteen existing HQA checks and three targeted negative checks passed in separate file-based regression testing: <strong>19 of 19</strong> within that defined test scope. Historical workbook QA entries were retained but were not all rerun. A further proposed control would require explicit handoff acknowledgment and human sign-off; it was not implemented.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="case-section section case-evidence-section" aria-labelledby="evidence-title">
+      <div class="container">
+        <p class="kicker">OBSERVATION VS. INTERPRETATION</p>
+        <h2 id="evidence-title">What the tests <span class="text-orange">actually showed.</span></h2>
+        <div class="case-evidence-grid">
+          <div class="case-evidence-card"><span class="case-stage-number">ANDROID / TEMPORARY TEST</span><h3>When E2 = Undetermined</h3><dl><div><dt>L2 · Computed first failure</dt><dd>Authorization applicability</dd></div><div><dt>N2 · Computed QA outcome</dt><dd>Review</dd></div><div><dt>O2 · Rule comparison</dt><dd>FAIL <small>— expected due to unchanged baseline</small></dd></div></dl><p>The <code>FAIL</code> compares temporary inputs with the original expected fixture and is <em>not</em> a failed repair.</p></div>
+          <div class="case-evidence-card"><span class="case-stage-number">ANDROID / BASELINE RESTORED</span><h3>When E2 = Not Triggered</h3><dl><div><dt>L2 · Computed first failure</dt><dd>None detected</dd></div><div><dt>N2 · Computed QA outcome</dt><dd>Ready for human QA</dd></div><div><dt>O2 · Rule comparison</dt><dd>PASS</dd></div></dl><p>Screenshots support recalculation and restoration; independently logged Android save/reopen and arbitrary invalid-entry rejection are not established.</p></div>
+        </div>
+        <div class="case-limits"><h3>Limits that matter</h3><p>“Ready for human QA” means a fictional rule check is complete enough to send to a person. It does not mean cleared for care, payer approval, or that any human approval occurred. <code>PV FIXTURES!Q2:Q13</code> records human approval as <code>Not Performed</code>. This is a spreadsheet demonstration, not a validated healthcare software product.</p></div>
+      </div>
+    </section>
+    <section class="case-section section" aria-labelledby="sources-title">
+      <div class="container case-sources">
+        <p class="kicker">AUDIT TRACE</p>
+        <h2 id="sources-title">Inspect the <span class="text-orange">documentation.</span></h2>
+        <p>The case-study narrative is fully readable on this page. The linked supporting documents are stored in a private Google Drive folder, so access may require permission; linking them does not change sharing settings.</p>
+        <div class="case-source-links">
+          <a class="case-resource" href="https://docs.google.com/document/d/1sV1eKwyae4Z0_hMH93ybaFHOOrnbVQ-N7y-4x00lwpo/edit?usp=drivesdk" target="_blank" rel="noopener noreferrer"><span><strong>Revised PV12 case study</strong><small>Google Doc · November 9, 2026 · permission may be required</small></span><span aria-hidden="true">↗</span></a>
+          <a class="case-resource" href="https://drive.google.com/file/d/1F2Uyi727O_gFFFcrew82OTKLOabR6v_B/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><span><strong>DEF-001 QA closeout</strong><small>Evidence receipt · file + Android evidence qualifications</small></span><span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="case-source-note"><strong>Exact workbook trace:</strong> <code>PV FIXTURES!E2, L2:Q2, O2:O13</code>; historical case tests <code>QA TESTS!A83:F98</code>. Student-created, synthetic, no-PHI project. No original workbook was overwritten.</p>
+        <a class="button button-secondary case-return" href="index.html#projects">Return to portfolio <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand">KORI PICKLE<span>.</span></div><div><p>HEALTHCARE OPERATIONS INTELLIGENCE ENGINE™</p><p>Detect → Diagnose → Prevent → Improve &amp; Validate</p></div><a href="#top" class="back-top">Back to top ↑</a></div><div class="footer-bottom"><p>© <span id="year">2026</span> Kori Pickle. Educational portfolio.</p><p>All case material is fictional; operational, clinical, payer, and employer performance is not claimed.</p></div></div></footer>
+  <script src="script.js" defer></script>
+</body>
+</html>

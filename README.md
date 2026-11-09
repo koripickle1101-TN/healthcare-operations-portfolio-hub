@@ -1,85 +1,34 @@
-# Healthcare Operations Portfolio Hub
+# Healthcare Operations & Workflow Intelligence Portfolio™
 
-**Student-developed · Simulated · Educational · No PHI**
+A static student portfolio with a main page and a dedicated, documented PV12 case-study page for Kori Pickle. All project content describes hypothetical educational exercises; no patient, payer, EHR, or employer data are used.
 
-Kori Pickle · Bachelor of Science in Healthcare Administration candidate, University of Phoenix (degree in progress)  
-No formal healthcare employment experience
+## Files
+- `index.html`: Main site content, accessible navigation, portfolio sections, professional links, and Project 005 PV12 spotlight
+- `pv12-def001-case-study.html`: Self-contained recruiter-facing DEF-001 QA narrative, limitations, and links to supporting evidence
+- `styles.css`: Responsive editorial brand system (white #FFFFFF, orange #FF8200, black #000000); includes mobile styling and reduced-motion preference
+- `script.js`: Small mobile navigation toggle and footer year
+- `favicon.svg`: Original KP mark
 
----
+## Preview
+Open `index.html` in a modern browser. Google Fonts (Montserrat and Inter) load over the internet; system sans-serif fallbacks are provided.
 
-## Recruiter Quick View
+## Free publishing option: GitHub Pages
+1. Create a PUBLIC GitHub repository for the site (or use a repository you control, with the site at its root).
+2. Upload all five website files to the default branch, keeping `index.html` at the site root.
+3. In GitHub: Repository → Settings → Pages → Build and deployment → Deploy from a branch → select the default branch and `/ (root)` → Save.
+4. Wait until GitHub displays a Pages URL. Test each section, the Project 005 link, and contact links on mobile. Do not add your portfolio URL to LinkedIn until it loads publicly.
 
-This hub is the single recruiter-facing entry point for exactly eight owner-approved repositories. The other seven are linked below by their distinct roles. All examples are student-developed, educational, and synthetic; no PHI or professional healthcare employment is represented.
+GitHub Pages offers free publishing for eligible public repositories, subject to GitHub's current terms and limits. Avoid placing private data or credentials in the repository.
 
-| Approved repository | Role | Explore |
-|---|---|---|
-| Healthcare Operations Portfolio Hub | Central directory | [Open website](https://healthcare-operations-portfolio-hub.vercel.app/) |
-| Healthcare Workflow Portfolio | Case-study library | [GitHub](https://github.com/koripickle1101-TN/healthcare-workflow-portfolio) |
-| GitHub Profile | Professional introduction | [GitHub](https://github.com/koripickle1101-TN/koripickle1101-TN) |
-| EVIS | Eligibility verification | [GitHub](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system) |
-| PARCS | Prior authorization | [GitHub](https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system) |
-| DPIS | Denial prevention | [GitHub](https://github.com/koripickle1101-TN/denial-prevention-intelligence-system) |
-| Silent Breakpoint Intelligence | Workflow quality | [GitHub](https://github.com/koripickle1101-TN/silent-breakpoint-intelligence-system) |
-| Healthcare Operations Proof System | Supporting evidence | [GitHub](https://github.com/koripickle1101-TN/healthcare-operations-proof-system) |
+## November 9, 2026 PV12 verified update
+- New home-page Project 005 links to a detailed case-study page.
+- Records a documented false-ready authorization-applicability gap, repair in a disposable copy, 16 original HQA + 3 negative file-based tests passed (19/19), and screenshot-supported Android formula behavior.
+- Original PV12 workbook and original branded master were not changed. The original website ZIP is unchanged.
+- Original supporting Google Drive documents remain private; external users may need permission. The case-study web page itself is self-contained.
+- The Android application’s rejection of arbitrary invalid entries remains unverified, so full platform validation is not claimed.
 
----
+## Transparency
+The project descriptions are educational case-study scopes and proposed deliverables, not proof of completed live deployments, validated metrics, healthcare employment, or actual denial prevention results. Update only after evidence has been verified.
 
-I built this hub to study one question: **where does a healthcare workflow first lose control before the problem reaches the patient, the staff member trying to fix it, or the revenue cycle?**
-
-As I work toward my Bachelor’s of Science degree in Healthcare Administration at the University of Phoenix, I am especially interested in patient access, eligibility verification, prior authorization, documentation readiness, denial prevention, and the handoffs that connect those areas.
-
-My perspective is patient-to-professional. From the patient side, these processes do not feel like separate departments. A missed verification step, unclear requirement, documentation gap, or handoff failure can show up later as another phone call, a delayed appointment, a reschedule, billing confusion, or a denial.
-
-## Featured Case Study 01 — Medical Record Completeness
-
-**Student-developed · Simulated · Educational · No PHI**
-
-[Inspect Case Study 01: Medical Record Completeness KPI Dashboard](case-studies/01-medical-record-completeness/README.md). This synthetic 500-document scenario studies 40 defects, documentation-completeness controls, detection/escape KPIs, and modeled downstream rework. The hypothetical proposed scenario is not evidence of real-world effectiveness or net labor savings.
-
-## Verified Project Evidence
-
-[Administrative Task & Handoff Tracker — Verified Project Evidence](https://github.com/koripickle1101-TN/healthcare-operations-portfolio-hub/tree/recruiter-evidence-2026-11-08/recruiter-evidence/administrative-task-handoff-tracker) — inspect the original branded synthetic workbook, November 6, 2026 technical QA receipt, and documented limitations. Automated workbook checks passed within their stated scope; interactive Android app acceptance remains unverified. No real-world deployment or healthcare outcomes are claimed.
-
-## Portfolio Path
-
-| Project | What I Am Studying | Where It Fits |
-|---|---|---|
-| [EVIS — Eligibility Verification Intelligence System](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system) | How eligibility, payer, demographic, and coordination-of-benefits issues can be identified earlier | Patient access / front-end revenue cycle |
-| [PARCS — Prior Authorization Command System](https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system) | How missing information, unclear ownership, aging requests, and escalation gaps can put an authorization at risk | Prior authorization workflow |
-| [DPIS — Denial Prevention Intelligence System](https://github.com/koripickle1101-TN/denial-prevention-intelligence-system) | How upstream documentation, authorization, and claim-readiness defects can become preventable denial risk | Denial prevention / revenue cycle |
-| [SBI — Silent Breakpoint Intelligence](https://github.com/koripickle1101-TN/silent-breakpoint-intelligence-system) | How to identify the first control loss in a workflow before the downstream effects become obvious | Cross-workflow analysis |
-| [Healthcare Operations Habit Audit](https://github.com/koripickle1101-TN/healthcare-operations-habit-audit) | How daily habits in documentation, data integrity, communication, and follow-through can affect workflow reliability | Cross-cutting audit / improvement review |
-
-## What I Am Practicing
-
-- Patient access and registration workflow analysis
-- Eligibility verification logic and insurance accuracy review
-- Prior authorization workflow tracking and escalation thinking
-- Documentation readiness and handoff review
-- Denial prevention and root-cause analysis
-- Revenue cycle workflow analysis
-- KPI and dashboard design
-- Process mapping and ownership review
-- Clear separation between simulated evidence and real-world claims
-
-## What This Portfolio Is — and Is Not
-
-This is a **student-developed educational portfolio**.
-
-- All scenarios and data are simulated or synthetic.
-- No protected health information (PHI) is used.
-- No real patient, payer, claim, employer, or healthcare organization data is represented.
-- These projects do not represent formal healthcare employment, production deployment, clinical decision-making, or payer decision authority.
-- I do not claim real-world cost savings, denial reductions, productivity gains, or patient outcomes.
-
-## Live Portfolio
-
-[View the Healthcare Operations Portfolio Hub](https://healthcare-operations-portfolio-hub.vercel.app/)
-
-## Connect
-
-- [LinkedIn](https://www.linkedin.com/in/kori-pickle)
-- [GitHub profile](https://github.com/koripickle1101-TN)
-- Email: [koripickle1101@gmail.com](mailto:koripickle1101@gmail.com)
-
-Created by Kori Pickle. Student-developed portfolio. Synthetic data only. No PHI.
+## Note about original Instant Website draft
+This is a separate zero-cost portable version. It does not alter the Instant Website draft and has not been automatically published.
