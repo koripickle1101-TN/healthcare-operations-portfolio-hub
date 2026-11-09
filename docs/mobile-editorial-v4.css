@@ -66,7 +66,7 @@ body { color:#000000; font-size:16px; line-height:1.75; }
   .menu-toggle span:nth-child(1){transform:translateY(-6px);}
   .menu-toggle span:nth-child(2){transform:translateY(0);}
   .menu-toggle span:nth-child(3){transform:translateY(6px);}
-  .menu-toggle .menu-toggle-label{display:block;position:absolute;left:16px;font-size:13px;font-weight:600;line-height:1;letter-spacing:.02em;}
+  .menu-toggle .menu-toggle-label{display:block;position:absolute;left:12px;font-size:13px;font-weight:600;line-height:1;letter-spacing:.02em;width:auto;height:auto;background:transparent !important;}
   .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:rotate(45deg);}
   .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
   .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:rotate(-45deg);}
@@ -124,7 +124,7 @@ body { color:#000000; font-size:16px; line-height:1.75; }
   .brand-copy small{font-size:8px;letter-spacing:.035em;}
   .menu-toggle{min-width:83px;height:42px;padding-right:49px;}
   .menu-toggle span:not(.menu-toggle-label){right:13px;width:19px;}
-  .menu-toggle .menu-toggle-label{left:13px;font-size:12px;}
+  .menu-toggle .menu-toggle-label{left:10px;font-size:12px;}
   .hero{padding:48px 0 60px;}
   .hero h1 {font-size:clamp(35px,9.25vw,49px);letter-spacing:-.06em;line-height:1.22;margin:22px 0 24px;}
   .hero-deck {font-size:17px;line-height:1.75;}
