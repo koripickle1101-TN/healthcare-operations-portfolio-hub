@@ -5,6 +5,11 @@ for(const viewport of [{width:390,height:844},{width:768,height:1024},{width:144
 const context=await browser.newContext({viewport});const page=await context.newPage();const errors=[];const backgroundExpected='rgb(255, 255, 255)';page.on('pageerror',e=>errors.push(e.message));await page.goto(base,{waitUntil:'networkidle'});
 
 assert.match(await page.locator('#featured .section-intro').innerText(),/Six educational workflow examples/);
+const qaReceiptLink=page.locator('#featured a[href*="Healthcare_Data_Quality_Lab_QA_Receipt_2026-11-09.md"]');
+assert.equal(await qaReceiptLink.count(),1,'Missing single recruiter-facing QA receipt link');
+assert.match(await page.locator('#featured').innerText(),/Android acceptance remains incomplete/i);
+assert.match(await qaReceiptLink.getAttribute('rel'),/noopener/);
+
 assert.match(await page.locator('.case-library-credit').innerText(),/separate tab rather than being embedded/);
 assert.equal(await page.locator('.case-library-topic-list li').count(),4);
 assert.equal(await page.locator('a.case-library-launch').getAttribute('href'),'https://public.flourish.studio/visualisation/30850574/');
@@ -72,9 +77,14 @@ for(let i=0;i<await cards.count();i++){
  const c=cards.nth(i);
  assert.ok((await c.locator('h3').innerText()).trim(),'Missing project title '+i);
  const evidence=c.getByRole('link',{name:'Inspect evidence'});
- const source=c.getByRole('link',{name:'GitHub source'});
+ const isPrivateProof=(await c.locator('h3').innerText()).includes('Healthcare Operations Proof System');
+ const source=c.getByRole('link',{name:isPrivateProof?'Public evidence directory':'GitHub source'});
  assert.equal(await evidence.count(),1,'Missing evidence action '+i);
- assert.equal(await source.count(),1,'Missing source action '+i);
+ assert.equal(await source.count(),1,'Missing source/evidence action '+i);
+ if(isPrivateProof){
+   assert.equal(await source.getAttribute('href'),'https://github.com/koripickle1101-TN/healthcare-operations-portfolio-hub/tree/main/evidence','Proof System should link to existing public alternative');
+   assert.match(await c.locator('.card-summary').innerText(),/private and archived/i);
+ }
  for(const a of [evidence,source]){
   assert.match(await a.getAttribute('href'),/^https:\/\/github\.com\/koripickle1101-TN\//);
   assert.equal(await a.getAttribute('target'),'_blank');
