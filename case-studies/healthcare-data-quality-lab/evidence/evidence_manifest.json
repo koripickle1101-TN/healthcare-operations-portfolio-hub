@@ -1,0 +1,64 @@
+{
+  "project": "Healthcare Data Quality Lab™",
+  "phase": "Phase 1 source preservation + Phase 2 independent QA",
+  "run_utc": "2026-11-09T08:26:23+00:00",
+  "source_kind": "Student-developed synthetic/no-PHI fixture, 12 scenario grain",
+  "sources": {
+    "repaired": {
+      "filename": "HOIE_PV12_DEF001_REPAIRED_DISPOSABLE_2026-11-09.xlsx",
+      "sha256": "8fa7fc79bc2d40c0b5308e620aabbeac25e41baf6447605f466e0c1f6fef6567",
+      "historical_sha256": "8fa7fc79bc2d40c0b5308e620aabbeac25e41baf6447605f466e0c1f6fef6567",
+      "byte_identical_to_historical": true
+    },
+    "original": {
+      "filename": "Administrative_Tracker_PV12_Healthcare_QA_2026-11-08.xlsx",
+      "sha256": "b647a736dec0dabf38e16ec5c619aab0dbdf11005c5b2b5e0394b235981a7164",
+      "historical_sha256": "b647a736dec0dabf38e16ec5c619aab0dbdf11005c5b2b5e0394b235981a7164",
+      "byte_identical_to_historical": true
+    },
+    "historical_retest_report": {
+      "filename": "HOIE_PV12_DEF001_RETEST_REPORT_2026-11-09.xlsx",
+      "sha256": "6003465d68f01fdd9317809356bb3fbde2597a26bf6457379308f76912a4a26c",
+      "interpretation": "Historical test receipt, not substituted for this run"
+    }
+  },
+  "preservation": {
+    "status": "PASSED",
+    "changed_formula_cells": [
+      "PV FIXTURES!L10",
+      "PV FIXTURES!L11",
+      "PV FIXTURES!L12",
+      "PV FIXTURES!L13",
+      "PV FIXTURES!L2",
+      "PV FIXTURES!L3",
+      "PV FIXTURES!L4",
+      "PV FIXTURES!L5",
+      "PV FIXTURES!L6",
+      "PV FIXTURES!L7",
+      "PV FIXTURES!L8",
+      "PV FIXTURES!L9"
+    ],
+    "errors": []
+  },
+  "execution": {
+    "qa_suite_total": 14,
+    "qa_passed": 14,
+    "qa_failed": 0,
+    "qa_blocked": 0,
+    "negative_probes_total": 19,
+    "negative_probes_passed": 19,
+    "negative_probes_failed": 0,
+    "corruption_tests_total": 8,
+    "corruption_tests_passed": 8,
+    "corruption_tests_failed": 0
+  },
+  "boundaries": {
+    "no_phi": true,
+    "no_real_patient_or_payer_data": true,
+    "no_live_healthcare_environment": true,
+    "excel_android_app_validation": "BLOCKED",
+    "human_approval": "NOT PERFORMED",
+    "railway": "NOT DEPLOYED",
+    "github": "NOT MODIFIED"
+  }
+}
