@@ -79,3 +79,13 @@ During final recruiter accessibility review, the previously linked `healthcare-o
 - The new fourth destination was checked through GitHub's connected repository API; its public repository visibility was confirmed.
 - **The previous v5 Android evidence-link pass applies to the old fourth URL only**. A new Android acceptance check of the corrected fourth link is required before production authorization.
 - No production release, domain reassignment, `main` merge, or change to the original recruiter hub is authorized.
+
+## Corrected v5.1 preview deployment
+
+- Preview URL: https://kori-healthcare-workflow-intelligence-minfi1odp.vercel.app/
+- Vercel preview deployment ID: `dpl_Z3UYMsK1h72MZavJtedMAJCWnA5H`
+- Deployment state on November 9, 2026: **READY** (`target: null`, not production).
+- Link 4 now opens the public EVIS metrics-and-scoring methodology documenting the 30-case synthetic demographic-registration exercise.
+- Owner acceptance of the **previous** four links does not verify the corrected fourth link in the new preview; confirm its public-access behavior on Android before requesting production promotion.
+- Independent HTTP retrieval of the v5.1 preview through the checking environment was unavailable; Vercel READY and authenticated browser tests are different assurances.
+- The original recruiter portfolio, `main`, and production domain remain outside scope and must not be modified.
