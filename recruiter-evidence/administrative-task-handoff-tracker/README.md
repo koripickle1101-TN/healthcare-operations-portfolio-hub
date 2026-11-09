@@ -10,8 +10,9 @@
 
 1. [Branded 16-worksheet Excel tracker](./Administrative_Task_Handoff_Tracker_TENNESSEE_ORANGE_BRANDED.xlsx) — original workbook; contains synthetic task records and a demonstrator.
 2. [November 6 technical QA receipt](./Prompt_03_Final_Technical_QA_Receipt.txt) — scope, methodology, results, and excluded tests.
+3. [November 8 PV12 pre-visit healthcare QA case study](./PV12_Previsit_Administrative_QA_Case_Study.md) — 12 fictional cases, HQA-001–HQA-016 test mapping, first-control-loss analysis, and explicit human approval limitations. **An educational extension of this existing tracker, not another project.**
 
-Both files are displayed here from a dedicated evidence branch. The published portfolio's `main` branch, résumé, original workbook and website were **not changed** to create this evidence link. To inspect spreadsheet contents, use a read-only GitHub preview if available or download a copy; downloading does not grant permission to edit this repository.
+The original two files and the supporting PV12 case-study note are displayed here from a dedicated evidence branch. The published portfolio's `main` branch, résumé, original workbook and website were **not changed** to create this evidence link. To inspect spreadsheet contents, use a read-only GitHub preview if available or download a copy; downloading does not grant permission to edit this repository.
 
 ## Evidence supported by the November 6 technical QA receipt
 
