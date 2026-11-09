@@ -1,0 +1,162 @@
+/* Kori Pickle — Mobile editorial refinement v4.
+ * Exact brand: white #FFFFFF, orange #FF8200, black #000000.
+ * Typeface: Montserrat Semi-Bold / Inter. No alternate palette or serif.
+ * Layered after editorial-v3.css; keep previous source for rollback. */
+:root {
+  --orange:#FF8200;
+  --black:#000000;
+  --white:#FFFFFF;
+  --font-head:'Montserrat',Arial,sans-serif;
+  --font-body:'Inter',Arial,sans-serif;
+}
+html { scroll-padding-top:88px; }
+html,body { background:#FFFFFF !important; }
+body { color:#000000; font-size:16px; line-height:1.75; }
+.hero h1 {
+  max-width:670px;
+  font-family:var(--font-head);
+  font-weight:600;
+  font-size:clamp(43px,4.45vw,66px);
+  line-height:1.17;
+  letter-spacing:-.052em;
+  text-wrap:balance;
+  margin:27px 0 27px;
+}
+.orange-emphasis { position:relative; display:inline; white-space:normal; color:#000000 !important; }
+.orange-emphasis::after { height:3px; bottom:-6px; background:#FF8200 !important; }
+.hero-deck {font-size:19px; line-height:1.65;}
+.hero-identity {font-size:14px; line-height:1.7;}
+.section-main>p:not(.kicker) {font-size:16px; line-height:1.82;}
+.section-main .lead {font-size:19px !important;line-height:1.75;}
+.section-heading-note {font-size:15px;line-height:1.75;}
+.step-card p,.featured-body p,.project-card p,.featured-aside li,
+.skill-group p,.career-box p,.contact-layout>div:first-child p:not(.kicker),
+.career-layout>div:first-child p:not(.kicker) {font-size:15px;line-height:1.8;}
+.project-card summary,.button,.primary-nav a {font-size:14px;}
+.project-disclaimer p,.evidence-panel>p,.evidence-panel .panel-note {font-size:14px;line-height:1.75;}
+.brand-copy strong {font-size:11px;letter-spacing:.08em;}
+.brand-copy small {font-size:9px;letter-spacing:.09em;}
+.step-card {min-height:225px;}
+.step-card h3 {margin-top:39px;}
+.project-card {min-height:0;}
+.menu-toggle-label {display:none;}
+.button, .menu-toggle, .primary-nav a, summary {touch-action:manipulation;}
+
+/* Widen the breakpoint: tablet-sized screens should not shrink the desktop header. */
+@media screen and (max-width:1100px),
+       screen and (hover:none) and (pointer:coarse) and (max-width:1300px) {
+  html {scroll-padding-top:78px;}
+  .container {width:calc(100% - 44px);max-width:760px;}
+  .header-inner{min-height:75px;gap:18px;}
+  .menu-toggle {
+    display:flex !important; align-items:center;justify-content:center;
+    width:auto;min-width:91px;height:45px;gap:7px;
+    padding:10px 14px;
+    border:1px solid #000000;
+    border-radius:999px;
+    background:#FFFFFF !important;
+    box-shadow:none;
+    cursor:pointer;
+    color:#000000;
+    position:relative;
+    flex-direction:column;
+    padding-right:56px;
+  }
+  .menu-toggle span:not(.menu-toggle-label){position:absolute;right:16px;width:22px;height:2px;background:#000000;transition:transform .15s ease,opacity .15s ease;}
+  .menu-toggle span:nth-child(1){transform:translateY(-6px);}
+  .menu-toggle span:nth-child(2){transform:translateY(0);}
+  .menu-toggle span:nth-child(3){transform:translateY(6px);}
+  .menu-toggle .menu-toggle-label{display:block;position:absolute;left:16px;font-size:13px;font-weight:600;line-height:1;letter-spacing:.02em;}
+  .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:rotate(45deg);}
+  .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+  .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:rotate(-45deg);}
+  .primary-nav {
+    display:none !important;
+    position:absolute;
+    top:calc(100% + 1px);
+    left:0;right:0;
+    padding:16px 22px 24px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    background:#FFFFFF !important;
+    border:1px solid #E6E6E6;
+    border-top:0;
+    border-radius:0 0 18px 18px;
+    box-shadow:0 18px 35px rgba(0,0,0,.055);
+    z-index:60;
+  }
+  .primary-nav.is-open {display:flex !important;}
+  .primary-nav a {
+    min-height:52px;display:flex;align-items:center;
+    padding:11px 9px !important;
+    border-bottom:1px solid #EBEBEB;
+    font-size:16px;
+    font-weight:500;
+    text-decoration:none;
+  }
+  .primary-nav .nav-contact {border:1px solid #FF8200;background:#FF8200 !important;color:#000!important;display:flex;justify-content:center;margin-top:14px;}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) !important;gap:33px;}
+  .hero{padding:62px 0 64px;}
+  .hero h1{font-size:clamp(40px,6vw,60px);max-width:660px;}
+  .hero-art{max-width:620px;width:100%;margin-inline:auto;}
+  .steps-grid,.project-grid{display:grid;grid-template-columns:minmax(0,1fr) !important;gap:16px;}
+  .step-card{min-height:0; padding:26px 25px;}
+  .step-card h3{margin:24px 0 9px;}
+  .project-card{padding:28px;}
+  .project-card .project-category{margin-top:25px;}
+  .featured-body{grid-template-columns:minmax(0,1fr) !important;gap:25px;}
+  .featured-aside{border-left:0;border-top:1px solid #E8E8E8;padding:23px 0 0;}
+  .section-heading{display:block;}
+  .section-heading-note{max-width:650px;margin-top:15px;}
+  .split-layout{display:block;}
+  .section-side{margin-bottom:22px;}
+  .section{padding:73px 0;}
+  .career-layout,.contact-layout{grid-template-columns:minmax(0,1fr);gap:28px;}
+  .principles-grid{grid-template-columns:minmax(0,1fr);}
+  .footer-top{grid-template-columns:1fr 1fr;}
+}
+@media screen and (max-width:600px) {
+  .container{width:calc(100% - 36px);}
+  .header-inner{min-height:70px;gap:10px;}
+  .brand-mark{font-size:27px;}
+  .brand-copy strong{font-size:9px;letter-spacing:.035em;}
+  .brand-copy small{font-size:8px;letter-spacing:.035em;}
+  .menu-toggle{min-width:83px;height:42px;padding-right:49px;}
+  .menu-toggle span:not(.menu-toggle-label){right:13px;width:19px;}
+  .menu-toggle .menu-toggle-label{left:13px;font-size:12px;}
+  .hero{padding:48px 0 60px;}
+  .hero h1 {font-size:clamp(35px,9.25vw,49px);letter-spacing:-.06em;line-height:1.22;margin:22px 0 24px;}
+  .hero-deck {font-size:17px;line-height:1.75;}
+  .hero-identity{font-size:14px;}
+  .micro-note{font-size:13px;line-height:1.65;}
+  .hero-art{padding:13px;}
+  .art-caption,.art-footer{font-size:8px;letter-spacing:.08em;}
+  .hero-actions{display:flex;flex-direction:column;gap:11px;}
+  .hero-actions .button{width:100%;justify-content:center;min-height:50px;font-size:14px;}
+  .ticker-inner{justify-content:center;flex-wrap:wrap;gap:10px;}
+  .ticker-inner span{font-size:11px;}
+  .section{padding:58px 0;}
+  h2{font-size:clamp(30px,8.1vw,40px);line-height:1.25;letter-spacing:-.04em;}
+  .section-main>p:not(.kicker),.section-main .lead {font-size:16px !important;line-height:1.8;}
+  .section-heading-note,.step-card p,.featured-body p,.project-card p,.featured-aside li,
+  .skill-group p,.career-box p,.career-layout>div:first-child p:not(.kicker),
+  .contact-layout>div:first-child p:not(.kicker),.evidence-panel>p,.evidence-panel .panel-note,
+  .project-disclaimer p{font-size:16px;line-height:1.75;}
+  .step-card{padding:25px 23px;}
+  .step-card h3{font-size:21px;margin:21px 0 8px;}
+  .featured-project{padding:24px 20px;}
+  .featured-body h3{font-size:clamp(27px,7vw,35px);}
+  .project-card{padding:23px;}
+  .project-card h3{font-size:21px;}
+  .project-card summary{font-size:14px;min-height:44px;}
+  .project-category{font-size:11px;}
+  .evidence-panel{padding:23px 19px;}
+  .evidence-tags{gap:9px;}
+  .evidence-tags span,.tag-list li{font-size:11px;}
+  .fact-row{grid-template-columns:1fr;gap:18px;}
+  .footer-top{grid-template-columns:1fr;}
+  .footer-bottom{display:block;}
+  .footer-bottom p:last-child{text-align:left;}
+}
+@media (prefers-reduced-motion:reduce){.menu-toggle span:not(.menu-toggle-label){transition:none;}}
