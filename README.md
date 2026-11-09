@@ -21,7 +21,7 @@ This hub is the single recruiter-facing entry point for nine owner-approved repo
 | PARCS | Prior authorization | [GitHub](https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system) |
 | DPIS | Denial prevention | [GitHub](https://github.com/koripickle1101-TN/denial-prevention-intelligence-system) |
 | Silent Breakpoint Intelligence | Workflow quality | [GitHub](https://github.com/koripickle1101-TN/silent-breakpoint-intelligence-system) |
-| Healthcare Operations Proof System | Supporting evidence | [GitHub](https://github.com/koripickle1101-TN/healthcare-operations-proof-system) |
+| Healthcare Operations Proof System (private, archived source) | Supporting evidence | [Inspect public verified workbook](https://github.com/koripickle1101-TN/healthcare-operations-portfolio-hub/blob/main/evidence/Revenue_Cycle_Visibility_Tracker_Kori_Pickle.xlsx) |
 
 ---
 
