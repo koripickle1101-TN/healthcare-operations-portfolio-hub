@@ -1,10 +1,10 @@
 # Healthcare Operations & Workflow Intelligence Portfolio™ — Production Release Record
 
 Record date: November 9, 2026  
-Release status: **Version 5 published to production; Version 5.1 correction remains preview-only, not approved for publication.**  
+Release status: **Version 5.1 published to production on November 9, 2026; Version 5 is retained as the previous production release record.**  
 Owner: Kori Pickle · University of Phoenix BS Healthcare Administration student
 
-## What was actually published
+## Previous production release: Version 5 (historical)
 
 | Field | Verified production record |
 | --- | --- |
@@ -70,3 +70,29 @@ Solid white `#FFFFFF` page background, Tennessee Orange `#FF8200` accents, black
 5. Record a new Version 5.1 production deployment ID and close the remaining check limitations honestly.
 
 **Current decision:** Version 5 is live via Vercel production mapping. Version 5.1 is a verified preview with a necessary public-link correction, not published, and not authorized for release.
+
+
+## Version 5.1 — confirmed production release (November 9, 2026)
+
+This section supersedes earlier Version 5.1 preview-only status references above. The earlier sections are retained as an audit trail and must not be interpreted as the latest status.
+
+| Check | Verified result |
+| --- | --- |
+| User release authorization | User replied **“Yes 5.1”** to the proposed corrected-version publication |
+| Vercel project | `kori-healthcare-workflow-intelligence` (`prj_zQYOsTjkkVqiB6o1eaj4gt4HYC5W`) |
+| Source branch | `portfolio-evidence-links-2026-11-09` (source files read at deployment time, no merge) |
+| Published URL | https://kori-healthcare-workflow-intelligen.vercel.app/ |
+| Version 5.1 deployment | `dpl_9hneKpGNXiDwyggjgC9ZCjyNKFf9` |
+| Build and target | `READY` and `production` — verified via Vercel deployment API |
+| Domain mapping | Canonical domain assigned to exact Version 5.1 deployment — verified via Vercel alias API |
+| Deployed source tree | All six expected static files in `docs/`; corrected `index.html` has a distinct Vercel content ID from the prior Version 5 deployment |
+| Corrected fourth evidence link | Now points to [public EVIS metrics-and-scoring methodology](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system/blob/main/evidence/metrics-and-scoring-methodology.md); source link and destination verified via connected GitHub tools |
+| Other evidence destinations | DPIS, EVIS patient-access queue, and PARCS links preserved in source |
+| Simulated educational boundaries | Fictional/synthetic provenance disclaimer retained |
+| Original recruiter hub | Different Vercel project `prj_l9WRpeU7ta8apt86IzKrkVV8K9FF`; its canonical domain stayed mapped to `dpl_4bn6KTEhC8CaeA1eRsf1RqhWVj17`. No release action targeted the recruiter hub |
+| Original GitHub `main` | No merge or write in this release. At post-release check the branch head was `3539b8d495a5014ee9dbefad4a13aa7b790b3814` |
+| Independent public HTML response | **BLOCKED, NOT VERIFIED:** external web tool could not retrieve the production URL; Vercel READY and domain mapping do not prove full unauthenticated browser accessibility |
+| Live production Android acceptance | **PENDING:** explicit fresh on-device test of corrected EVIS evidence link on the production URL has not been reported |
+| Production runtime logs | Not independently cleared; earlier Vercel logs API query returned 403. Do not claim error-free runtime logs |
+
+**Final disposition:** Version 5.1 is published to the intended separate Vercel production domain, and its build, domain mapping and file presence are verified. No deployment, code merge, or DNS operation was performed on the recruiter hub. A final unauthenticated/browser confirmation of the published site remains an acceptance follow-up, not a new publication prerequisite.
