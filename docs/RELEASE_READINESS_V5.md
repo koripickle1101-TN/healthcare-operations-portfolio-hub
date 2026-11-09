@@ -1,7 +1,7 @@
 # Healthcare Operations & Workflow Intelligence Portfolio™ — Release Readiness v5
 
 Review date: November 9, 2026
-Status: **Release candidate — not approved for production promotion**
+Status: **Recommended for controlled publication after explicit authorization — not yet published to production**
 Prepared for: Kori Pickle, BS Healthcare Administration student
 
 ## Scope and protections
@@ -37,32 +37,35 @@ All four destination files were fetched and confirmed to exist through the conne
 | v5 deployment build | Vercel `dpl_2BiQqqgSAwumRXDGf82ZkUx2YPNR` | **READY** |
 | v5 files present in deployed source tree | Vercel returned `docs/index.html`, stylesheet layers, `script.js`, and favicon | **Passed (source tree)** |
 | Public unauthenticated HTTP response | Separate web/browser check unable to access Vercel address; local DNS unavailable | **Blocked — not verified** |
-| v5 links work on actual Android | No user test reported for newly added evidence links | **Untested** |
-| Production release approval | Not yet given | **Pending** |
+| v5 links work on actual Android | User explicitly confirmed all four evidence buttons opened their intended GitHub pages on November 9, 2026 | **Passed (user-reported device acceptance)** |
+| Production release approval | User requested recommendation only; explicitly prohibited publication without approval | **Pending — do not publish** |
 
 ## Exact design constraints
 
 Primary page background `#FFFFFF`; Tennessee Orange accent `#FF8200`; primary text `#000000`. Montserrat Semi-Bold headings and Inter body text. All copy describes student-developed simulations; no real-world healthcare employment, PHI, or operational outcomes are claimed.
 
-## Final Android acceptance steps
+## Android acceptance record and production smoke tests
 
-1. Open the **v5 preview** above with Desktop site turned off.
-2. Open the menu; select Projects; confirm the navigation works.
-3. Expand one of the three `Focus & proposed deliverables` accordions.
-4. Tap **each of the four new evidence links** and confirm the intended GitHub evidence page opens.
-5. Tap Email and LinkedIn and verify the expected destinations.
-6. Verify white background, orange accents, black Montserrat/Inter typography, and single-column phone cards.
-7. Confirm no login/paywall or browser warning blocks public viewing.
+- **v4 Android user acceptance:** mobile menu, project accordions, Email Me, and LinkedIn passed per the user's explicit report.
+- **v5 Android evidence-link acceptance:** all four newly added evidence buttons passed per the user's explicit November 9, 2026 report. This establishes the user's device test of the preview, not an independent automated HTTP test.
+- **Remaining release-time checks:** after an explicitly authorized production deployment, confirm the new production URL opens in an unauthenticated browser, contains the four links, retains navigation and contact links, and shows the exact white/orange/black mobile design.
+- **Verification limitation:** an independent unauthenticated HTTP/browser request from the test environment was previously blocked. Do not replace this limitation with an ungrounded pass claim.
 
-Record any failures before release. Do **not** treat the v4 acceptance report as proof that the v5 evidence links work.
+A second pre-release Android tap-through is not required merely to repeat the accepted v5 evidence-link checks.
 
 ## Final publication route — separate from recruiter hub
 
-When explicit authorization is received and the v5 Android checks pass:
+When explicit authorization is received (v5 Android evidence links already reported passed):
 - Release **only** the separate `kori-healthcare-workflow-intelligence` Vercel project.
 - Preserve `healthcare-operations-portfolio-hub` production and its `main` branch unchanged.
 - Verify a production-target deployment, its source files, assigned production domain, and public response.
 - Do not merge the evidence branch into the recruiter hub's `main` merely to release this separate site.
 - Record the release URL, deployment ID, readiness result, and any unresolved checks.
+- **Deployment caution:** The exact v5 preview deployment `dpl_2BiQqqgSAwumRXDGf82ZkUx2YPNR` reports READY. The separate Vercel project subsequently showed a newer CANCELED preview deployment. Never use the canceled deployment for release; pin the verified v5 files and confirm a successful production-target build before assigning a production domain.
+- Ensure the recruiter hub project `healthcare-operations-portfolio-hub` is not selected as a deployment or domain target.
 
 **No production release or main-branch merge is authorized by this checklist.**
+
+## Publication recommendation — November 9, 2026
+
+**Recommendation: APPROVE WHEN USER EXPLICITLY AUTHORIZES; NO AUTOMATIC RELEASE.** The v5 preview has a READY build, four grounded evidence links, intact student/synthetic-data disclaimers, and user-reported Android acceptance of the four new links. The earlier v4 navigation, accordion, and contact tests also passed on the user's device. The remaining release gate is explicit consent for the distinct `kori-healthcare-workflow-intelligence` production target, followed by post-release URL/asset/link verification. The source branch must remain separate from `main` in the original recruiter hub repository. No publication has been executed as part of this recommendation.
