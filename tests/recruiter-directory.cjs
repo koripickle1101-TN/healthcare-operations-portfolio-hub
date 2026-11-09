@@ -45,9 +45,14 @@ for(let i=0;i<await cards.count();i++){
  const c=cards.nth(i);
  assert.ok((await c.locator('h3').innerText()).trim(),'Missing project title '+i);
  const evidence=c.getByRole('link',{name:'Inspect evidence'});
- const source=c.getByRole('link',{name:'GitHub source'});
+ const isPrivateProof=(await c.locator('h3').innerText()).includes('Healthcare Operations Proof System');
+ const source=c.getByRole('link',{name:isPrivateProof?'Public evidence directory':'GitHub source'});
  assert.equal(await evidence.count(),1,'Missing evidence action '+i);
- assert.equal(await source.count(),1,'Missing source action '+i);
+ assert.equal(await source.count(),1,'Missing accessible source/evidence action '+i);
+ if(isPrivateProof){
+  assert.equal(await source.getAttribute('href'),'https://github.com/koripickle1101-TN/healthcare-operations-portfolio-hub/tree/main/evidence','Proof System must point to public replacement evidence');
+  assert.match(await c.locator('.card-summary').innerText(),/private and archived/i,'Proof System access limitation missing');
+ }
  for(const a of [evidence,source]){
   assert.match(await a.getAttribute('href'),/^https:\/\/github\.com\/koripickle1101-TN\//);
   assert.equal(await a.getAttribute('target'),'_blank');
