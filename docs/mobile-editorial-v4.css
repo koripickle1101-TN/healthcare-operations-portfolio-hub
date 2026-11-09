@@ -160,3 +160,12 @@ body { color:#000000; font-size:16px; line-height:1.75; }
   .footer-bottom p:last-child{text-align:left;}
 }
 @media (prefers-reduced-motion:reduce){.menu-toggle span:not(.menu-toggle-label){transition:none;}}
+
+/* Related evidence links — v5, preserve exact white / orange / black visual system */
+.evidence-link-panel{margin-top:20px;padding-top:17px;border-top:1px solid #E8E8E8;background:#FFFFFF}
+.evidence-action{display:inline-flex;align-items:center;gap:10px;padding:12px 15px;border:1px solid #FF8200;border-radius:999px;background:#FFFFFF;color:#000000;text-decoration:none;font-family:'Inter',Arial,sans-serif;font-weight:700;font-size:13px;line-height:1.5;transition:background .15s ease}
+.evidence-action:hover,.evidence-action:focus-visible{background:#FF8200;color:#000000}
+.evidence-action span{color:#000000}
+.evidence-context{font-size:12px!important;line-height:1.65!important;color:#333333!important;margin:10px 0 0!important;max-width:520px}
+@media screen and (max-width:800px){.evidence-link-panel{margin-top:17px;padding-top:14px}.evidence-action{min-height:48px;padding:12px 14px;font-size:14px}.evidence-context{font-size:13px!important}}
+@media screen and (max-width:450px){.evidence-action{display:flex;width:100%;justify-content:space-between}}
