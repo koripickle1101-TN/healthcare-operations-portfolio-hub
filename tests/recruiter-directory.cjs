@@ -84,7 +84,7 @@ for(let i=0;i<await cards.count();i++){
 assert.equal(await page.locator('#featured-grid .recruiter-card').count(),6);
 assert.equal(await page.getByText('Enterprise Rev Ops',{exact:false}).count(),0,'Excluded project visible');
 assert.equal(await page.locator('a[href="resume.html"]').count()>0,true);
-await page.locator('a[href="resume.html"]').first().click();
+await page.locator('.hero-actions a[href="resume.html"]').first().click();
 await page.waitForURL('**/resume.html');
 assert.match(await page.locator('main').innerText(),/Employment History/);
 await page.getByRole('link',{name:/portfolio/i}).first().click();
