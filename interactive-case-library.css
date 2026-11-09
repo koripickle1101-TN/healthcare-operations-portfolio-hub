@@ -1,0 +1,162 @@
+/* Interactive Case Library: isolated, responsive premium editorial styling.
+   User brand: pure white, Tennessee orange #FF8200, black, modern sans-serif. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+.case-library-section {
+  padding: clamp(3.5rem, 6vw, 5.5rem) 0;
+  margin: 0 0 1.5rem;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+  background: #FFFFFF !important;
+  color: #000000;
+}
+.case-library-section,
+.case-library-section h2,
+.case-library-section p,
+.case-library-section a,
+.case-library-section strong {
+  font-family: 'DM Sans', 'Inter', Arial, sans-serif !important;
+}
+.case-library-overline {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #FF8200;
+  color: #000000 !important;
+  font-size: .76rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.case-library-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(20px, 4vw, 48px);
+  align-items: end;
+}
+.case-library-section h2 {
+  margin: 0 0 13px;
+  max-width: 18ch;
+  color: #000000 !important;
+  font-size: clamp(2.45rem, 5.2vw, 4.7rem) !important;
+  line-height: 1.06 !important;
+  letter-spacing: -.052em !important;
+  font-weight: 500 !important;
+  border: 0 !important;
+  padding: 0 !important;
+}
+.case-library-lead {
+  margin: 0 0 14px;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 600;
+  letter-spacing: -.025em;
+  color: #000000 !important;
+}
+.case-library-description {
+  margin: 0;
+  max-width: 690px;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #333333 !important;
+}
+.case-library-launch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 50px;
+  padding: 14px 19px;
+  background: #FF8200 !important;
+  color: #000000 !important;
+  border: 1px solid #000000;
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+}
+.case-library-launch:hover {background: #FFFFFF !important;}
+.case-library-launch:focus-visible, .case-library-section a:focus-visible {
+  outline: 3px solid #000000;
+  outline-offset: 4px;
+}
+.case-library-topics {
+  width: 100%;
+  margin: 32px 0 18px;
+  padding: clamp(22px, 3vw, 30px) 0 18px;
+  border-top: 2px solid #FF8200;
+  border-bottom: 1px solid #dedede;
+  background: #FFFFFF !important;
+}
+.case-library-topics h3 {
+  margin: 0 0 18px;
+  color: #000000 !important;
+  font-family: 'DM Sans', 'Inter', Arial, sans-serif !important;
+  font-size: clamp(1.15rem, 2vw, 1.45rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: -.02em !important;
+}
+.case-library-topic-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+}
+.case-library-topic-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #000000;
+  border-top: 3px solid #FF8200;
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  font-size: .9rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.case-library-topic-count {
+  color: #000000 !important;
+  font-size: 1.9rem;
+  font-weight: 500;
+  letter-spacing: -.06em;
+}
+.case-library-topics > p {
+  max-width: 720px;
+  margin: 0;
+  color: #333333 !important;
+  font-size: .94rem;
+  line-height: 1.7;
+}
+.case-library-evidence {
+  margin: 20px 0 8px;
+  max-width: 940px;
+  font-size: .91rem;
+  line-height: 1.65;
+  color: #222222 !important;
+}
+.case-library-credit {
+  margin: 0;
+  color: #444444 !important;
+  font-size: .85rem;
+  line-height: 1.6;
+}
+.case-library-credit a {color: #000000 !important; text-underline-offset: 3px; text-decoration-color: #FF8200;}
+@media (max-width: 780px) {
+  .case-library-heading {grid-template-columns: 1fr;gap: 20px;}
+  .case-library-launch {justify-self: start;white-space: normal;}
+}
+@media (max-width: 780px) {.case-library-topic-list {grid-template-columns: repeat(2, minmax(0, 1fr));}}
+@media (max-width: 480px) {
+  .case-library-section {padding: 2.75rem 0;}
+  .case-library-overline {font-size: .68rem;letter-spacing: .08em;}
+  .case-library-section h2 {font-size: clamp(2.2rem, 12vw, 3rem) !important;}
+  .case-library-launch {width: 100%;justify-self: stretch;}
+  .case-library-topics {margin-top: 24px;}
+  .case-library-topic-list {grid-template-columns: 1fr;}
+}
