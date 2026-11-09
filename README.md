@@ -40,6 +40,8 @@ My perspective is patient-to-professional. From the patient side, these processe
 
 [Administrative Task & Handoff Tracker — Verified Project Evidence](https://github.com/koripickle1101-TN/healthcare-operations-portfolio-hub/tree/recruiter-evidence-2026-11-08/recruiter-evidence/administrative-task-handoff-tracker) — inspect the original branded synthetic workbook, November 6, 2026 technical QA receipt, and documented limitations. Automated workbook checks passed within their stated scope; interactive Android app acceptance remains unverified. No real-world deployment or healthcare outcomes are claimed.
 
+[PV12 Pre-Visit Administrative QA Case Study — supporting evidence](https://github.com/koripickle1101-TN/healthcare-operations-portfolio-hub/blob/recruiter-evidence-2026-11-08/recruiter-evidence/administrative-task-handoff-tracker/PV12_Previsit_Administrative_QA_Case_Study.md) — November 8, 2026 healthcare-specific synthetic extension of the **same tracker**, not an additional project. Twelve fictional fixture checks and four temporary regression scenarios matched expected rule classifications; human approval was not performed. The source healthcare QA workbook remains separate from the original generic demonstration, and these results do not establish production performance.
+
 ## Portfolio Path
 
 | Project | What I Am Studying | Where It Fits |
