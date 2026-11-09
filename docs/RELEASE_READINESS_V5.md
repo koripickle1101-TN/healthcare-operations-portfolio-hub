@@ -21,7 +21,7 @@ Prepared for: Kori Pickle, BS Healthcare Administration student
 | The Denial That Started Before Care™ | [DPIS five-case denial/claim-readiness reviewer guide](https://github.com/koripickle1101-TN/denial-prevention-intelligence-system/blob/main/evidence/denial-queue-reviewer-guide.md) | Related **fictional** worked examples; does not prove the exact flagship scenario was completed or validated |
 | Eligibility Verification Failure Analysis | [EVIS 12-case patient-access queue reviewer guide](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system/blob/main/evidence/patient-access-queue-reviewer-guide.md) | Related separate **synthetic** queue; does not establish real payer verification |
 | Prior Authorization Workflow Audit | [PARCS five-case authorization queue guide](https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system/blob/main/evidence/prior-authorization-queue-example.md) | Related **fictional** records; no live determination or completed exact audit implied |
-| Registration Error Impact Study | [Patient Access Proof case study](https://github.com/koripickle1101-TN/healthcare-operations-proof-system/blob/main/project-examples/patient-access-proof.md) | Related student-developed patient-access example, not proof of a stand-alone impact evaluation |
+| Registration Error Impact Study | [EVIS demographic-registration methodology](https://github.com/koripickle1101-TN/eligibility-verification-intelligence-system/blob/main/evidence/metrics-and-scoring-methodology.md) | Related 30-case fictional registration simulation with transparent assumptions; not a measured registration improvement or stand-alone impact evaluation |
 
 All four destination files were fetched and confirmed to exist through the connected GitHub account. The four links are plain external anchors with `target="_blank"` and `rel="noopener noreferrer"`.
 
@@ -69,3 +69,13 @@ When explicit authorization is received (v5 Android evidence links already repor
 ## Publication recommendation — November 9, 2026
 
 **Recommendation: APPROVE WHEN USER EXPLICITLY AUTHORIZES; NO AUTOMATIC RELEASE.** The v5 preview has a READY build, four grounded evidence links, intact student/synthetic-data disclaimers, and user-reported Android acceptance of the four new links. The earlier v4 navigation, accordion, and contact tests also passed on the user's device. The remaining release gate is explicit consent for the distinct `kori-healthcare-workflow-intelligence` production target, followed by post-release URL/asset/link verification. The source branch must remain separate from `main` in the original recruiter hub repository. No publication has been executed as part of this recommendation.
+
+## v5.1 public-access correction — November 9, 2026
+
+During final recruiter accessibility review, the previously linked `healthcare-operations-proof-system` repository was confirmed **private and archived**. Successful owner-authenticated Android navigation to that repository does not establish public recruiter access. The fourth portfolio evidence button now points instead to the **public** EVIS `evidence/metrics-and-scoring-methodology.md` page, which documents a separate 30-case fictional demographic-registration simulation and its limitations. The page explicitly says the 15/15 groups use different defect compositions and their differences are not measured improvements or causal effects.
+
+- The first three linked evidence destinations remain public and unchanged.
+- The fourth destination URL and link text were corrected in `docs/index.html`.
+- The new fourth destination was checked through GitHub's connected repository API; its public repository visibility was confirmed.
+- **The previous v5 Android evidence-link pass applies to the old fourth URL only**. A new Android acceptance check of the corrected fourth link is required before production authorization.
+- No production release, domain reassignment, `main` merge, or change to the original recruiter hub is authorized.
