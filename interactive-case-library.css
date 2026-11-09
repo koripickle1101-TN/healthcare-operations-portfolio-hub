@@ -82,15 +82,57 @@
   outline: 3px solid #000000;
   outline-offset: 4px;
 }
-.case-library-embed {
+.case-library-topics {
   width: 100%;
   margin: 32px 0 18px;
-  padding: clamp(10px, 2.2vw, 24px) 0;
+  padding: clamp(22px, 3vw, 30px) 0 18px;
   border-top: 2px solid #FF8200;
   border-bottom: 1px solid #dedede;
   background: #FFFFFF !important;
 }
-.case-library-embed .flourish-embed {max-width: 100%; width: 100%;}
+.case-library-topics h3 {
+  margin: 0 0 18px;
+  color: #000000 !important;
+  font-family: 'DM Sans', 'Inter', Arial, sans-serif !important;
+  font-size: clamp(1.15rem, 2vw, 1.45rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: -.02em !important;
+}
+.case-library-topic-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+}
+.case-library-topic-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #000000;
+  border-top: 3px solid #FF8200;
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  font-size: .9rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.case-library-topic-count {
+  color: #000000 !important;
+  font-size: 1.9rem;
+  font-weight: 500;
+  letter-spacing: -.06em;
+}
+.case-library-topics > p {
+  max-width: 720px;
+  margin: 0;
+  color: #333333 !important;
+  font-size: .94rem;
+  line-height: 1.7;
+}
 .case-library-evidence {
   margin: 20px 0 8px;
   max-width: 940px;
@@ -109,10 +151,12 @@
   .case-library-heading {grid-template-columns: 1fr;gap: 20px;}
   .case-library-launch {justify-self: start;white-space: normal;}
 }
+@media (max-width: 780px) {.case-library-topic-list {grid-template-columns: repeat(2, minmax(0, 1fr));}}
 @media (max-width: 480px) {
   .case-library-section {padding: 2.75rem 0;}
   .case-library-overline {font-size: .68rem;letter-spacing: .08em;}
   .case-library-section h2 {font-size: clamp(2.2rem, 12vw, 3rem) !important;}
   .case-library-launch {width: 100%;justify-self: stretch;}
-  .case-library-embed {margin-top: 24px;}
+  .case-library-topics {margin-top: 24px;}
+  .case-library-topic-list {grid-template-columns: 1fr;}
 }
