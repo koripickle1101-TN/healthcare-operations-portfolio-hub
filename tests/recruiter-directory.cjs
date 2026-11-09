@@ -32,7 +32,7 @@ assert.equal(await page.locator('body').evaluate(e=>getComputedStyle(e).backgrou
 await page.goto(base,{waitUntil:'networkidle'});
 assert.equal(await page.locator('#featured-grid .recruiter-card').count(),6);
 assert.equal(await page.locator('#directory-grid .recruiter-card').count(),10);
-assert.match(await page.locator('#result-count').innerText(),/10 of 10/);
+assert.match(await page.locator('#result-count').innerText(),/^10 of 10 portfolio entries shown$/);
 await page.locator('#role-filter').selectOption('authorization');assert.ok(await page.locator('#directory-grid .recruiter-card').count()>=2);
 await page.locator('#project-search').fill('PARCS');assert.equal(await page.locator('#directory-grid .recruiter-card').count(),1);
 await page.locator('#project-search').fill('no-such-project');assert.equal(await page.locator('#directory-grid .recruiter-card').count(),0);assert.equal(await page.locator('#empty-results').isVisible(),true);
