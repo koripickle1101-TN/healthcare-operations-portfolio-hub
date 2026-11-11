@@ -36,5 +36,6 @@ jobs:
           path: |
             /tmp/portfolio-hub-*.png
             /tmp/careflow-editorial-*.png
+            /tmp/careflow-scenario-debug-*.png
           if-no-files-found: warn
           retention-days: 3
