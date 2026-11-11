@@ -1,7 +1,7 @@
 name: Recruiter Hub Validation
 on:
   push:
-    branches: [recruiter-directory-review-2026-10]
+    branches: [recruiter-directory-review-2026-10, feat/full-editorial-portfolio-suite-2026-11]
   pull_request:
     branches: [main]
 permissions:
