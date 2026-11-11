@@ -130,3 +130,9 @@ html body main h1,html body main h2,html body main h3 {letter-spacing:-.045em!im
 html body .recruiter-hero h1{letter-spacing:-.047em!important;font-weight:600!important}
 html body .portfolio-pulse h2 span,html body .analytics-showcase h2 span,html body .capability-section h2 span,html body .premium-contact h2 span{color:#000000!important;text-decoration:underline;text-decoration-color:#FF8200;text-decoration-thickness:.075em;text-underline-offset:.11em}
 @media(max-width:480px){html body .recruiter-hero h1{font-size:clamp(2.25rem,9.8vw,2.95rem)!important;letter-spacing:-.035em!important;line-height:1.1!important}}
+
+/* Preserve visible word boundaries in editorial headings; do not crush spaces. */
+html body main h1,html body main h2,html body main h3{letter-spacing:-.018em!important;word-spacing:.13em!important}
+html body .recruiter-hero h1{letter-spacing:-.018em!important;word-spacing:.16em!important}
+html body .portfolio-pulse h2,html body .analytics-showcase h2,html body .capability-section h2,html body .premium-contact h2{letter-spacing:-.015em!important;word-spacing:.13em!important}
+.site-header .brand-mark{letter-spacing:-.015em!important;word-spacing:.1em!important}
