@@ -9,7 +9,7 @@ No formal healthcare employment experience
 
 ## Recruiter Quick View
 
-This hub is the single recruiter-facing entry point for exactly eight owner-approved repositories. The other seven are linked below by their distinct roles. All examples are student-developed, educational, and synthetic; no PHI or professional healthcare employment is represented.
+This hub is the single recruiter-facing entry point for exactly eight owner-approved repositories. The other seven are linked below by their distinct roles. The interactive website also lists supplementary educational work and portfolio navigation entries; its broader directory is not a claim that every entry is an additional approved repository. All examples are student-developed, educational, and synthetic; no PHI or professional healthcare employment is represented.
 
 | Approved repository | Role | Explore |
 |---|---|---|
@@ -75,6 +75,13 @@ This is a **student-developed educational portfolio**.
 ## Live Portfolio
 
 [View the Healthcare Operations Portfolio Hub](https://healthcare-operations-portfolio-hub.vercel.app/)
+
+## Recruiter Evidence and Release Limitations
+
+- Dashboard and queue examples use fictional records. Workbook or browser smoke checks do not establish real-world performance.
+- Website build/deployment status is separate from runtime testing and mobile acceptance.
+- The portfolio website lists supporting work beyond the eight core approved repositories; directory entries must not be interpreted as separate validated projects.
+- Historical employment dates are intentionally omitted from the website résumé until independently verified. Employer names and job titles are presented as historical information, not healthcare employment.
 
 ## Connect
 
