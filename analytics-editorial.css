@@ -48,3 +48,7 @@ h1,h2,h3,.brandcopy strong,.ptitle,.kvalue,.kpi,.hero,.flowitem b,.bigresult b,.
 .portfolio-return:focus-visible{outline:3px solid #FF8200;outline-offset:2px}
 @media(max-width:760px){.portfolio-return{top:auto;right:12px;bottom:88px;font-size:10px;padding:8px 11px}.hero{min-height:222px!important;padding:26px 21px!important}.hero h1{font-size:clamp(35px,9vw,43px)!important}.hero:before{width:260px!important;height:260px!important;right:-150px!important;top:-70px!important}.main{padding:18px 14px 95px!important}.topbar{padding:18px 16px!important}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Keep feedback visible without obstructing one-handed Android navigation. */
+.toast{pointer-events:none!important}
+@media(max-width:760px){.toast{bottom:95px!important;right:14px!important;left:14px!important;text-align:center!important;z-index:19!important}}
