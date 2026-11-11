@@ -1,6 +1,6 @@
 'use strict';
 const assert=require('node:assert/strict');
-const repos=['patient-access-bottleneck-intelligence-system','eligibility-verification-intelligence-system','parcs-prior-authorization-command-system','denial-prevention-intelligence-system','silent-breakpoint-intelligence-system','healthcare-workflow-portfolio','healthcare-operations-proof-system','koripickle1101-TN','healthcare-operations-portfolio-hub'];
+const repos=['patient-access-bottleneck-intelligence-system','eligibility-verification-intelligence-system','parcs-prior-authorization-command-system','denial-prevention-intelligence-system','silent-breakpoint-intelligence-system','healthcare-workflow-portfolio','healthcare-operations-proof-system','koripickle1101-TN','healthcare-operations-portfolio-hub','healthcare-operations-habit-audit'];
 const owner='koripickle1101-TN';
 const req=async u=>{const r=await fetch(u,{headers:{'Accept':'application/vnd.github+json','User-Agent':'portfolio-integrity-audit'}});if(!r.ok)throw Error(r.status+' '+u);return r};
 const get=async u=>(await req(u)).json();
@@ -15,7 +15,7 @@ for(const repo of repos){
 }
 const src=require('node:fs').readFileSync('recruiter-directory.js','utf8');
 const matches=[...src.matchAll(/repo:'([^']+)',evidenceUrl:owner\+'([^']+)'/g)];
-assert.equal(matches.length,10,'Expected 10 evidence entries');
+assert.equal(matches.length,11,'Expected 11 evidence entries');
 for(const m of matches){
  const repo=m[1],p=pathOf('https://github.com/'+owner+'/'+m[2]);
  assert.ok(p&&(p.repo===repo||(repo==='healthcare-operations-proof-system'&&p.repo==='healthcare-operations-portfolio-hub'&&p.path==='evidence/Revenue_Cycle_Visibility_Tracker_Kori_Pickle.xlsx')),'Incorrect evidence repository '+repo);
@@ -74,5 +74,5 @@ for(const [repo,path] of [['patient-access-bottleneck-intelligence-system','Pati
  assert.ok(b.length>1000,'Truncated XLSX '+repo);
  console.log('PASS XLSX ZIP signature '+repo+'/'+path);
 }
-console.log('PASS 10 recruiter evidence destinations and supporting Markdown/PDF/XLSX integrity');
+console.log('PASS 11 recruiter evidence destinations and supporting Markdown/PDF/XLSX integrity');
 })().catch(e=>{console.error(e);process.exit(1)});
