@@ -136,3 +136,26 @@ html body main h1,html body main h2,html body main h3{letter-spacing:-.018em!imp
 html body .recruiter-hero h1{letter-spacing:-.018em!important;word-spacing:.16em!important}
 html body .portfolio-pulse h2,html body .analytics-showcase h2,html body .capability-section h2,html body .premium-contact h2{letter-spacing:-.015em!important;word-spacing:.13em!important}
 .site-header .brand-mark{letter-spacing:-.015em!important;word-spacing:.1em!important}
+
+
+/* Source-backed supplementary PDF studies: restrained white-orange-black editorial. */
+.portfolio-evidence-library{padding:clamp(55px,7vw,100px) 0!important;border-top:1px solid #E9E9E9;border-bottom:1px solid #E9E9E9}
+.sectionhead-evidence{max-width:960px;margin-bottom:28px}
+.sectionhead-evidence h2{font-family:'Instrument Sans','Inter',Arial,sans-serif!important;font-size:clamp(2.5rem,5.3vw,4.7rem)!important;font-weight:600!important;letter-spacing:-.015em!important;word-spacing:.12em!important;line-height:1.1!important;color:#000!important;margin:0 0 20px!important}
+.sectionhead-evidence h2 span{color:#000!important;text-decoration:underline;text-decoration-color:#FF8200;text-decoration-thickness:.075em;text-underline-offset:.12em}
+.sectionhead-evidence>p:not(.portfolio-index){max-width:750px;color:#444!important;font-size:.91rem!important;line-height:1.75!important}
+.portfolio-evidence-disclosure{border:1px solid #E6E6E6;border-radius:15px;background:#fff;overflow:hidden}
+.portfolio-evidence-disclosure>summary{list-style:none;cursor:pointer;min-height:62px;padding:20px 22px;font-weight:800;font-size:.85rem;color:#111;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.portfolio-evidence-disclosure>summary::-webkit-details-marker{display:none}
+.portfolio-evidence-disclosure>summary:before{content:'+';color:#A45800;font-size:20px;font-weight:600;margin-right:8px}
+.portfolio-evidence-disclosure[open]>summary:before{content:'−'}
+.portfolio-evidence-disclosure>summary span{font-size:.68rem;color:#666;font-weight:700;letter-spacing:.025em}
+.evidence-pdf-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:0 16px 16px}
+.evidence-pdf-card{padding:20px;border:1px solid #E6E6E6;border-top:3px solid #FF8200;border-radius:12px;min-width:0;display:flex;flex-direction:column;gap:10px;background:#fff}
+.evidence-pdf-card .evidence-number{font-size:.67rem;font-weight:800;letter-spacing:.1em;color:#A85700}
+.evidence-pdf-card h3{font-family:'Instrument Sans','Inter',Arial,sans-serif!important;letter-spacing:-.025em!important;font-size:1.28rem!important;font-weight:600!important;line-height:1.3!important;color:#000!important;margin:0!important;overflow-wrap:anywhere}
+.evidence-pdf-card p{font-size:.77rem!important;color:#535353!important;line-height:1.7!important;margin:0 0 12px!important}
+.evidence-pdf-card a{margin-top:auto;display:inline-block;align-self:start;font-size:.78rem!important;font-weight:800!important;color:#000!important;text-decoration:none;border-bottom:2px solid #FF8200;padding-bottom:5px}
+.evidence-pdf-card a:hover{color:#A65000!important}
+@media(max-width:1020px){.evidence-pdf-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.evidence-pdf-grid{grid-template-columns:1fr;padding:0 12px 12px}.evidence-pdf-card{padding:17px}.portfolio-evidence-disclosure>summary{padding:17px;font-size:.82rem}.portfolio-evidence-disclosure>summary span{font-size:.65rem;text-align:right;max-width:90px}.sectionhead-evidence h2{font-size:clamp(2.25rem,10vw,3.1rem)!important}}
