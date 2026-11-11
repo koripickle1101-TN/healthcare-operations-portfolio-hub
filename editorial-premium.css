@@ -47,7 +47,7 @@ html body main>section{background:#FFFFFF!important}
 .pulse-insignia{color:#FF8200!important}
 .pulse-label{display:block;margin-top:7px;font-size:.81rem;font-weight:800;color:#1b1b1b;line-height:1.5}
 .pulse-link{font-size:.68rem;color:#9F4E00;letter-spacing:-.01em;margin-top:auto;padding-top:14px;font-weight:800}
-.portfolio-source-note{color:#777!important;font-size:.74rem!important;line-height:1.65!important;margin:14px 0 0!important}
+.portfolio-source-note{color:#505050!important;font-size:.74rem!important;line-height:1.65!important;margin:14px 0 0!important}
 .analytics-showcase{padding:clamp(54px,8vw,98px) 0!important}
 .analytics-head{display:flex;justify-content:space-between;align-items:start;gap:36px;margin-bottom:34px}
 .analytics-head>div:first-child{max-width:880px}
