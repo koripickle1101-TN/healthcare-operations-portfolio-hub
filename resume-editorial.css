@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+html,body,body:before{background:#FFFFFF!important;color:#000000!important}
+html body,html body p,html body li,html body a,html body button,html body strong{font-family:'Manrope','Inter',Arial,sans-serif!important}
+html body h1,html body h2,html body h3,.site-header .brand-mark{font-family:'Instrument Sans','Inter',Arial,sans-serif!important;color:#000!important;font-weight:800!important;letter-spacing:-.055em!important}
+html body main{max-width:850px!important;margin:auto!important;background:#fff!important}
+.resume-sheet{border-top:4px solid #FF8200!important}
+.resume-sheet h1{font-size:clamp(2.7rem,5vw,4.2rem)!important;line-height:1.06!important}
+.resume-sheet h2{border-top:1px solid #DDD!important;border-left:3px solid #FF8200!important;padding:6px 0 6px 12px!important;margin-top:28px!important;font-size:1.06rem!important}
+.site-header{background:#fff!important;border-bottom:1px solid #E4E4E4!important}
+.site-header .nav-shell{max-width:1120px!important;margin:auto!important;align-items:center!important}
+.resume-actions button{background:#FF8200!important;border:1px solid #FF8200!important;color:#000!important;border-radius:8px!important;font-family:'Manrope','Inter',sans-serif!important;font-size:.85rem!important;font-weight:800!important;cursor:pointer}
+.resume-actions .secondary-button{border:1px solid #E2E2E2!important;border-radius:8px!important;background:#FFFFFF!important;font-size:.85rem!important;font-weight:800!important}
+.resume-sheet p,.resume-sheet li{color:#292929!important;line-height:1.65!important}
+.resume-sheet a{color:#000!important;text-decoration-color:#FF8200!important;text-underline-offset:4px!important}
+@media print{
+  html,body,main,.resume-sheet{color:#000!important;background:#fff!important}
+  .resume-sheet h1{font-size:22pt!important}
+  .resume-sheet h2{margin-top:13px!important;padding:4px 0 4px 9px!important;border-left:2px solid #FF8200!important}
+  .resume-sheet li,.resume-sheet p{font-size:9.3pt!important;line-height:1.35!important}
+}
