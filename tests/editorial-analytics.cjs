@@ -31,7 +31,7 @@ const base='http://127.0.0.1:8766/';
    assert.ok(saved&&saved.includes('Billing'),'Session browser-only decision was not saved');
    await page.locator('.mobilebar button[data-nav="scenario"]').click({force:true});
    const before=await page.locator('#scenarioResult').innerText();
-   await page.locator('#reduce').fill('75');
+   await page.locator('#reduce').evaluate(el=>{el.value='75';el.dispatchEvent(new Event('input',{bubbles:true}))});
    const after=await page.locator('#scenarioResult').innerText();
    assert.notEqual(before,after,'Scenario slider not reactive');
    await page.locator('.mobilebar button[data-nav="quality"]').click({force:true});
