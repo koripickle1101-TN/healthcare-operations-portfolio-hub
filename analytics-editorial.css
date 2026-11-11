@@ -1,0 +1,50 @@
+/* Volunteer CareFlow Systems · Premium Editorial Sans-serif 2026 */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--paper:#FFFFFF!important;--white:#FFFFFF!important;--ink:#000000!important;--orange:#FF8200!important;--line:#E9E9E6!important;--soft:#FAFAF8!important;--muted:#646464!important;--r:17px}
+html,body,.shell,.content,.main{background:#FFFFFF!important;color:#000000!important}
+body,button,input,textarea,select,table{font-family:'Manrope','Instrument Sans','Inter',Arial,sans-serif!important}
+h1,h2,h3,.brandcopy strong,.ptitle,.kvalue,.kpi,.hero,.flowitem b,.bigresult b,.sectionhead h2,.statbox b{font-family:'Instrument Sans','Inter',Arial,sans-serif!important}
+.side{background:#FFFFFF!important;color:#000!important;border-right:1px solid #E8E8E8!important;box-shadow:5px 0 24px #00000006!important}
+.side .brand{border-bottom:1px solid #eee;margin-bottom:18px;padding-bottom:23px}
+.brandcopy strong,.brandcopy small,.sectionlabel,.sidefoot b{color:#000!important}
+.brandcopy small{color:#666!important}
+.sidefoot{color:#555!important;border-top:1px solid #eee!important}
+.nav button{color:#333!important;letter-spacing:-.015em}
+.nav button:hover{color:#000!important;background:#FAFAF8!important}
+.nav button.active{color:#000!important;background:#FFF1E0!important;box-shadow:inset 3px 0 #FF8200!important}
+.topbar{background:white!important;border-bottom:1px solid #ededeb!important}
+.crumb b{font-weight:800}
+.tag,.chip{background:#FFF4E8!important;color:#995000!important;border:1px solid #F8DAB8!important}
+.hero{background:#FFFFFF!important;color:#000!important;border:1px solid #E7E7E4!important;border-radius:16px!important;min-height:229px!important;box-shadow:0 12px 60px #00000008}
+.hero h1{color:#000!important;letter-spacing:-.075em!important;font-weight:800!important}
+.hero .eyebrow{color:#A45800!important}
+.hero p{color:#444!important}
+.hero:before{background:transparent!important;opacity:.85!important;border:1px solid #FFC88B!important;box-shadow:0 0 0 40px #FFF9F3,0 0 0 42px #FFE2C1,0 0 0 88px #FFFDF9,0 0 0 89px #FFEAD1!important}
+.hero:after{height:4px!important;left:38px!important}
+.heroIcon{background:#FF8200!important;color:#000!important;box-shadow:0 12px 30px #ff820033}
+.filterbar,.panel,.kpi,.tablewrap{border-color:#E6E6E3!important;background:#FFFFFF!important}
+.filterbar{border-radius:14px!important}
+.panel{border-radius:16px!important;box-shadow:0 8px 30px #00000005!important}
+.kpi{border-radius:15px!important;box-shadow:0 9px 30px #00000007!important}
+.kpi:hover{box-shadow:0 12px 34px #ff820015!important}
+.klabel{color:#555!important}
+.kvalue{font-weight:800!important;color:#000!important}
+.kpi:before{height:4px!important}
+.btn,.field input,.field select,.field textarea{border-radius:8px!important}
+.btn.dark{background:#000!important;color:#fff!important}
+.btn.orange{background:#FF8200!important;color:#000!important}
+.baritem:hover{background:#FFF9F3!important}
+.track{background:#F4F4F2!important}
+.disclaimer{color:#555!important}
+.sectionhead h2{font-weight:800!important;letter-spacing:-.055em!important}
+.sectionhead a,.sectionhead button{color:#9C4E00!important}
+.bigresult{background:#000!important}
+.mobilebar{background:#FFFFFF!important;border-top:1px solid #E7E7E6!important;box-shadow:0 -6px 26px #0000000A!important}
+.mobilebar button{color:#333!important}
+.mobilebar button.active{background:#FFF1E0!important;color:#9B5200!important}
+.mobilebar button:focus-visible{outline-color:#FF8200}
+.portfolio-return{position:fixed;top:68px;right:24px;z-index:40;padding:8px 13px;background:#FFFFFF;color:#000;text-decoration:none;border:1px solid #E4E4E4;border-radius:9px;font-size:11px;font-weight:800;box-shadow:0 8px 25px #00000010}
+.portfolio-return:hover{background:#FFF2E2;border-color:#FF8200}
+.portfolio-return:focus-visible{outline:3px solid #FF8200;outline-offset:2px}
+@media(max-width:760px){.portfolio-return{top:auto;right:12px;bottom:88px;font-size:10px;padding:8px 11px}.hero{min-height:222px!important;padding:26px 21px!important}.hero h1{font-size:clamp(35px,9vw,43px)!important}.hero:before{width:260px!important;height:260px!important;right:-150px!important;top:-70px!important}.main{padding:18px 14px 95px!important}.topbar{padding:18px 16px!important}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
