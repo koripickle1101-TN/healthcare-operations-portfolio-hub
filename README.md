@@ -1,5 +1,26 @@
 # Healthcare Operations Portfolio Hub
 
+## Portfolio evidence audit — October 24, 2026
+
+This is a working audit, not a claim of verified job performance. All projects are student-developed simulations using synthetic records.
+
+| Component | Evidence currently identified | Verification still required | Recruiter treatment |
+|---|---|---|---|
+| Patient Access Bottleneck | Eight-sheet Excel workbook, 12 fictional cases | Independently recalculate formulas, validate queue and closure controls | Flagship candidate |
+| EVIS | 12-case CSV, 30-case separate simulation, methodology and validation notes | Reproduce calculations; inspect UI and source consistency | Flagship candidate |
+| PARCS | Fictional authorization records, source CSV, operational stress-test documentation | Verify service-date logic, exception lifecycle, and test assertions | Flagship candidate |
+| DPIS | Five-case claim-readiness evidence and source CSV | Reconcile dispositions and separate hypotheses from proven denial causes | Flagship candidate |
+| Silent Breakpoint | Breakpoint and root-cause templates | Complete a distinct worked investigation and validate criteria | Supporting / rework |
+| Healthcare Workflow Portfolio | Case studies and supporting applications | Curate nonduplicative case studies and test links | Supporting library |
+| Healthcare Operations Proof System | Templates and revenue-cycle workbook | Private and archived: not accessible to public recruiters; verify artifact before promotion | Restricted supporting material |
+| GitHub Profile | Public profile README | Align featured links to approved portfolio and confirm current credential wording | Professional navigation |
+| Portfolio Hub | Public landing page and draft nine-component review | Mobile browser test, all destination links, accessibility and role-based navigation | Recruiter entry point |
+
+Audit rules: distinguish observed repository facts from independently tested functionality; do not claim employer outcomes, payer access, EHR use, healthcare employment, or validated clinical/payer risk scoring. Do not publish changes before explicit approval.
+
+---
+
+
 **Student-developed · Simulated · Educational · No PHI**
 
 Kori Pickle · Bachelor of Science in Healthcare Administration candidate, University of Phoenix (degree in progress)  
