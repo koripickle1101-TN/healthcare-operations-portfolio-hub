@@ -1,0 +1,15 @@
+test_id,test,category,status,expected,observed,detail
+DQL-001,Fixture count and expected IDs,Dataset,PASSED,12 rows; IDs PV-01 through PV-12,"12 rows, 12 IDs",One fictional pre-visit scenario per source record
+DQL-002,Primary-key uniqueness and format,Dataset,PASSED,"No blank, malformed, or duplicated IDs",bad=[]; duplicates=[],Exact source-grain key check
+DQL-003,Controlled-value conformance,Dataset,PASSED,All controlled tokens match documented enumerations,0 invalid fields,[]
+DQL-004,Registration completeness and consistency,Registration,PASSED,Applicable synthetic fixture(s) routed to expected first-failure gate,"2 expected fixture(s), 2 detected","[('PV-02', 'Registration completeness', 'Registration completeness'), ('PV-08', 'Registration consistency', 'Registration consistency')]"
+DQL-005,Eligibility-documentation checkpoint,Eligibility,PASSED,Applicable synthetic fixture(s) routed to expected first-failure gate,"2 expected fixture(s), 2 detected","[('PV-03', 'Eligibility documentation', 'Eligibility documentation'), ('PV-04', 'Eligibility documentation', 'Eligibility documentation')]"
+DQL-006,Authorization applicability and evidence,Authorization,PASSED,Applicable synthetic fixture(s) routed to expected first-failure gate,"3 expected fixture(s), 3 detected","[('PV-05', 'Authorization applicability', 'Authorization applicability'), ('PV-06', 'Authorization status', 'Authorization status'), ('PV-07', 'Authorization status', 'Authorization status')]"
+DQL-007,Accountable-owner checkpoint,Ownership,PASSED,Applicable synthetic fixture(s) routed to expected first-failure gate,"1 expected fixture(s), 1 detected","[('PV-09', 'Task ownership', 'Task ownership')]"
+DQL-008,Handoff destination checkpoint,Handoff,PASSED,Applicable synthetic fixture(s) routed to expected first-failure gate,"1 expected fixture(s), 1 detected","[('PV-10', 'Handoff control', 'Handoff control')]"
+DQL-009,Escalation-evidence checkpoint,Escalation,PASSED,Applicable synthetic fixture(s) routed to expected first-failure gate,"1 expected fixture(s), 1 detected","[('PV-11', 'Exception escalation', 'Exception escalation')]"
+DQL-010,Independent first-failure rule precedence,Dataset,PASSED,All 12 expected first failures reproduced,0 mismatches,[]
+DQL-011,Expected vs cached results reconciliation,Reconciliation,PASSED,"Computed and expected checkpoint/outcome agree with independent Python, Rule Test=PASS",0 mismatches,[]
+DQL-012,Human-approval boundary,Governance,PASSED,Human Approval=Not Performed and review gate populated for all cases,0 violations; approved=0,[]
+DQL-013,Historical checksum and workbook preservation,Integrity,PASSED,"Exact known SHA-256 matches, 18 sheets, only 12 repaired formula changes and E validation",original_sha_match=True; repaired_sha_match=True; preservation=PASSED,Source and repaired workbooks read-only
+DQL-014,In-memory adversarial regression probes,Negative paths,PASSED,All scenario probes meet independent Python expectations,19/19 probes passed,Failed probes: []

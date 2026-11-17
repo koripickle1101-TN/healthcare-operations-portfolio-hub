@@ -1,0 +1,8 @@
+Test ID,Artifact,Test,Status,Reason
+MOB-001,Google Sheets Android workbook,Status change updates overdue M2/N2,BLOCKED,No independently observed Android editor test
+MOB-002,Google Sheets Android workbook,Invalid status input rejected,BLOCKED,No independently observed Android editor test
+MOB-003,Google Sheets Android workbook,Filter and reset Review Flag,BLOCKED,No independently observed Android editor test
+MOB-004,Google Sheets Android workbook,Save reopen persistence,BLOCKED,No independently observed Android editor test
+NXT-001,PV12 simulated QA,Multi-defect visibility,UNTESTED,Not implemented or evaluated
+NXT-002,PV12 simulated QA,Authorization evidence unexpected tokens,UNTESTED,Not evaluated in source editor
+NXT-003,PV12 simulated QA,Receiving handoff acknowledgement gate,UNTESTED,Not implemented
