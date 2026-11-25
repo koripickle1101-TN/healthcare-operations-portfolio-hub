@@ -122,3 +122,70 @@ html,body{color-scheme:only light!important}
 .about-panel{border-left-width:4px!important;border-top-width:2px!important}
 .site-footer{border-top-width:3px!important}
 .recruiter-card{box-shadow:none!important}
+
+
+/* Editorial refinement: three original, fully opaque brand colors only.
+   Reduce visual orange coverage; preserve #FF8200 unchanged. */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Inter:wght@400;500;600;700;800&display=swap');
+:root{--orange:#FF8200;--brand-orange:#FF8200;--black:#000000;--white:#FFFFFF}
+html body{color:#000000!important;background:#FFFFFF!important}
+html body h1,html body h2,html body h3,
+html body .recruiter-hero h1,html body .directory-section h2,
+html body .recruiter-card h3 {
+ font-family:'Bodoni Moda',Georgia,serif!important;
+ font-weight:500!important;letter-spacing:-.035em!important;
+ color:#000000!important;overflow-wrap:break-word;
+}
+html body h1,html body .recruiter-hero h1{line-height:1.12!important}
+html body .recruiter-card h3{font-size:clamp(1.6rem,2.3vw,2.15rem)!important;line-height:1.19!important}
+html body p,html body a,html body button,html body input,
+html body select,html body label,html body span,html body strong{
+ font-family:'Inter',Arial,sans-serif!important;color:#000000;
+}
+.site-header{border-bottom:1px solid #000000!important}
+.brand-mark:before{width:7px!important;height:7px!important;border-radius:0!important}
+.recruiter-hero{border:1px solid #000000!important;border-top:2px solid #FF8200!important;padding:clamp(24px,5vw,62px)!important}
+.recruiter-hero h1{border:0!important;padding-left:0!important}
+.recruiter-hero:after{width:46px!important;height:2px!important;background:#FF8200!important}
+.eyebrow,.card-category{border-bottom:2px solid #FF8200!important}
+.directory-section>.section-intro{border-top:1px solid #FF8200!important}
+.directory-section h2{border-bottom:0!important;padding-bottom:0!important}
+#featured-grid .recruiter-card,#directory-grid .recruiter-card{
+ border:1px solid #000000!important;border-top:1px solid #000000!important;
+ border-left:1px solid #000000!important;box-shadow:none!important;
+ border-radius:0!important;background:#FFFFFF!important;
+}
+.recruiter-card .card-acronym{margin:-5px 0 0!important;font-size:.75rem!important;
+ font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#000000!important}
+.recruiter-card .card-purpose{font-size:1.02rem!important;line-height:1.65!important;
+ font-weight:500;color:#000000!important}
+.recruiter-card .card-competencies{padding-top:12px;border-top:1px solid #000000}
+.recruiter-card .competencies-label{font-size:.72rem;letter-spacing:.12em;
+ text-transform:uppercase;font-weight:800;color:#000000}
+.recruiter-card .card-competencies p{font-size:.86rem!important;margin:7px 0 0!important}
+.recruiter-card .review-status{border:1px solid #000000!important;
+ border-radius:0!important;background:#FFFFFF!important}
+.hero-actions .primary-button,.hero-actions .secondary-button{
+ background:#000000!important;color:#FFFFFF!important;border:1px solid #000000!important;
+ border-radius:0!important;box-shadow:none!important}
+.hero-actions .primary-button:hover,.hero-actions .secondary-button:hover{
+ background:#FFFFFF!important;color:#000000!important;border-color:#000000!important;box-shadow:none!important}
+.card-actions .evidence-link,.card-actions .evidence-link:first-child{
+ background:#000000!important;color:#FFFFFF!important;border:1px solid #000000!important;
+ border-radius:0!important;box-shadow:none!important}
+.card-actions .evidence-link:hover,.card-actions .evidence-link:first-child:hover{
+ background:#FFFFFF!important;color:#000000!important}
+.filter-panel{border:1px solid #000000!important;border-top:2px solid #FF8200!important}
+.filter-panel button{background:#000000!important;color:#FFFFFF!important;border:1px solid #000000!important}
+.filter-panel button:hover{background:#FFFFFF!important;color:#000000!important}
+.about-panel{border:1px solid #000000!important;border-left:2px solid #FF8200!important;
+ border-top:1px solid #000000!important}
+.site-footer{border-top:1px solid #FF8200!important}
+.integrity-note{border-left:2px solid #FF8200!important;border-bottom:0!important}
+@media(max-width:640px){
+ html body .recruiter-card h3{font-size:clamp(1.52rem,6vw,1.95rem)!important}
+ html body .recruiter-hero h1{font-size:clamp(2.35rem,10vw,3.4rem)!important}
+ .recruiter-card{padding:22px!important}
+ .card-actions{display:grid!important;grid-template-columns:minmax(0,1fr)}
+ .card-actions .evidence-link{justify-content:center;text-align:center;min-height:48px}
+}
