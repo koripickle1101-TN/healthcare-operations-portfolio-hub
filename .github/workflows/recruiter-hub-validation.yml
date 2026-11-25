@@ -21,9 +21,22 @@ jobs:
         run: |
           npm install --no-save playwright@1.56.1 @axe-core/playwright@4.10.2
           npx playwright install --with-deps chromium
+      - name: Validate static JavaScript syntax
+        run: |
+          node --check recruiter-directory.js
+          node --check mobile-navigation.js
+          node --check tests/recruiter-directory.cjs
       - name: Audit cross-repository evidence links and artifacts
         run: node tests/portfolio-integrity.cjs
       - name: Run browser audit
         run: |
           python3 -m http.server 8766 --bind 127.0.0.1 >/tmp/portfolio-server.log 2>&1 &
           node tests/recruiter-directory.cjs
+      - name: Upload rendered browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-editorial-browser-evidence
+          path: /tmp/portfolio-*.png
+          if-no-files-found: warn
+          retention-days: 7
