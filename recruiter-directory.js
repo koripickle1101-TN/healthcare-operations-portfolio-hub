@@ -14,10 +14,72 @@ const projects=[
 ];
 const create=(tag,className,text)=>{const e=document.createElement(tag);if(className)e.className=className;if(text!==undefined)e.textContent=text;return e};
 function link(label,url){const a=create('a','evidence-link',label);a.href=url;if(url.startsWith('https:')){a.target='_blank';a.rel='noopener noreferrer'}return a}
-function card(p){const article=create('article','recruiter-card');const top=create('div','card-top');top.append(create('span','card-category',p.category),create('span','review-status',p.status));article.append(top,create('h3','',p.title));if(p.acronym)article.append(create('p','card-acronym',p.acronym+' · Educational portfolio project'));article.append(create('p','card-purpose',p.purpose||p.summary));if(p.competencies){const skills=create('div','card-competencies');skills.append(create('span','competencies-label','Competencies demonstrated'),create('p','',p.competencies));article.append(skills)}const details=create('p','card-summary',p.summary);article.append(details);const ev=create('p','card-evidence');ev.append(create('strong','', 'Available evidence: '),document.createTextNode(p.evidence));article.append(ev);const actions=create('div','card-actions');actions.append(link(p.action||'Review project evidence',p.evidenceUrl),link('View project source code',owner+p.repo));if(p.live)actions.append(link('Open verified project demonstration',p.live));article.append(actions);return article}
-function render(){const role=document.getElementById('role-filter').value;const term=document.getElementById('project-search').value.toLocaleLowerCase().trim();const filtered=projects.filter(p=>(role==='all'||p.roles.includes(role))&&[p.title,p.acronym||'',p.category,p.purpose||'',p.competencies||'',p.summary,p.evidence].join(' ').toLocaleLowerCase().includes(term));const dir=document.getElementById('directory-grid');dir.replaceChildren(...filtered.map(card));document.getElementById('result-count').textContent=filtered.length+' of '+projects.length+' portfolio directory entries shown';document.getElementById('empty-results').hidden=filtered.length!==0}
-document.getElementById('featured-grid').replaceChildren(...projects.filter(p=>p.featured).map(card));
-document.getElementById('role-filter').addEventListener('change',render);
-document.getElementById('project-search').addEventListener('input',render);
-document.getElementById('clear-filters').addEventListener('click',()=>{document.getElementById('role-filter').value='all';document.getElementById('project-search').value='';render();document.getElementById('role-filter').focus()});
-render();
+const featuredIds=new Set(['evis','parcs','dpis','sbi']);
+const actionLabels={
+case01:'Explore documentation analytics',pabis:'Explore patient access analysis',
+evis:'Explore eligibility verification',parcs:'Explore prior authorization',
+dpis:'Explore denial prevention',sbi:'Explore workflow intelligence',
+workflow:'Browse healthcare case studies',proof:'Review supporting evidence',
+profile:'View GitHub portfolio',hub:'View portfolio documentation'
+};
+function card(p,compact=false){
+ const article=create('article','recruiter-card');
+ article.dataset.project=p.id;
+ const top=create('div','card-top');
+ top.append(create('span','card-category',p.category));
+ article.append(top,create('h3','',p.title));
+ if(p.acronym){
+  const classification=p.id==='case01'?'Educational case study':'Educational portfolio project';
+  article.append(create('p','card-acronym',p.acronym+' · '+classification));
+ }else{
+  article.append(create('p','card-acronym','Supporting educational portfolio resource'));
+ }
+ article.append(create('p','card-purpose',p.purpose||p.summary));
+ if(p.competencies){
+  const skills=create('div','card-competencies');
+  skills.append(create('span','competencies-label','Educational competencies'),create('p','',p.competencies));
+  article.append(skills);
+ }
+ const ev=create('p','card-evidence');
+ ev.append(create('strong','', 'Available evidence: '),document.createTextNode(p.evidence));
+ article.append(ev);
+ if(!compact){
+  const details=create('details','card-details');
+  details.append(create('summary','','Project details and validation status'));
+  details.append(create('p','',p.summary));
+  details.append(create('p','','Validation / review status: '+p.status));
+  article.append(details);
+ }
+ const actions=create('div','card-actions');
+ const primary=actionLabels[p.id]||p.action||'Review project evidence';
+ actions.append(link(primary,p.evidenceUrl));
+ actions.append(link('View source for '+p.title,owner+p.repo));
+ if(p.live)actions.append(link('Open project demonstration for '+p.title,p.live));
+ article.append(actions);
+ return article;
+}
+function renderDirectory(){
+ const filter=document.getElementById('role-filter');
+ const search=document.getElementById('project-search');
+ const dir=document.getElementById('directory-grid');
+ if(!filter||!search||!dir)return;
+ const role=filter.value;
+ const term=search.value.toLocaleLowerCase().trim();
+ const filtered=projects.filter(p=>(role==='all'||p.roles.includes(role))&&[p.title,p.acronym||'',p.category,p.purpose||'',p.competencies||'',p.summary,p.evidence].join(' ').toLocaleLowerCase().includes(term));
+ dir.replaceChildren(...filtered.map(p=>card(p,false)));
+ const count=document.getElementById('result-count');
+ if(count)count.textContent=filtered.length+' of '+projects.length+' portfolio directory entries shown';
+ const empty=document.getElementById('empty-results');
+ if(empty)empty.hidden=filtered.length!==0;
+}
+const featured=document.getElementById('featured-grid');
+if(featured)featured.replaceChildren(...projects.filter(p=>featuredIds.has(p.id)).map(p=>card(p,true)));
+if(document.getElementById('directory-grid')){
+ const role=document.getElementById('role-filter');
+ const search=document.getElementById('project-search');
+ const reset=document.getElementById('clear-filters');
+ role.addEventListener('change',renderDirectory);
+ search.addEventListener('input',renderDirectory);
+ reset.addEventListener('click',()=>{role.value='all';search.value='';renderDirectory();role.focus()});
+ renderDirectory();
+}
