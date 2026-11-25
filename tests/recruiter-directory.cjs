@@ -32,9 +32,10 @@ if(viewport.width<=480){
 
 assert.equal(await page.locator('body').evaluate(e=>getComputedStyle(e).backgroundColor),backgroundExpected);
 assert.equal(await page.locator('.recruiter-card').first().evaluate(e=>getComputedStyle(e).backgroundColor),backgroundExpected);
-assert.match(await page.locator('h1').evaluate(e=>getComputedStyle(e).fontFamily),/Inter/);
+assert.match(await page.locator('h1').evaluate(e=>getComputedStyle(e).fontFamily),/Bodoni Moda/);
 for(const selector of ['main','.recruiter-hero','.filter-panel','.about-panel','.site-footer'])assert.equal(await page.locator(selector).evaluate(e=>getComputedStyle(e).backgroundColor),backgroundExpected,'Nonwhite '+selector);
-for(const selector of ['body','h1','h2','.recruiter-card h3','.recruiter-card p','.evidence-link','.nav-links a'])assert.match(await page.locator(selector).first().evaluate(e=>getComputedStyle(e).fontFamily),/Inter/,'Font mismatch '+selector);
+for(const selector of ['body','.recruiter-card p','.evidence-link','.nav-links a'])assert.match(await page.locator(selector).first().evaluate(e=>getComputedStyle(e).fontFamily),/Inter/,'Font mismatch '+selector);
+for(const selector of ['h1','h2','.recruiter-card h3'])assert.match(await page.locator(selector).first().evaluate(e=>getComputedStyle(e).fontFamily),/Bodoni Moda/,'Editorial font mismatch '+selector);
 assert.equal(await page.locator(':root').evaluate(e=>getComputedStyle(e).getPropertyValue('--brand-orange').trim().toUpperCase()),'#FF8200');
 
 assert.ok(await page.locator('a[href="resume.html"]').count()>=2);
@@ -58,6 +59,11 @@ const resumeWidths=await page.evaluate(()=>({document:document.documentElement.s
 assert.equal(await page.locator('body').evaluate(e=>getComputedStyle(e).backgroundColor),backgroundExpected);
 await page.goto(base,{waitUntil:'networkidle'});
 assert.equal(await page.locator('#featured-grid .recruiter-card').count(),6);
+for(const [full,acronym] of [['Eligibility Verification Intelligence System','EVIS'],['Prior Authorization Command System','PARCS'],['Denial Prevention Intelligence System','DPIS'],['Silent Breakpoint Intelligence','SBI']]){
+ const project=page.locator('#directory-grid .recruiter-card').filter({has:page.locator('h3', {hasText:full})});
+ assert.equal(await project.count(),1,'Missing full project name '+full);
+ assert.match(await project.locator('.card-acronym').innerText(),new RegExp(acronym));
+}
 assert.equal(await page.locator('#directory-grid .recruiter-card').count(),10);
 assert.match(await page.locator('#result-count').innerText(),/10 of 10/);
 await page.locator('#role-filter').selectOption('authorization');assert.ok(await page.locator('#directory-grid .recruiter-card').count()>=2);
@@ -71,9 +77,12 @@ assert.equal(await cards.count(),10,'Directory must contain all 10 in-scope entr
 for(let i=0;i<await cards.count();i++){
  const c=cards.nth(i);
  assert.ok((await c.locator('h3').innerText()).trim(),'Missing project title '+i);
- const evidence=c.getByRole('link',{name:'Inspect evidence'});
- const source=c.getByRole('link',{name:'GitHub source'});
+ const evidence=c.locator('.card-actions a').first();
+ const source=c.getByRole('link',{name:'View project source code'});
  assert.equal(await evidence.count(),1,'Missing evidence action '+i);
+ assert.ok((await evidence.innerText()).trim().length>12,'Uninformative evidence action '+i);
+ assert.ok((await c.locator('.card-purpose').innerText()).trim().length>35,'Missing plain-language operational purpose '+i);
+ assert.ok((await c.locator('.card-competencies').innerText()).trim().length>25,'Missing competencies '+i);
  assert.equal(await source.count(),1,'Missing source action '+i);
  for(const a of [evidence,source]){
   assert.match(await a.getAttribute('href'),/^https:\/\/github\.com\/koripickle1101-TN\//);
