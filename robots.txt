@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://healthcare-operations-portfolio-hub.vercel.app/sitemap.xml
