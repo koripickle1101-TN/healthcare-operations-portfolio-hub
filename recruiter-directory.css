@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Inter:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 :root{--orange:#FF8200;--black:#000;--white:#FFF}
 html{scroll-behavior:smooth;background:#fff!important}
@@ -126,7 +127,6 @@ html,body{color-scheme:only light!important}
 
 /* Editorial refinement: three original, fully opaque brand colors only.
    Reduce visual orange coverage; preserve #FF8200 unchanged. */
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Inter:wght@400;500;600;700;800&display=swap');
 :root{--orange:#FF8200;--brand-orange:#FF8200;--black:#000000;--white:#FFFFFF}
 html body{color:#000000!important;background:#FFFFFF!important}
 html body h1,html body h2,html body h3,
