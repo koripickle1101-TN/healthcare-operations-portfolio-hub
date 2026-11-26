@@ -63,6 +63,11 @@ assert.equal(await page.locator('a[href="https://github.com/koripickle1101-TN/he
 assert.equal(await page.locator('#directory-grid .recruiter-card').count(),10);
 assert.equal(await page.locator('.recruiter-card a[href*="healthcare-operations-proof-system"]').count(),0,'Private repository should not be linked to recruiters');
 assert.match(await page.locator('#result-count').innerText(),/10 of 10/);
+await page.locator('#project-search').focus();
+const visibleFocus=await page.locator('#project-search').evaluate(e=>({outline:getComputedStyle(e).outlineColor,width:getComputedStyle(e).outlineWidth,shadow:getComputedStyle(e).boxShadow}));
+assert.equal(visibleFocus.outline,'rgb(0, 0, 0)','Keyboard focus must have black high-contrast outline');
+assert.equal(visibleFocus.width,'3px','Keyboard focus outline must be 3px');
+assert.match(visibleFocus.shadow,/rgb\\(255, 130, 0\\)/,'Orange separation ring missing');
 await page.locator('#role-filter').selectOption('authorization');assert.ok(await page.locator('#directory-grid .recruiter-card').count()>=2);
 await page.locator('#project-search').fill('PARCS');assert.equal(await page.locator('#directory-grid .recruiter-card').count(),1);
 await page.locator('#project-search').fill('no-such-project');assert.equal(await page.locator('#directory-grid .recruiter-card').count(),0);assert.equal(await page.locator('#empty-results').isVisible(),true);
