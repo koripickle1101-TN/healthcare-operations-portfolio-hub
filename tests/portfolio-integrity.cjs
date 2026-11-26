@@ -1,14 +1,13 @@
 'use strict';
 const assert=require('node:assert/strict');
-const repos=['patient-access-bottleneck-intelligence-system','eligibility-verification-intelligence-system','parcs-prior-authorization-command-system','denial-prevention-intelligence-system','silent-breakpoint-intelligence-system','healthcare-workflow-portfolio','healthcare-operations-proof-system','koripickle1101-TN','healthcare-operations-portfolio-hub'];
+const repos=['patient-access-bottleneck-intelligence-system','eligibility-verification-intelligence-system','parcs-prior-authorization-command-system','denial-prevention-intelligence-system','silent-breakpoint-intelligence-system','healthcare-workflow-portfolio','koripickle1101-TN','healthcare-operations-portfolio-hub'];
 const owner='koripickle1101-TN';
-const req=async u=>{const r=await fetch(u,{headers:{'Accept':'application/vnd.github+json','User-Agent':'portfolio-integrity-audit'}});if(!r.ok)throw Error(r.status+' '+u);return r};
+const req=async u=>{const headers={'Accept':'application/vnd.github+json','User-Agent':'portfolio-integrity-audit'};if(process.env.GH_API_TOKEN&&u.startsWith('https://api.github.com/'))headers.Authorization='Bearer '+process.env.GH_API_TOKEN;const r=await fetch(u,{headers});if(!r.ok){const details=(await r.text()).slice(0,260);throw Error(r.status+' '+u+' '+details)}return r};
 const get=async u=>(await req(u)).json();
 const pathOf=u=>{let m=u.match(/^https:\/\/github\.com\/koripickle1101-TN\/([^/]+)(?:\/(?:blob|tree)\/([^/]+)\/(.+))?$/);return m?{repo:m[1],ref:m[2]||'main',path:m[3]||''}:null};
 (async()=>{
 const trees=new Map();
 for(const repo of repos){
- if(['healthcare-operations-proof-system'].includes(repo)){console.log('SKIP inaccessible repository '+repo+': unauthenticated CI cannot inspect; verified through authenticated connector separately');trees.set(repo,null);continue;}
  const data=await get('https://api.github.com/repos/'+owner+'/'+repo+'/git/trees/main?recursive=1');
  assert.equal(data.truncated,false,'Incomplete tree '+repo);
  trees.set(repo,new Set(data.tree.map(x=>x.path)));
@@ -16,9 +15,10 @@ for(const repo of repos){
 const src=require('node:fs').readFileSync('recruiter-directory.js','utf8');
 const matches=[...src.matchAll(/repo:'([^']+)',evidenceUrl:owner\+'([^']+)'/g)];
 assert.equal(matches.length,10,'Expected 10 evidence entries');
+assert.ok(!src.includes("healthcare-operations-proof-system/blob/"),'Recruiter listing must not link to the private Proof System');
 for(const m of matches){
  const repo=m[1],p=pathOf('https://github.com/'+owner+'/'+m[2]);
- assert.ok(p&&(p.repo===repo||(repo==='healthcare-operations-proof-system'&&p.repo==='healthcare-operations-portfolio-hub'&&p.path==='evidence/Revenue_Cycle_Visibility_Tracker_Kori_Pickle.xlsx')),'Incorrect evidence repository '+repo);
+ assert.ok(p&&p.repo===repo,'Incorrect evidence repository '+repo);
  if(repo==='healthcare-operations-portfolio-hub'&&p.path==='case-studies/01-medical-record-completeness/README.md'){
   const fs=require('node:fs');
   assert.ok(fs.existsSync(p.path),'Missing Case Study 01 README '+p.path);
@@ -30,17 +30,15 @@ for(const m of matches){
   console.log('PASS Case Study 01 local README and workbook ('+buf.length+' bytes)');
   continue;
  }
- if(repo==='healthcare-operations-proof-system'&&p.repo==='healthcare-operations-portfolio-hub'){
+ if(repo==='healthcare-operations-portfolio-hub'&&p.path==='evidence/Revenue_Cycle_Visibility_Tracker_Kori_Pickle.xlsx'){
   const fs=require('node:fs');
-  const local=p.path;
-  assert.ok(fs.existsSync(local),'Missing verified workbook '+local);
-  const buf=fs.readFileSync(local);
-  assert.equal(buf.subarray(0,2).toString(),'PK','Invalid verified workbook container');
-  assert.ok(buf.length>10000,'Truncated verified workbook');
-  console.log('PASS verified local tracker '+local+' ('+buf.length+' bytes)');
+  assert.ok(fs.existsSync(p.path),'Missing public synthetic evidence workbook '+p.path);
+  const buf=fs.readFileSync(p.path);
+  assert.equal(buf.subarray(0,2).toString(),'PK','Invalid public evidence workbook container');
+  assert.ok(buf.length>10000,'Truncated public evidence workbook');
+  console.log('PASS public synthetic evidence workbook '+p.path+' ('+buf.length+' bytes)');
   continue;
  }
- if(!trees.get(repo)){console.log('SKIP inaccessible evidence target '+repo+'; connector verification required');continue;}
  assert.ok(!p.path||trees.get(repo).has(p.path)||[...trees.get(repo)].some(k=>k.startsWith(p.path+'/')),'Missing evidence target '+repo+'/'+p.path);
 }
 for(const repo of ['healthcare-workflow-portfolio','koripickle1101-TN']){
@@ -74,5 +72,5 @@ for(const [repo,path] of [['patient-access-bottleneck-intelligence-system','Pati
  assert.ok(b.length>1000,'Truncated XLSX '+repo);
  console.log('PASS XLSX ZIP signature '+repo+'/'+path);
 }
-console.log('PASS 10 recruiter evidence destinations and supporting Markdown/PDF/XLSX integrity');
+console.log('PASS 10 public recruiter evidence destinations and supporting Markdown/PDF/XLSX container integrity; formulas, semantics and runtime outcomes not validated');
 })().catch(e=>{console.error(e);process.exit(1)});

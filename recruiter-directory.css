@@ -122,3 +122,16 @@ html,body{color-scheme:only light!important}
 .about-panel{border-left-width:4px!important;border-top-width:2px!important}
 .site-footer{border-top-width:3px!important}
 .recruiter-card{box-shadow:none!important}
+
+/* Recruiter quick-start: works without JavaScript and stays within the original brand palette. */
+.quick-start-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.quick-start-card{display:flex;flex-direction:column;align-items:flex-start;gap:13px;min-width:0;background:#FFFFFF;border:2px solid #000000;border-top:5px solid #FF8200;padding:clamp(18px,2vw,28px)}
+.quick-start-card h3{font-size:clamp(1.18rem,1.6vw,1.5rem)!important;letter-spacing:-.025em!important;line-height:1.2!important;margin:0!important}
+.quick-start-card p{margin:0;flex:1}
+.quick-start-card .evidence-link{margin-top:auto}
+#quick-start-title{scroll-margin-top:2rem}
+@media(max-width:900px){.quick-start-grid{grid-template-columns:1fr}.quick-start-card{padding:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* WCAG 2.2 focus visibility: black high-contrast focus perimeter plus Tennessee-orange separation. */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.site-header .nav-toggle:focus-visible,.site-header .nav-links a:focus-visible{outline:3px solid #000000!important;outline-offset:3px!important;box-shadow:0 0 0 6px #FF8200!important}
