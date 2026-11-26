@@ -132,3 +132,6 @@ html,body{color-scheme:only light!important}
 #quick-start-title{scroll-margin-top:2rem}
 @media(max-width:900px){.quick-start-grid{grid-template-columns:1fr}.quick-start-card{padding:20px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* WCAG 2.2 focus visibility: black high-contrast focus perimeter plus Tennessee-orange separation. */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.site-header .nav-toggle:focus-visible,.site-header .nav-links a:focus-visible{outline:3px solid #000000!important;outline-offset:3px!important;box-shadow:0 0 0 6px #FF8200!important}
