@@ -81,7 +81,7 @@ This is a **student-developed educational portfolio**.
 - Dashboard and queue examples use fictional records. Workbook or browser smoke checks do not establish real-world performance.
 - Website build/deployment status is separate from runtime testing and mobile acceptance.
 - The portfolio website lists supporting work beyond the eight core approved repositories; directory entries must not be interpreted as separate validated projects.
-- Historical employment dates are intentionally omitted from the website résumé until independently verified. Employer names and job titles are presented as historical information, not healthcare employment.
+- The website résumé uses a skills-based format with selected prior customer service and hospitality roles from before 2014. Exact employment dates are unavailable and are not a portfolio release requirement. Prior roles are distinct from educational healthcare projects.
 
 ## Connect
 
