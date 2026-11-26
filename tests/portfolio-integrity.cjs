@@ -2,7 +2,7 @@
 const assert=require('node:assert/strict');
 const repos=['patient-access-bottleneck-intelligence-system','eligibility-verification-intelligence-system','parcs-prior-authorization-command-system','denial-prevention-intelligence-system','silent-breakpoint-intelligence-system','healthcare-workflow-portfolio','koripickle1101-TN','healthcare-operations-portfolio-hub'];
 const owner='koripickle1101-TN';
-const req=async u=>{const r=await fetch(u,{headers:{'Accept':'application/vnd.github+json','User-Agent':'portfolio-integrity-audit'}});if(!r.ok)throw Error(r.status+' '+u);return r};
+const req=async u=>{const headers={'Accept':'application/vnd.github+json','User-Agent':'portfolio-integrity-audit'};if(process.env.GH_API_TOKEN&&u.startsWith('https://api.github.com/'))headers.Authorization='Bearer '+process.env.GH_API_TOKEN;const r=await fetch(u,{headers});if(!r.ok){const details=(await r.text()).slice(0,260);throw Error(r.status+' '+u+' '+details)}return r};
 const get=async u=>(await req(u)).json();
 const pathOf=u=>{let m=u.match(/^https:\/\/github\.com\/koripickle1101-TN\/([^/]+)(?:\/(?:blob|tree)\/([^/]+)\/(.+))?$/);return m?{repo:m[1],ref:m[2]||'main',path:m[3]||''}:null};
 (async()=>{
