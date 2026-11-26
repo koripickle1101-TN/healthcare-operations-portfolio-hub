@@ -9,7 +9,7 @@ No formal healthcare employment experience
 
 ## Recruiter Quick View
 
-This hub is the single recruiter-facing entry point for exactly eight owner-approved repositories. The other seven are linked below by their distinct roles. The interactive website also lists supplementary educational work and portfolio navigation entries; its broader directory is not a claim that every entry is an additional approved repository. All examples are student-developed, educational, and synthetic; no PHI or professional healthcare employment is represented.
+This hub is the single recruiter-facing entry point for exactly eight owner-approved repositories. The other seven are linked below by their distinct roles. The interactive website also lists supplementary educational work and portfolio navigation entries; its broader directory is not a claim that every entry is an additional approved repository. All public examples are student-developed, educational, and synthetic; no PHI or professional healthcare employment is represented. The Proof System authoring repository is private; its curated synthetic tracker is linked from this public hub rather than exposing or requiring access to the private repository.
 
 | Approved repository | Role | Explore |
 |---|---|---|
@@ -20,7 +20,7 @@ This hub is the single recruiter-facing entry point for exactly eight owner-appr
 | PARCS | Prior authorization | [GitHub](https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system) |
 | DPIS | Denial prevention | [GitHub](https://github.com/koripickle1101-TN/denial-prevention-intelligence-system) |
 | Silent Breakpoint Intelligence | Workflow quality | [GitHub](https://github.com/koripickle1101-TN/silent-breakpoint-intelligence-system) |
-| Healthcare Operations Proof System | Supporting evidence | [GitHub](https://github.com/koripickle1101-TN/healthcare-operations-proof-system) |
+| Healthcare Operations Proof System | Private authoring repository; public synthetic sample available | [Inspect public revenue-cycle tracker](https://github.com/koripickle1101-TN/healthcare-operations-portfolio-hub/blob/main/evidence/Revenue_Cycle_Visibility_Tracker_Kori_Pickle.xlsx) |
 
 ---
 
